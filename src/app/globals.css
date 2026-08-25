@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --paper: #f4f5f1;
+  --surface: #ffffff;
+  --ink: #171f30;
+  --ink-soft: #4c5468;
+  --ink-faint: #838ba0;
+  --line: #dcdfd6;
+  --line-strong: #c3c8bc;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --navy: #1f3a5f;
+  --navy-ink: #ffffff;
+  --teal: #256b5c;
+  --teal-soft: #e2ece7;
+  --gold: #a97a25;
+  --gold-soft: #f3e6c9;
+  --tag-bg: #eceee7;
+
+  --danger: #a5432f;
+  --danger-soft: #f6e5e0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --paper: #10141d;
+    --surface: #171d29;
+    --ink: #eceef2;
+    --ink-soft: #b7bdcc;
+    --ink-faint: #7d8496;
+    --line: #2a3145;
+    --line-strong: #3a4258;
+
+    --navy: #7fa3d1;
+    --navy-ink: #0d1420;
+    --teal: #6fbfa8;
+    --teal-soft: #1c2e2a;
+    --gold: #e0b85c;
+    --gold-soft: #2e2818;
+    --tag-bg: #1e2434;
+
+    --danger: #e18a75;
+    --danger-soft: #3a2420;
   }
 }
 
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-navy: var(--navy);
+  --color-navy-ink: var(--navy-ink);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-tag-bg: var(--tag-bg);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  border-color: var(--line);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+::selection {
+  background: var(--teal-soft);
+  color: var(--teal);
 }
