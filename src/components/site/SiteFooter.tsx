@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ADMIN_URL, FORM_URL } from "@/lib/config";
+import { ADMIN_URL } from "@/lib/config";
 
 export function SiteFooter() {
   return (
@@ -24,9 +24,6 @@ export function SiteFooter() {
               <Link href="#parceiros" className="text-ink-soft hover:text-ink">
                 Parceiros
               </Link>
-              <a href={FORM_URL} className="text-ink-soft hover:text-ink">
-                Descobrir meu perfil
-              </a>
             </div>
             <div className="flex flex-col gap-2">
               <span className="font-mono text-[11px] uppercase tracking-wide text-ink-faint">

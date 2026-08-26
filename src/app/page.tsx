@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { SOLUTIONS, PARTNERS } from "@/lib/content";
-import { FORM_URL } from "@/lib/config";
 
 const PILLARS = [
   {
@@ -47,17 +46,17 @@ export default function HomePage() {
               admissão em universidades no exterior.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <a
-                href={FORM_URL}
-                className="rounded-full bg-navy px-7 py-3.5 text-sm font-medium text-navy-ink transition hover:opacity-90"
-              >
-                Quero saber meu perfil internacional
-              </a>
               <Link
                 href="#solucoes"
-                className="text-sm font-medium text-ink-soft underline decoration-line-strong underline-offset-4 hover:text-ink"
+                className="rounded-full bg-navy px-7 py-3.5 text-sm font-medium text-navy-ink transition hover:opacity-90"
               >
                 Ver as soluções
+              </Link>
+              <Link
+                href="#parceiros"
+                className="text-sm font-medium text-ink-soft underline decoration-line-strong underline-offset-4 hover:text-ink"
+              >
+                Conhecer os parceiros
               </Link>
             </div>
             <div className="mt-12 flex flex-wrap gap-x-6 gap-y-2">
@@ -101,9 +100,9 @@ export default function HomePage() {
             Cada aluno tem um caminho — não adivinhamos, calculamos.
           </h2>
           <p className="mt-4 max-w-2xl text-ink-soft">
-            Responda 5 blocos rápidos sobre o perfil do aluno e veja, na hora,
-            qual das três soluções combina melhor com o momento acadêmico e
-            o objetivo da família.
+            A partir do perfil acadêmico, do momento escolar e do objetivo da
+            família, nossa equipe indica qual das três soluções combina
+            melhor com cada aluno.
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -128,13 +127,6 @@ export default function HomePage() {
               )
             )}
           </div>
-
-          <a
-            href={FORM_URL}
-            className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-navy hover:opacity-80"
-          >
-            Descobrir qual combina com meu perfil →
-          </a>
         </div>
       </section>
 
@@ -175,29 +167,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Eventos + CTA final */}
+      {/* Eventos */}
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.14em] text-teal">
-              Agenda
-            </p>
-            <h2 className="mt-3 font-display text-2xl text-ink">Próximos eventos</h2>
-            <ul className="mt-5 flex flex-col gap-2 text-sm text-ink-soft">
-              {EVENTS.map((e) => (
-                <li key={e} className="flex items-center gap-2">
-                  <span className="h-1 w-1 rounded-full bg-ink-faint" /> {e}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <a
-            href={FORM_URL}
-            className="whitespace-nowrap rounded-full bg-navy px-7 py-3.5 text-sm font-medium text-navy-ink transition hover:opacity-90"
-          >
-            Quero saber meu perfil internacional
-          </a>
-        </div>
+        <p className="font-mono text-xs uppercase tracking-[0.14em] text-teal">
+          Agenda
+        </p>
+        <h2 className="mt-3 font-display text-2xl text-ink">Próximos eventos</h2>
+        <ul className="mt-5 flex flex-col gap-2 text-sm text-ink-soft">
+          {EVENTS.map((e) => (
+            <li key={e} className="flex items-center gap-2">
+              <span className="h-1 w-1 rounded-full bg-ink-faint" /> {e}
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   );

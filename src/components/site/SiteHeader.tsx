@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ADMIN_URL, FORM_URL } from "@/lib/config";
+import { ADMIN_URL } from "@/lib/config";
 
 const NAV_LINKS = [
   { href: "#solucoes", label: "Soluções" },
@@ -43,13 +43,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
-          <a
-            href={FORM_URL}
-            className="rounded-full bg-navy px-4 py-2.5 text-sm font-medium text-navy-ink transition hover:opacity-90 sm:px-5"
-          >
-            <span className="sm:hidden">Meu perfil</span>
-            <span className="hidden sm:inline">Quero saber meu perfil</span>
-          </a>
           <button
             type="button"
             onClick={() => setMobileOpen((v) => !v)}
