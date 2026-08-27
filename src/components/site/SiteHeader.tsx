@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ADMIN_URL } from "@/lib/config";
+import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_LINKS = [
   { href: "#solucoes", label: "Soluções" },
@@ -14,41 +15,45 @@ export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-paper/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3.5 sm:px-6 sm:py-4">
-        <Link href="/" className="flex min-w-0 items-center gap-2.5" onClick={() => setMobileOpen(false)}>
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-navy text-navy-ink font-display text-sm">
+    <header className="sticky top-0 z-30 border-b-2 border-rule bg-paper">
+      <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-3 px-4 py-3.5 sm:px-10 sm:py-[18px]">
+        <Link href="/" className="flex min-w-0 items-center gap-3" onClick={() => setMobileOpen(false)}>
+          <span className="flex h-[30px] w-[30px] shrink-0 items-center justify-center bg-accent text-accent-ink text-[15px] font-semibold">
             N
           </span>
-          <span className="min-w-0 font-display text-[15px] leading-none text-ink sm:text-[17px]">
-            <span className="block truncate">Núcleo Internacional</span>
-            <span className="mt-0.5 hidden font-mono text-[10px] font-normal uppercase tracking-[0.14em] text-ink-faint sm:block">
+          <span className="min-w-0 leading-[1.1]">
+            <span className="block truncate text-[15px] font-semibold -tracking-[0.01em] sm:text-base">
+              Núcleo Internacional
+            </span>
+            <span className="mt-[3px] hidden font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint sm:block">
               Polaris · COC Santa Catarina
             </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-sm text-ink-soft md:flex">
+        <nav className="hidden items-center gap-7 text-sm text-ink-soft md:flex">
           {NAV_LINKS.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-ink">
+            <Link key={link.href} href={link.href} className="hover:text-accent">
               {link.label}
             </Link>
           ))}
           <a
             href={ADMIN_URL}
-            className="font-mono text-xs uppercase tracking-wide text-ink-faint hover:text-ink"
+            className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint hover:text-accent"
           >
             Painel interno
           </a>
+          <ThemeToggle />
         </nav>
 
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2 md:hidden">
+          <ThemeToggle />
           <button
             type="button"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={mobileOpen}
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-ink-soft md:hidden"
+            className="flex h-9 w-9 items-center justify-center border border-line text-ink-soft"
           >
             {mobileOpen ? (
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -64,20 +69,20 @@ export function SiteHeader() {
       </div>
 
       {mobileOpen && (
-        <nav className="flex flex-col gap-1 border-t border-line px-4 py-3 md:hidden">
+        <nav className="flex flex-col border-t border-line px-4 py-2 md:hidden">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="rounded-lg px-2 py-2.5 text-sm text-ink-soft hover:bg-tag-bg hover:text-ink"
+              className="px-2 py-3 text-sm text-ink-soft hover:bg-accent-tint hover:text-ink"
             >
               {link.label}
             </Link>
           ))}
           <a
             href={ADMIN_URL}
-            className="rounded-lg px-2 py-2.5 text-sm text-ink-soft hover:bg-tag-bg hover:text-ink"
+            className="px-2 py-3 text-sm text-ink-soft hover:bg-accent-tint hover:text-ink"
           >
             Painel interno
           </a>

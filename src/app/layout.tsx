@@ -1,26 +1,28 @@
 import type { Metadata } from "next";
-import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Archivo, Archivo_Narrow } from "next/font/google";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { ThemeScript } from "@/components/site/ThemeScript";
 import "./globals.css";
 
-const fraunces = Fraunces({
+// Modernist: Archivo em tudo. --font-mono passa a ser Archivo Narrow,
+// usada nos rótulos em caixa alta (as classes font-mono existentes continuam valendo).
+const archivo = Archivo({
   variable: "--font-display",
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  axes: ["opsz", "SOFT", "WONK"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const plexSans = IBM_Plex_Sans({
+const archivoBody = Archivo({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const plexMono = IBM_Plex_Mono({
+const archivoNarrow = Archivo_Narrow({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -33,8 +35,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${archivo.variable} ${archivoBody.variable} ${archivoNarrow.variable} h-full antialiased`}
     >
+      <head>
+        <ThemeScript />
+      </head>
       <body className="min-h-full flex flex-col bg-paper text-ink font-body">
         <SiteHeader />
         <main className="flex-1">{children}</main>

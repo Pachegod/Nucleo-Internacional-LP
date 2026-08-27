@@ -1,47 +1,45 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   Núcleo Internacional — tokens
+   Tema claro é o padrão. O tema escuro é ativado por data-theme="dark" no <html>,
+   escrito pelo ThemeScript antes da primeira pintura (sem flash).
+   --------------------------------------------------------------------------- */
+
 :root {
-  --paper: #f4f5f1;
+  --paper: #f4f5f7;
   --surface: #ffffff;
-  --ink: #171f30;
-  --ink-soft: #4c5468;
-  --ink-faint: #838ba0;
-  --line: #dcdfd6;
-  --line-strong: #c3c8bc;
+  --ink: #101114;
+  --ink-soft: #55585f;
+  --ink-faint: #8a8d96;
+  --line: #e0e2e8;
+  --rule: #101114;
 
-  --navy: #1f3a5f;
-  --navy-ink: #ffffff;
-  --teal: #256b5c;
-  --teal-soft: #e2ece7;
-  --gold: #a97a25;
-  --gold-soft: #f3e6c9;
-  --tag-bg: #eceee7;
+  --accent: #1f3cff;
+  --accent-ink: #ffffff;
+  --accent-tint: #e9ecff;
+  --accent-deep: #1830cc;
 
-  --danger: #a5432f;
-  --danger-soft: #f6e5e0;
+  --danger: #b3261e;
+  --danger-soft: #fbe9e7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #10141d;
-    --surface: #171d29;
-    --ink: #eceef2;
-    --ink-soft: #b7bdcc;
-    --ink-faint: #7d8496;
-    --line: #2a3145;
-    --line-strong: #3a4258;
+:root[data-theme="dark"] {
+  --paper: #08090a;
+  --surface: #111214;
+  --ink: #f4f5f7;
+  --ink-soft: #a8acb4;
+  --ink-faint: #71757d;
+  --line: #23262b;
+  --rule: #f4f5f7;
 
-    --navy: #7fa3d1;
-    --navy-ink: #0d1420;
-    --teal: #6fbfa8;
-    --teal-soft: #1c2e2a;
-    --gold: #e0b85c;
-    --gold-soft: #2e2818;
-    --tag-bg: #1e2434;
+  --accent: #5a74ff;
+  --accent-ink: #06070c;
+  --accent-tint: #151a3c;
+  --accent-deep: #8296ff;
 
-    --danger: #e18a75;
-    --danger-soft: #3a2420;
-  }
+  --danger: #ff9b8f;
+  --danger-soft: #2a1512;
 }
 
 @theme inline {
@@ -51,25 +49,48 @@
   --color-ink-soft: var(--ink-soft);
   --color-ink-faint: var(--ink-faint);
   --color-line: var(--line);
-  --color-line-strong: var(--line-strong);
+  --color-rule: var(--rule);
 
-  --color-navy: var(--navy);
-  --color-navy-ink: var(--navy-ink);
-  --color-teal: var(--teal);
-  --color-teal-soft: var(--teal-soft);
-  --color-gold: var(--gold);
-  --color-gold-soft: var(--gold-soft);
-  --color-tag-bg: var(--tag-bg);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-tint: var(--accent-tint);
+  --color-accent-deep: var(--accent-deep);
+
   --color-danger: var(--danger);
   --color-danger-soft: var(--danger-soft);
+
+  /* Aliases da paleta antiga, para que arquivos ainda não migrados compilem.
+     Remova quando não houver mais bg-navy / text-teal / text-gold no código. */
+  --color-navy: var(--accent);
+  --color-navy-ink: var(--accent-ink);
+  --color-teal: var(--accent);
+  --color-gold: var(--accent);
+  --color-tag-bg: var(--surface);
+  --color-line-strong: var(--line);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
   --font-mono: var(--font-mono);
+
+  /* Modernist: nada arredondado. */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-full: 0px;
 }
 
 * {
   border-color: var(--line);
+}
+
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
@@ -78,6 +99,17 @@ body {
 }
 
 ::selection {
-  background: var(--teal-soft);
-  color: var(--teal);
+  background: var(--accent-tint);
+  color: var(--accent-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Toda fotografia de conteúdo entra em preto e branco. */
+.grayscale-media img,
+img.grayscale-media {
+  filter: grayscale(1);
 }
