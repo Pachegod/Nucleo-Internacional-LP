@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ADMIN_URL } from "@/lib/config";
+import { ADMIN_URL, whatsappLink, interestMessage } from "@/lib/config";
 
 export function SiteFooter() {
   return (
@@ -26,8 +26,19 @@ export function SiteFooter() {
           </div>
           <div className="flex flex-col gap-2.5">
             <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
-              Time
+              Contato
             </span>
+            <a
+              href={whatsappLink(interestMessage())}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink-soft hover:text-accent"
+            >
+              WhatsApp
+            </a>
+            <Link href="#inscrever" className="text-ink-soft hover:text-accent">
+              Inscreva-se
+            </Link>
             <a href={ADMIN_URL} className="text-ink-soft hover:text-accent">
               Painel interno
             </a>

@@ -3,12 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ADMIN_URL } from "@/lib/config";
+import { CTA } from "@/lib/content";
 import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_LINKS = [
+  { href: "#trajetoria", label: "Trajetória" },
   { href: "#solucoes", label: "Soluções" },
+  { href: "#summer", label: "Summer Camps" },
   { href: "#parceiros", label: "Parceiros" },
-  { href: "#cases", label: "Cases" },
 ];
 
 export function SiteHeader() {
@@ -44,9 +46,21 @@ export function SiteHeader() {
             Painel interno
           </a>
           <ThemeToggle />
+          <Link
+            href="#inscrever"
+            className="bg-accent px-4 py-2 text-[13px] font-semibold text-accent-ink transition-colors hover:bg-accent-deep"
+          >
+            {CTA.visit}
+          </Link>
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 md:hidden">
+          <Link
+            href="#inscrever"
+            className="bg-accent px-3 py-2 text-[12px] font-semibold text-accent-ink"
+          >
+            {CTA.enroll}
+          </Link>
           <ThemeToggle />
           <button
             type="button"
@@ -86,6 +100,13 @@ export function SiteHeader() {
           >
             Painel interno
           </a>
+          <Link
+            href="#inscrever"
+            onClick={() => setMobileOpen(false)}
+            className="mx-2 my-2 bg-accent px-4 py-3 text-center text-sm font-semibold text-accent-ink"
+          >
+            {CTA.visit}
+          </Link>
         </nav>
       )}
     </header>

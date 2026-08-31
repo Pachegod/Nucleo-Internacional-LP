@@ -37,3 +37,72 @@ export const PARTNERS = {
     brands: "Programas em diferentes países e sistemas educacionais",
   },
 } as const;
+
+// ---------------------------------------------------------------------------
+// Landing page — copy dos CTAs e das seções novas.
+// ---------------------------------------------------------------------------
+
+/** Rótulos de Call to Action. Todos levam ao mesmo formulário (#inscrever). */
+export const CTA = {
+  visit: "Agende uma visita",
+  enroll: "Inscreva-se",
+  meeting: "Marque uma reunião",
+  whatsapp: "Falar no WhatsApp",
+};
+
+/** Frase curta de reforço usada nas faixas de CTA ao longo da rolagem. */
+export const CTA_LINE = "Matrículas abertas — fale com o Núcleo antes das vagas fecharem.";
+
+/** A trajetória do aluno, do Fundamental II ao próximo passo. */
+export const TRAJETORIA = [
+  {
+    phase: "Fundamental II",
+    label: "6º ao 9º ano",
+    detail:
+      "Imersão em inglês desde cedo e a base do currículo internacional, integradas à rotina do COC.",
+  },
+  {
+    phase: "Certificação Junior High",
+    label: "Certificação americana",
+    detail:
+      "Certificação norte-americana de Junior High cursada em paralelo ao Fundamental II.",
+  },
+  {
+    phase: "Ensino Médio",
+    label: "1ª à 3ª série",
+    detail:
+      "Dupla diplomação Brasil/USA: o diploma de High School americano somado ao do COC.",
+  },
+  {
+    phase: "Próximo passo",
+    label: "Universidade no exterior",
+    detail:
+      "Para quem já mira fora, orientação completa de admissão em universidades internacionais.",
+  },
+];
+
+/** Seção de Summer Camps. */
+export const SUMMER_CAMPS = {
+  kicker: "Summer Camps",
+  title: "No verão, a trajetória internacional sai do papel.",
+  description:
+    "Nas férias, os alunos do Núcleo participam de summer camps no exterior — semanas de imersão em inglês, vida de campus e cultura local que aceleram todo o resto da formação.",
+  points: [
+    "Imersão em inglês em ambiente 100% nativo",
+    "Vivência de campus e da rotina de um estudante internacional",
+    "Turmas acompanhadas pela coordenação do Núcleo",
+    "Vagas limitadas por temporada",
+  ],
+};
+
+/** Opções de série no formulário de inscrição. */
+export const SERIE_OPTIONS = [
+  "6º ano",
+  "7º ano",
+  "8º ano",
+  "9º ano",
+  "1ª série do Ensino Médio",
+  "2ª série do Ensino Médio",
+  "3ª série do Ensino Médio",
+  "Já concluí o Ensino Médio",
+];

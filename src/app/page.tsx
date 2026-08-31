@@ -1,23 +1,39 @@
 import Link from "next/link";
-import { SOLUTIONS, PARTNERS } from "@/lib/content";
+import { SOLUTIONS, PARTNERS, TRAJETORIA, SUMMER_CAMPS, CTA } from "@/lib/content";
 import { MediaFrame } from "@/components/site/MediaFrame";
+import { CtaButton, CtaBand } from "@/components/site/Cta";
+import { InscricaoForm } from "@/components/site/InscricaoForm";
+import { WhatsappButton } from "@/components/site/WhatsappButton";
 
 const PILLARS = [
   {
     title: "Formação Internacional",
-    items: ["Dupla Diplomação", "Certificações", "Currículo Internacional"],
+    items: [
+      "Dupla Diplomação",
+      "Certificações",
+      "Currículo Internacional",
+      "Junior High",
+      "High School",
+    ],
   },
   {
     title: "Desenvolvimento do Estudante",
-    items: ["Planejamento", "Extracurriculares", "Summer Programs", "Mentorias"],
+    items: ["Planejamento", "Extracurriculares", "Summer Camps", "Mentorias"],
   },
   {
     title: "Universidade Internacional",
-    items: ["Admissions", "Essays", "SAT, TOEFL, IELTS", "Applications"],
+    items: ["Admissions", "Essays", "SAT, TOEFL, IELTS", "Applications", "Scholarship"],
   },
 ];
 
-const PROOF = ["Inglês", "Competências Globais", "Experiências Internacionais", "Planejamento", "Projeto de Vida"];
+const PROOF = [
+  "Inglês",
+  "Competências Globais",
+  "Experiências Internacionais",
+  "Planejamento",
+  "Projeto de Vida",
+  "Bolsa de Estudos",
+];
 
 const EVENTS = [
   "Parents Meeting",
@@ -39,7 +55,7 @@ const SHELL = "mx-auto max-w-[1240px] border-x border-line";
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero — primeiro CTA visível já na abertura (inclusive no mobile) */}
       <section className={`${SHELL} grid border-b-2 border-rule md:grid-cols-[1.15fr_0.85fr]`}>
         <div className="px-6 py-16 sm:px-10 md:border-r-2 md:border-rule md:py-[72px]">
           <p className={`mb-6 ${KICKER}`}>Núcleo de Internacionalização · Colégio COC</p>
@@ -48,22 +64,18 @@ export default function HomePage() {
           </h1>
           <p className="mt-7 max-w-[520px] text-[17px] leading-relaxed text-ink-soft">
             Do Fundamental II ao Ensino Médio, construímos uma trajetória
-            internacional real — dupla diplomação e imersão em inglês desde
-            cedo. Para quem já mira o próximo passo, também orientamos a
-            admissão em universidades no exterior.
+            internacional real — certificação americana Junior High, dupla
+            diplomação Brasil/USA e imersão em inglês desde cedo. Para quem já
+            mira o próximo passo, também orientamos a admissão em universidades
+            no exterior.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-5">
+            <CtaButton label={CTA.visit} />
             <Link
-              href="#solucoes"
-              className="bg-accent px-[26px] py-3.5 text-sm font-semibold text-accent-ink transition-colors hover:bg-accent-deep"
-            >
-              Ver as soluções
-            </Link>
-            <Link
-              href="#parceiros"
+              href="#trajetoria"
               className="border-b-2 border-accent pb-0.5 text-sm font-medium text-ink-soft hover:text-ink"
             >
-              Conhecer os parceiros
+              Conhecer o programa
             </Link>
           </div>
           <div className="mt-12 flex flex-wrap gap-x-7 gap-y-2.5 border-t border-line pt-5 font-mono text-xs uppercase tracking-[0.1em] text-ink-soft">
@@ -104,6 +116,41 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Trajetória — Fundamental II ao Ensino Médio */}
+      <section id="trajetoria" className={`${SHELL} scroll-mt-24 border-b-2 border-rule px-6 py-[72px] sm:px-10`}>
+        <p className={KICKER}>A trajetória</p>
+        <h2 className="mt-3.5 max-w-[640px] text-balance text-[32px] font-semibold leading-[1.08] -tracking-[0.02em] md:text-[38px]">
+          Um caminho contínuo — do 6º ano ao diploma internacional.
+        </h2>
+        <p className="mt-4 max-w-[660px] leading-relaxed text-ink-soft">
+          A formação internacional não começa no Ensino Médio. Ela é construída
+          ano a ano, dentro da rotina do COC, até o aluno chegar à reta final
+          com dupla diplomação e — se quiser — candidatura a universidades no
+          exterior.
+        </p>
+
+        <ol className="mt-12 grid border-t-2 border-rule md:grid-cols-4">
+          {TRAJETORIA.map((step, i) => (
+            <li
+              key={step.phase}
+              className={`flex flex-col py-7 md:px-6 ${i === 0 ? "md:pl-0" : ""} ${
+                i === TRAJETORIA.length - 1 ? "md:pr-0" : "md:border-r md:border-line"
+              } ${i > 0 ? "border-t border-line md:border-t-0" : ""}`}
+            >
+              <span className="font-mono text-xs tracking-[0.1em] text-accent">0{i + 1}</span>
+              <h3 className="mt-3.5 text-[19px] font-semibold leading-tight">{step.phase}</h3>
+              <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-faint">
+                {step.label}
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-ink-soft">{step.detail}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {/* CTA #2 — início-meio da rolagem */}
+      <CtaBand label={CTA.enroll} />
+
       {/* Soluções */}
       <section id="solucoes" className={`${SHELL} scroll-mt-24 border-b-2 border-rule px-6 py-[72px] sm:px-10`}>
         <p className={KICKER}>Três soluções estratégicas</p>
@@ -142,6 +189,42 @@ export default function HomePage() {
               </div>
             )
           )}
+        </div>
+      </section>
+
+      {/* Summer Camps */}
+      <section
+        id="summer"
+        className={`${SHELL} grid scroll-mt-24 border-b-2 border-rule md:grid-cols-[1fr_0.9fr]`}
+      >
+        <div className="px-6 py-[72px] sm:px-10 md:border-r-2 md:border-rule">
+          <p className={KICKER}>{SUMMER_CAMPS.kicker}</p>
+          <h2 className="mt-3.5 max-w-[520px] text-balance text-[30px] font-semibold leading-[1.1] -tracking-[0.02em] md:text-[36px]">
+            {SUMMER_CAMPS.title}
+          </h2>
+          <p className="mt-4 max-w-[520px] leading-relaxed text-ink-soft">
+            {SUMMER_CAMPS.description}
+          </p>
+          <ul className="mt-8 border-t border-line">
+            {SUMMER_CAMPS.points.map((point, i) => (
+              <li
+                key={point}
+                className="flex gap-4 border-b border-line py-3.5 text-[15px] text-ink-soft"
+              >
+                <span className="w-6 font-mono text-xs tracking-[0.1em] text-accent">
+                  0{i + 1}
+                </span>
+                {point}
+              </li>
+            ))}
+          </ul>
+          <CtaButton label="Quero saber das vagas" className="mt-9" />
+        </div>
+        <div className="flex flex-col">
+          <MediaFrame placeholder="Foto — summer camp no exterior (retrato, 1200×1500)" ratio="4 / 5" className="border-0 flex-1" />
+          <div className="border-t border-line px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint sm:px-8">
+            Temporada de verão · turmas do Núcleo
+          </div>
         </div>
       </section>
 
@@ -248,6 +331,33 @@ export default function HomePage() {
                 <MediaFrame key={n} placeholder="Foto do evento (retrato)" ratio="3 / 4" />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fechamento + inscrição — terceiro CTA, no texto final (não no rodapé) */}
+      <section id="inscrever" className={`${SHELL} scroll-mt-24 border-b-2 border-rule px-6 py-[72px] sm:px-10`}>
+        <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr]">
+          <div className="md:border-r-2 md:border-rule md:pr-10">
+            <p className={KICKER}>Próximo passo</p>
+            <h2 className="mt-3.5 text-balance text-[30px] font-semibold leading-[1.1] -tracking-[0.02em] md:text-[36px]">
+              Comece a trajetória internacional deste aluno.
+            </h2>
+            <p className="mt-4 leading-relaxed text-ink-soft">
+              Deixe seus dados e o time do Núcleo retoma o contato pelo
+              WhatsApp para agendar uma visita, tirar dúvidas sobre a dupla
+              diplomação e os summer camps, e mostrar qual solução combina com
+              o momento escolar do aluno.
+            </p>
+            <div className="mt-8 border-t border-line pt-6">
+              <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-faint">
+                Prefere falar agora?
+              </p>
+              <WhatsappButton label={CTA.whatsapp} />
+            </div>
+          </div>
+          <div className="md:pl-2">
+            <InscricaoForm />
           </div>
         </div>
       </section>
