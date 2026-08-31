@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ADMIN_URL } from "@/lib/config";
+import { LOGIN_URL } from "@/lib/config";
 import { CTA } from "@/lib/content";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -39,13 +39,13 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
-          <a
-            href={ADMIN_URL}
-            className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint hover:text-accent"
-          >
-            Painel interno
-          </a>
           <ThemeToggle />
+          <a
+            href={LOGIN_URL}
+            className="border-2 border-rule px-4 py-2 text-[13px] font-semibold text-ink transition-colors hover:bg-accent-tint"
+          >
+            Login
+          </a>
           <Link
             href="#inscrever"
             className="bg-accent px-4 py-2 text-[13px] font-semibold text-accent-ink transition-colors hover:bg-accent-deep"
@@ -95,10 +95,10 @@ export function SiteHeader() {
             </Link>
           ))}
           <a
-            href={ADMIN_URL}
+            href={LOGIN_URL}
             className="px-2 py-3 text-sm text-ink-soft hover:bg-accent-tint hover:text-ink"
           >
-            Painel interno
+            Login
           </a>
           <Link
             href="#inscrever"

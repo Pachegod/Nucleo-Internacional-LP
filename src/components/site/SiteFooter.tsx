@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ADMIN_URL, whatsappLink, interestMessage } from "@/lib/config";
+import { LOGIN_URL, whatsappLink, interestMessage } from "@/lib/config";
 
 export function SiteFooter() {
   return (
@@ -39,8 +39,8 @@ export function SiteFooter() {
             <Link href="#inscrever" className="text-ink-soft hover:text-accent">
               Inscreva-se
             </Link>
-            <a href={ADMIN_URL} className="text-ink-soft hover:text-accent">
-              Painel interno
+            <a href={LOGIN_URL} className="text-ink-soft hover:text-accent">
+              Login
             </a>
           </div>
         </div>

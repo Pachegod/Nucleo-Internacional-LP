@@ -1,8 +1,13 @@
-export const TOOL_URL = process.env.NEXT_PUBLIC_TOOL_URL || "http://localhost:3000";
+// Fallback é a URL de produção da ferramenta — assim o link do login
+// funciona mesmo sem NEXT_PUBLIC_TOOL_URL definido na Vercel. Para dev
+// local, o .env.local sobrescreve com http://localhost:3000.
+export const TOOL_URL =
+  process.env.NEXT_PUBLIC_TOOL_URL || "https://nucleo-de-internacionalizacao.vercel.app";
 
 // A ferramenta inteira (incluindo a Análise de Interesse) é de uso
-// interno — o único link público que a LP oferece é o acesso ao painel.
-export const ADMIN_URL = `${TOOL_URL}/admin`;
+// interno. O único acesso que a LP oferece é o login da equipe — após
+// entrar, a própria ferramenta leva o usuário para dentro dela.
+export const LOGIN_URL = `${TOOL_URL}/login`;
 
 // Número de WhatsApp de destino dos CTAs — só dígitos, com DDI.
 // Sobrescreva com NEXT_PUBLIC_WHATSAPP (Vercel → Project Settings →
