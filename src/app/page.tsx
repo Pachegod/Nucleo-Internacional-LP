@@ -183,9 +183,9 @@ export default function HomePage() {
                   {s.shortName}
                 </p>
                 <p className="mt-4.5 text-sm leading-relaxed text-ink-soft">{s.tagline}</p>
-                <p className="mt-6 border-t border-line pt-3.5 text-xs text-ink-faint">
-                  {s.investment}
-                </p>
+                <div className="mt-6 border-t border-line pt-4">
+                  <CtaButton label="Consultar valores" variant="ghost" />
+                </div>
               </div>
             )
           )}
