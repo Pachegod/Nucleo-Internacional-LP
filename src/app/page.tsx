@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { SOLUTIONS, PARTNERS, TRAJETORIA, SUMMER_CAMPS, CTA } from "@/lib/content";
 import { MediaFrame } from "@/components/site/MediaFrame";
+import { VideoEmbed } from "@/components/site/VideoEmbed";
 import { CtaButton, CtaBand } from "@/components/site/Cta";
 import { InscricaoForm } from "@/components/site/InscricaoForm";
 import { WhatsappButton } from "@/components/site/WhatsappButton";
+import { getLpContent, getImage, getVideo, parseVideoEmbed } from "@/lib/cms";
 
 const PILLARS = [
   {
@@ -52,7 +54,12 @@ const VIDEO_PIECES = [
 const KICKER = "font-mono text-xs uppercase tracking-[0.18em] text-accent";
 const SHELL = "mx-auto max-w-[1240px] border-x border-line";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const items = await getLpContent();
+  const heroImage = getImage(items, "hero");
+  const heroVideoUrl = getVideo(items, "hero-video");
+  const heroVideoEmbed = heroVideoUrl ? parseVideoEmbed(heroVideoUrl) : undefined;
+
   return (
     <>
       {/* Hero — primeiro CTA visível já na abertura (inclusive no mobile) */}
@@ -106,6 +113,8 @@ export default function HomePage() {
       {/* Imagem de abertura */}
       <section className={`${SHELL} border-b-2 border-rule`}>
         <MediaFrame
+          src={heroImage?.src}
+          alt={heroImage?.alt}
           placeholder="Imagem de abertura — alunos do Núcleo (paisagem, 2400×900)"
           height={460}
           className="border-0"
@@ -231,15 +240,7 @@ export default function HomePage() {
       {/* Vídeo */}
       <section className={`${SHELL} grid border-b-2 border-rule md:grid-cols-[1.5fr_1fr]`}>
         <div className="p-6 sm:p-10 md:border-r-2 md:border-rule">
-          <div className="relative">
-            <MediaFrame placeholder="Still do vídeo institucional (1920×1080)" ratio="16 / 9" />
-            <span className="pointer-events-none absolute bottom-6 left-6 flex items-center gap-3 bg-accent px-4.5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-accent-ink">
-              <svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true">
-                <path d="M0 0l10 6-10 6z" fill="currentColor" />
-              </svg>
-              Play
-            </span>
-          </div>
+          <VideoEmbed embed={heroVideoEmbed} />
         </div>
         <div className="border-t border-line p-6 sm:p-10 md:border-t-0">
           <p className={KICKER}>Vídeo</p>
@@ -247,8 +248,9 @@ export default function HomePage() {
             O Núcleo em movimento
           </h2>
           <p className="mt-4 text-[15px] leading-relaxed text-ink-soft">
-            Espaço reservado para o vídeo institucional. Substitua o still pelo
-            embed (YouTube, Vimeo ou arquivo) na implementação.
+            {heroVideoEmbed
+              ? "Conheça de perto a rotina do Núcleo."
+              : "Vídeo institucional cadastrado pelo admin (chave hero-video) aparece aqui."}
           </p>
           <ul className="mt-7 border-t border-line font-mono text-xs uppercase tracking-[0.12em] text-ink-faint">
             {VIDEO_PIECES.map((piece) => (

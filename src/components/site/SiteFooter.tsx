@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { LOGIN_URL, whatsappLink, interestMessage } from "@/lib/config";
 
-export function SiteFooter() {
+type SocialLink = { key: string; label: string; url: string };
+
+export function SiteFooter({ socialLinks = [] }: { socialLinks?: SocialLink[] }) {
   return (
     <footer className="mx-auto w-full max-w-[1240px] border-x border-line px-6 py-12 sm:px-10">
       <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
@@ -43,6 +45,24 @@ export function SiteFooter() {
               Login
             </a>
           </div>
+          {socialLinks.length > 0 && (
+            <div className="flex flex-col gap-2.5">
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+                Redes
+              </span>
+              {socialLinks.map((net) => (
+                <a
+                  key={net.key}
+                  href={net.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ink-soft hover:text-accent"
+                >
+                  {net.label}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
       <p className="mt-10 font-mono text-[11px] tracking-[0.08em] text-ink-faint">

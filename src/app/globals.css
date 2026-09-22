@@ -17,8 +17,10 @@
 
   --accent: #1f3cff;
   --accent-ink: #ffffff;
-  --accent-tint: #e9ecff;
-  --accent-deep: #1830cc;
+  /* Derivados do accent (que o admin pode sobrescrever via mini-CMS) em vez de
+     hex fixo, pra tint/deep acompanharem qualquer cor escolhida automaticamente. */
+  --accent-tint: color-mix(in srgb, var(--accent) 12%, var(--paper));
+  --accent-deep: color-mix(in srgb, var(--accent) 75%, var(--ink));
 
   --danger: #b3261e;
   --danger-soft: #fbe9e7;
@@ -35,8 +37,8 @@
 
   --accent: #5a74ff;
   --accent-ink: #06070c;
-  --accent-tint: #151a3c;
-  --accent-deep: #8296ff;
+  --accent-tint: color-mix(in srgb, var(--accent) 12%, var(--paper));
+  --accent-deep: color-mix(in srgb, var(--accent) 75%, var(--ink));
 
   --danger: #ff9b8f;
   --danger-soft: #2a1512;

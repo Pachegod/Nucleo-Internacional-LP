@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { LOGIN_URL } from "@/lib/config";
 import { CTA } from "@/lib/content";
@@ -13,16 +14,26 @@ const NAV_LINKS = [
   { href: "#parceiros", label: "Parceiros" },
 ];
 
-export function SiteHeader() {
+export function SiteHeader({ logo }: { logo?: { src: string; alt: string } }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-30 border-b-2 border-rule bg-paper">
       <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-3 px-4 py-3.5 sm:px-10 sm:py-[18px]">
         <Link href="/" className="flex min-w-0 items-center gap-3" onClick={() => setMobileOpen(false)}>
-          <span className="flex h-[30px] w-[30px] shrink-0 items-center justify-center bg-accent text-accent-ink text-[15px] font-semibold">
-            N
-          </span>
+          {logo ? (
+            <Image
+              src={logo.src}
+              alt={logo.alt || "Núcleo Internacional"}
+              width={30}
+              height={30}
+              className="h-[30px] w-[30px] shrink-0 object-contain"
+            />
+          ) : (
+            <span className="flex h-[30px] w-[30px] shrink-0 items-center justify-center bg-accent text-accent-ink text-[15px] font-semibold">
+              N
+            </span>
+          )}
           <span className="min-w-0 leading-[1.1]">
             <span className="block truncate text-[15px] font-semibold -tracking-[0.01em] sm:text-base">
               Núcleo Internacional
