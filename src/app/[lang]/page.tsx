@@ -325,17 +325,24 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
 
       {/* Abertura — carrossel com as cidades das unidades (pontos turísticos e paisagens) */}
       <CityCarousel
-        slides={COC_SC_UNITS.map((u) => {
-          const fallbackAlt = `${u.landmark} — ${u.city}, Santa Catarina`;
-          const cms = getImage(items, `cidade-${u.slug}`, lang, fallbackAlt);
-          return {
-            city: u.city,
-            landmark: u.landmark,
-            unitsLabel: u.units > 1 ? `${u.units} ${t.about.regional.unitsSuffix}` : "",
-            image: cms ?? (u.photo ? { src: u.photo, alt: fallbackAlt } : undefined),
-            // Crédito só vale para a foto local; foto do CMS é responsabilidade de quem subiu.
-            credit: cms ? undefined : u.credit,
-          };
+        slides={COC_SC_UNITS.flatMap((u) => {
+          const unitsLabel = u.units > 1 ? `${u.units} ${t.about.regional.unitsSuffix}` : "";
+          // Até 2 fotos por cidade: CMS (cidade-<slug>, cidade-<slug>-2) vence a foto local.
+          const count = Math.max(u.photos.length, 1);
+          return Array.from({ length: count }, (_, i) => {
+            const local = u.photos[i];
+            const alt = `${local?.landmark ?? u.city} — ${u.city}, Santa Catarina`;
+            const cms = getImage(items, i === 0 ? `cidade-${u.slug}` : `cidade-${u.slug}-${i + 1}`, lang, alt);
+            return {
+              key: `${u.slug}-${i}`,
+              city: u.city,
+              landmark: cms ? "" : (local?.landmark ?? ""),
+              unitsLabel,
+              image: cms ?? (local ? { src: local.src, alt } : undefined),
+              // Crédito só vale para a foto local; foto do CMS é responsabilidade de quem subiu.
+              credit: cms ? undefined : local?.credit,
+            };
+          });
         })}
         labels={{ ...t.abertura }}
       />

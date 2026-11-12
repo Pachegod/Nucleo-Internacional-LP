@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 
 export type CitySlide = {
+  key: string;
   city: string;
   /** Ponto turístico ou paisagem natural retratada no slide. */
   landmark: string;
@@ -62,7 +63,7 @@ export function CityCarousel({ slides, labels }: { slides: CitySlide[]; labels: 
       <div className="relative overflow-hidden" style={{ height: "clamp(300px, 38vw, 540px)" }}>
         {slides.map((slide, i) => (
           <div
-            key={slide.city}
+            key={slide.key}
             role="group"
             aria-roledescription="slide"
             aria-label={`${i + 1} / ${count} · ${slide.city}`}
@@ -97,7 +98,7 @@ export function CityCarousel({ slides, labels }: { slides: CitySlide[]; labels: 
               <p className="mt-2 font-display text-[52px] leading-[0.9] text-white sm:text-[80px] lg:text-[96px]">
                 {slide.city}
               </p>
-              <p className="mt-2 text-sm font-medium text-white/80 sm:text-base">{slide.landmark}</p>
+              {slide.landmark && <p className="mt-2 text-sm font-medium text-white/80 sm:text-base">{slide.landmark}</p>}
             </div>
             {slide.image && slide.credit && (
               <a
@@ -133,10 +134,10 @@ export function CityCarousel({ slides, labels }: { slides: CitySlide[]; labels: 
         <span className="flex items-center gap-2" aria-label={labels.carouselLabel}>
           {slides.map((slide, i) => (
             <button
-              key={slide.city}
+              key={slide.key}
               type="button"
               onClick={() => go(i)}
-              aria-label={`${labels.goTo} ${slide.city}`}
+              aria-label={`${labels.goTo} ${slide.city}${slide.landmark ? ` — ${slide.landmark}` : ""}`}
               aria-current={i === index}
               className="flex h-6 items-center"
             >
