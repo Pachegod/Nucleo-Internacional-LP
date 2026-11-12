@@ -1,3 +1,5 @@
+import type { Dictionary } from "./i18n/pt";
+
 // Fallback é a URL de produção da ferramenta — assim o link do login
 // funciona mesmo sem NEXT_PUBLIC_TOOL_URL definido na Vercel. Para dev
 // local, o .env.local sobrescreve com http://localhost:3000.
@@ -26,25 +28,25 @@ export function whatsappLink(message: string, number: string = WHATSAPP_NUMBER) 
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }
 
-/** Mensagem padrão de interesse, com os dados do formulário quando houver. */
-export function interestMessage(fields?: {
-  responsavel?: string;
-  aluno?: string;
-  serie?: string;
-  unidade?: string;
-  email?: string;
-}) {
-  const base =
-    "Olá! Vim pela página do Núcleo Internacional e quero saber mais sobre o programa de formação internacional (do Fundamental II ao Ensino Médio).";
-  if (!fields) return base;
+/** Mensagem padrão de interesse (no idioma da página), com os dados do formulário quando houver. */
+export function interestMessage(
+  t: Dictionary["whatsappMessage"],
+  fields?: {
+    responsavel?: string;
+    aluno?: string;
+    serie?: string;
+    unidade?: string;
+    email?: string;
+  }
+) {
+  if (!fields) return t.base;
 
   const linhas = [
-    fields.responsavel && `Responsável: ${fields.responsavel}`,
-    fields.aluno &&
-      `Aluno(a): ${fields.aluno}${fields.serie ? ` — ${fields.serie}` : ""}`,
-    fields.unidade && `Unidade/cidade: ${fields.unidade}`,
-    fields.email && `E-mail: ${fields.email}`,
+    fields.responsavel && `${t.responsavel}: ${fields.responsavel}`,
+    fields.aluno && `${t.aluno}: ${fields.aluno}${fields.serie ? ` — ${fields.serie}` : ""}`,
+    fields.unidade && `${t.unidade}: ${fields.unidade}`,
+    fields.email && `${t.email}: ${fields.email}`,
   ].filter(Boolean);
 
-  return linhas.length ? `${base}\n\n${linhas.join("\n")}` : base;
+  return linhas.length ? `${t.base}\n\n${linhas.join("\n")}` : t.base;
 }

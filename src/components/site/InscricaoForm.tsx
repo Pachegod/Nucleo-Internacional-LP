@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { whatsappLink, interestMessage } from "@/lib/config";
-import { SERIE_OPTIONS } from "@/lib/content";
+import type { Locale } from "@/lib/i18n/locales";
+import type { Dictionary } from "@/lib/i18n/pt";
 
 const inputClass =
   "min-h-12 w-full rounded-xl border border-night/20 bg-white px-3.5 text-[15px] text-night outline-none transition-colors focus:border-navy";
@@ -16,14 +17,6 @@ type Fields = {
   unidade: string;
 };
 
-const EMPTY: Fields = {
-  responsavel: "",
-  aluno: "",
-  serie: SERIE_OPTIONS[0],
-  email: "",
-  whatsapp: "",
-  unidade: "",
-};
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
@@ -33,8 +26,23 @@ function Label({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function InscricaoForm() {
-  const [fields, setFields] = useState<Fields>(EMPTY);
+export function InscricaoForm({
+  lang,
+  t,
+  message,
+}: {
+  lang: Locale;
+  t: Dictionary["form"];
+  message: Dictionary["whatsappMessage"];
+}) {
+  const [fields, setFields] = useState<Fields>({
+    responsavel: "",
+    aluno: "",
+    serie: t.serieOptions[0],
+    email: "",
+    whatsapp: "",
+    unidade: "",
+  });
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -60,14 +68,15 @@ export function InscricaoForm() {
       await fetch("/api/inscricao", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(fields),
+        // `lang` = idioma em que a família preencheu (o backend pode ignorar).
+        body: JSON.stringify({ ...fields, lang }),
       });
     } catch {
       // Persistência é best-effort — não trava o encaminhamento.
     }
 
     window.location.href = whatsappLink(
-      interestMessage({
+      interestMessage(message, {
         responsavel: fields.responsavel.trim(),
         aluno: fields.aluno.trim(),
         serie: fields.serie,
@@ -80,11 +89,11 @@ export function InscricaoForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      aria-label="Formulário de inscrição"
+      aria-label={t.ariaLabel}
       className="grid gap-x-4 gap-y-[18px] rounded-3xl bg-cream p-6 text-night sm:grid-cols-2 sm:p-10"
     >
       <label className="sm:col-span-1">
-        <Label>Nome do responsável *</Label>
+        <Label>{t.responsavel}</Label>
         <input
           className={inputClass}
           value={fields.responsavel}
@@ -93,7 +102,7 @@ export function InscricaoForm() {
         />
       </label>
       <label className="sm:col-span-1">
-        <Label>Nome do aluno(a) *</Label>
+        <Label>{t.aluno}</Label>
         <input
           className={inputClass}
           value={fields.aluno}
@@ -101,13 +110,13 @@ export function InscricaoForm() {
         />
       </label>
       <label className="sm:col-span-1">
-        <Label>Série que vai cursar</Label>
+        <Label>{t.serie}</Label>
         <select
           className={inputClass}
           value={fields.serie}
           onChange={(e) => set("serie", e.target.value)}
         >
-          {SERIE_OPTIONS.map((s) => (
+          {t.serieOptions.map((s) => (
             <option key={s} value={s}>
               {s}
             </option>
@@ -115,16 +124,16 @@ export function InscricaoForm() {
         </select>
       </label>
       <label className="sm:col-span-1">
-        <Label>Unidade / cidade</Label>
+        <Label>{t.unidade}</Label>
         <input
           className={inputClass}
           value={fields.unidade}
           onChange={(e) => set("unidade", e.target.value)}
-          placeholder="Ex.: Balneário Camboriú, SC"
+          placeholder={t.unidadePlaceholder}
         />
       </label>
       <label className="sm:col-span-1">
-        <Label>E-mail *</Label>
+        <Label>{t.email}</Label>
         <input
           type="email"
           className={inputClass}
@@ -134,19 +143,19 @@ export function InscricaoForm() {
         />
       </label>
       <label className="sm:col-span-1">
-        <Label>WhatsApp *</Label>
+        <Label>{t.whatsapp}</Label>
         <input
           className={inputClass}
           value={fields.whatsapp}
           onChange={(e) => set("whatsapp", e.target.value)}
-          placeholder="(47) 90000-0000"
+          placeholder={t.whatsappPlaceholder}
           autoComplete="tel"
         />
       </label>
 
       {status === "error" && (
         <p className="rounded-xl border border-red-700 bg-red-50 px-3.5 py-2.5 text-sm text-red-800 sm:col-span-2">
-          {errorMsg || "Não foi possível enviar agora. Tente novamente."}
+          {errorMsg || t.error}
         </p>
       )}
 
@@ -156,10 +165,10 @@ export function InscricaoForm() {
           disabled={missing || status === "sending"}
           className="min-h-14 rounded-full bg-navy px-7 text-xs font-bold uppercase tracking-[0.16em] text-white transition-colors hover:bg-night disabled:cursor-not-allowed disabled:opacity-40"
         >
-          {status === "sending" ? "Enviando…" : "Enviar e falar no WhatsApp"}
+          {status === "sending" ? t.sending : t.submit}
         </button>
         <span className="text-xs leading-relaxed text-night/60">
-          Ao enviar, você abre uma conversa no WhatsApp com o time do Núcleo.
+          {t.note}
         </span>
       </div>
     </form>

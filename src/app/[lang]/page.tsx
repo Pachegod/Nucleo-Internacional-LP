@@ -1,14 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  SOLUTIONS,
-  PARTNERS,
-  PARTNER_NETWORK,
-  TRAJETORIA,
-  SUMMER_CAMPS,
-  INSTAGRAM_POSTS,
-  CTA,
-} from "@/lib/content";
+import { notFound } from "next/navigation";
+import { SOLUTIONS, PARTNERS, PARTNER_NETWORK, INSTAGRAM_POSTS } from "@/lib/content";
 import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from "@/lib/config";
 import { MediaFrame } from "@/components/site/MediaFrame";
 import { VideoEmbed } from "@/components/site/VideoEmbed";
@@ -17,42 +10,9 @@ import { InscricaoForm } from "@/components/site/InscricaoForm";
 import { WhatsappButton } from "@/components/site/WhatsappButton";
 import { InstagramIcon } from "@/components/site/icons";
 import { getLpContent, getImage, getVideo, parseVideoEmbed } from "@/lib/cms";
+import { getDictionary, hasLocale } from "@/lib/i18n";
 
-const PILLARS = [
-  {
-    title: "Formação Internacional",
-    items: ["Dupla Diplomação", "Certificações", "Currículo Internacional", "Junior High", "High School"],
-  },
-  {
-    title: "Desenvolvimento do Estudante",
-    items: ["Planejamento", "Extracurriculares", "Summer Camps", "Mentorias"],
-  },
-  {
-    title: "Universidade Internacional",
-    items: ["Admissions", "Essays", "SAT, TOEFL, IELTS", "Applications", "Scholarship"],
-  },
-];
-
-const PROOF = [
-  "Inglês",
-  "Competências Globais",
-  "Experiências Internacionais",
-  "Planejamento",
-  "Projeto de Vida",
-  "Bolsa de Estudos",
-];
-
-const EVENTS = [
-  "Parents Meeting",
-  "Cerimônia de Abertura",
-  "Community Service",
-  "Workshops e Encontros Acadêmicos",
-  "Cerimônia Anual de Certificação",
-];
-
-const VIDEO_PIECES = ["Depoimento de família", "Tour pelo programa bilíngue", "Cerimônia de certificação"];
-
-const ABERTURA = { src: "/media/abertura.jpg", alt: "Estudantes saindo pelo portão de um campus universitário" };
+const ABERTURA_SRC = "/media/abertura.jpg";
 
 // Classes compartilhadas
 const WRAP = "mx-auto max-w-[1240px] px-5 sm:px-10 lg:px-14";
@@ -62,9 +22,13 @@ const H2 = "font-display text-[44px] leading-[0.95] sm:text-[56px] lg:text-[68px
 const LEAD = "text-base leading-[1.75]";
 const NUM = "font-display leading-none";
 
-export default async function HomePage() {
+export default async function HomePage({ params }: PageProps<"/[lang]">) {
+  const { lang } = await params;
+  if (!hasLocale(lang)) notFound();
+  const t = getDictionary(lang);
+
   const items = await getLpContent();
-  const aberturaImage = getImage(items, "hero") ?? ABERTURA;
+  const aberturaImage = getImage(items, "hero", lang, t.abertura.alt) ?? { src: ABERTURA_SRC, alt: t.abertura.alt };
   const heroVideoUrl = getVideo(items, "hero-video");
   const heroVideoEmbed = heroVideoUrl ? parseVideoEmbed(heroVideoUrl) : undefined;
 
@@ -85,31 +49,29 @@ export default async function HomePage() {
               className={`mb-6 inline-flex items-center gap-2.5 rounded-full border border-accent/35 px-3.5 py-2 ${KICKER} text-accent`}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
-              Núcleo de Internacionalização · Colégio COC
+              {t.hero.kicker}
             </p>
             <h1 className="font-display text-[56px] leading-[0.92] text-white sm:text-[80px] lg:text-[104px]">
-              Formação global,
+              {t.hero.titleA}
               <br />
-              <span className="text-accent">desde os primeiros anos</span>
+              <span className="text-accent">{t.hero.titleAccent}</span>
               <br />
-              da vida escolar.
+              {t.hero.titleB}
             </h1>
             <p className="mt-7 max-w-[520px] text-[17px] leading-[1.7] text-sand/75">
-              Do Fundamental II ao Ensino Médio, construímos uma trajetória internacional real — certificação
-              americana Junior High, dupla diplomação Brasil/USA e imersão em inglês desde cedo. Para quem já mira
-              o próximo passo, também orientamos a admissão em universidades no exterior.
+              {t.hero.lead}
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
-              <CtaButton label={CTA.visit} />
+              <CtaButton label={t.cta.visit} />
               <Link
                 href="#trajetoria"
                 className="border-b-2 border-accent py-2 text-sm font-semibold text-white hover:text-accent"
               >
-                Conhecer o programa
+                {t.hero.secondary}
               </Link>
             </div>
             <ul className="mt-12 flex flex-wrap gap-x-6 gap-y-2.5 border-t border-sand/10 pt-5 text-[11px] font-semibold uppercase tracking-[0.14em] text-sand/60">
-              {PROOF.map((p) => (
+              {t.hero.proof.map((p) => (
                 <li key={p}>{p}</li>
               ))}
             </ul>
@@ -119,7 +81,7 @@ export default async function HomePage() {
             <div className="relative w-full max-w-[420px]" style={{ aspectRatio: "335 / 597" }}>
               <Image
                 src="/media/hero-globo.jpg"
-                alt="O planeta Terra no espaço, com a estrela Polaris brilhando acima"
+                alt={t.hero.globeAlt}
                 fill
                 preload
                 sizes="(max-width: 768px) 90vw, 420px"
@@ -144,7 +106,7 @@ export default async function HomePage() {
                 className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.32em] text-[#dce8ff]/60"
                 style={{ top: "calc(11.9% + 52px)" }}
               >
-                Polaris · a estrela que guia
+                {t.hero.polaris}
               </p>
             </div>
           </div>
@@ -152,12 +114,12 @@ export default async function HomePage() {
       </section>
 
       {/* Pilares */}
-      <section aria-label="Pilares do programa" className="border-y border-sand/10 bg-night">
+      <section aria-label={t.pillars.label} className="border-y border-sand/10 bg-night">
         <div className={`${WRAP} grid md:grid-cols-3`}>
-          {PILLARS.map((pillar, i) => (
+          {t.pillars.items.map((pillar, i) => (
             <div
               key={pillar.title}
-              className={`py-9 md:px-8 ${i === 0 ? "md:pl-0" : ""} ${i === PILLARS.length - 1 ? "md:pr-0" : "md:border-r md:border-sand/10"} ${i > 0 ? "border-t border-sand/10 md:border-t-0" : ""}`}
+              className={`py-9 md:px-8 ${i === 0 ? "md:pl-0" : ""} ${i === t.pillars.items.length - 1 ? "md:pr-0" : "md:border-r md:border-sand/10"} ${i > 0 ? "border-t border-sand/10 md:border-t-0" : ""}`}
             >
               <p className={`${KICKER} text-accent`}>0{i + 1}</p>
               <h3 className="mb-4 mt-2.5 font-display text-[28px] tracking-[0.02em] text-white">{pillar.title}</h3>
@@ -185,8 +147,8 @@ export default async function HomePage() {
         <figcaption
           className={`${WRAP} flex flex-wrap justify-between gap-x-6 gap-y-2 py-3.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-sand/55`}
         >
-          <span>Fig. 01 — Abertura</span>
-          <span>O próximo passo começa dentro da escola</span>
+          <span>{t.abertura.figLabel}</span>
+          <span>{t.abertura.caption}</span>
         </figcaption>
       </figure>
 
@@ -195,17 +157,15 @@ export default async function HomePage() {
         <div className={`${WRAP} ${SECTION_Y}`}>
           <div className="grid items-end gap-10 md:grid-cols-2">
             <div>
-              <p className={`${KICKER} text-accent-deep`}>A trajetória</p>
-              <h2 className={`mt-3.5 ${H2}`}>Um caminho contínuo — do 6º ano ao diploma internacional.</h2>
+              <p className={`${KICKER} text-accent-deep`}>{t.trajetoria.kicker}</p>
+              <h2 className={`mt-3.5 ${H2}`}>{t.trajetoria.title}</h2>
               <p className={`mt-5 max-w-[560px] ${LEAD} text-night/70`}>
-                A formação internacional não começa no Ensino Médio. Ela é construída ano a ano, dentro da rotina do
-                COC, até o aluno chegar à reta final com dupla diplomação e — se quiser — candidatura a
-                universidades no exterior.
+                {t.trajetoria.lead}
               </p>
             </div>
             <MediaFrame
               src="/media/trajetoria.jpg"
-              alt="Formandos jogando os capelos para o alto"
+              alt={t.trajetoria.imageAlt}
               ratio="2 / 1"
               focus="center 30%"
               className="rounded-[20px]"
@@ -213,8 +173,8 @@ export default async function HomePage() {
           </div>
 
           <ol className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {TRAJETORIA.map((step, i) => {
-              const last = i === TRAJETORIA.length - 1;
+            {t.trajetoria.steps.map((step, i) => {
+              const last = i === t.trajetoria.steps.length - 1;
               return (
                 <li
                   key={step.phase}
@@ -240,44 +200,46 @@ export default async function HomePage() {
       </section>
 
       {/* CTA #2 — início-meio da rolagem */}
-      <CtaBand label={CTA.enroll} />
+      <CtaBand line={t.cta.line} label={t.cta.enroll} ariaLabel={t.cta.bandLabel} />
 
       {/* Soluções */}
       <section id="solucoes" className="scroll-mt-20 bg-night">
         <div className={`${WRAP} ${SECTION_Y}`}>
-          <p className={`${KICKER} text-accent`}>Três soluções estratégicas</p>
+          <p className={`${KICKER} text-accent`}>{t.solutions.kicker}</p>
           <h2 className={`mt-3.5 max-w-[760px] ${H2} text-white`}>
-            Cada aluno tem um caminho — não adivinhamos, calculamos.
+            {t.solutions.title}
           </h2>
           <p className={`mt-5 max-w-[620px] ${LEAD} text-sand/70`}>
-            A partir do perfil acadêmico, do momento escolar e do objetivo da família, nossa equipe indica qual das
-            três soluções combina melhor com cada aluno.
+            {t.solutions.lead}
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {Object.entries(SOLUTIONS).map(([id, s], i) => (
+            {Object.entries(SOLUTIONS).map(([id, s], i) => {
+              const copy = t.solutions.items[id as keyof typeof SOLUTIONS];
+              return (
               <article
                 key={id}
                 className="flex flex-col overflow-hidden rounded-[20px] border border-sand/10 bg-white/[0.04]"
               >
                 <MediaFrame
                   src={s.image.src}
-                  alt={s.image.alt}
+                  alt={copy.alt}
                   focus={s.image.focus}
                   ratio="16 / 10"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="flex flex-1 flex-col px-6 pb-7 pt-6">
                   <span className={`${NUM} text-4xl text-accent`}>0{i + 1}</span>
-                  <h3 className="mt-3.5 text-xl font-bold leading-tight text-white">{s.name}</h3>
+                  <h3 className="mt-3.5 text-xl font-bold leading-tight text-white">{copy.name}</h3>
                   <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-sand/55">
                     {s.shortName}
                   </p>
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-sand/75">{s.tagline}</p>
-                  <CtaButton label="Consultar valores" variant="outline" className="mt-6 self-start" />
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-sand/75">{copy.tagline}</p>
+                  <CtaButton label={t.cta.pricing} variant="outline" className="mt-6 self-start" />
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -286,29 +248,29 @@ export default async function HomePage() {
       <section id="summer" className="scroll-mt-20 bg-navy">
         <div className={`${WRAP} ${SECTION_Y} grid items-center gap-12 md:grid-cols-2`}>
           <div>
-            <p className={`${KICKER} text-accent`}>{SUMMER_CAMPS.kicker}</p>
-            <h2 className={`mt-3.5 ${H2} text-white`}>{SUMMER_CAMPS.title}</h2>
-            <p className={`mt-5 max-w-[520px] ${LEAD} text-white/75`}>{SUMMER_CAMPS.description}</p>
+            <p className={`${KICKER} text-accent`}>{t.summer.kicker}</p>
+            <h2 className={`mt-3.5 ${H2} text-white`}>{t.summer.title}</h2>
+            <p className={`mt-5 max-w-[520px] ${LEAD} text-white/75`}>{t.summer.description}</p>
             <ul className="mt-8 border-t border-white/15">
-              {SUMMER_CAMPS.points.map((point, i) => (
+              {t.summer.points.map((point, i) => (
                 <li key={point} className="flex gap-4 border-b border-white/15 py-4 text-[15px] text-white/85">
                   <span className="w-6 shrink-0 text-xs font-bold text-accent">0{i + 1}</span>
                   {point}
                 </li>
               ))}
             </ul>
-            <CtaButton label="Quero saber das vagas" className="mt-9" />
+            <CtaButton label={t.cta.summerSpots} className="mt-9" />
           </div>
           <figure className="grid grid-cols-2 gap-3.5">
             <MediaFrame
               src="/media/summer-01.jpg"
-              alt="Grupo de estudantes tirando uma selfie em uma rua de cidade americana"
+              alt={t.summer.images[0]}
               ratio="16 / 10"
               className="col-span-2 rounded-[20px]"
             />
             <MediaFrame
               src="/media/summer-02.jpg"
-              alt="Estudantes conversando na escadaria de um campus"
+              alt={t.summer.images[1]}
               ratio="4 / 3"
               focus="center 60%"
               sizes="(max-width: 768px) 50vw, 25vw"
@@ -316,14 +278,14 @@ export default async function HomePage() {
             />
             <MediaFrame
               src="/media/summer-03.jpg"
-              alt="Grupo de adolescentes reunidos no gramado de um campus"
+              alt={t.summer.images[2]}
               ratio="4 / 3"
               focus="center 55%"
               sizes="(max-width: 768px) 50vw, 25vw"
               className="rounded-2xl"
             />
             <figcaption className="col-span-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/60">
-              Temporada de verão · turmas do Núcleo
+              {t.summer.caption}
             </figcaption>
           </figure>
         </div>
@@ -332,15 +294,15 @@ export default async function HomePage() {
       {/* Vídeo */}
       <section aria-labelledby="video-titulo" className="bg-night">
         <div className={`${WRAP} ${SECTION_Y} grid items-center gap-10 md:grid-cols-[1.5fr_1fr]`}>
-          <VideoEmbed embed={heroVideoEmbed} />
+          <VideoEmbed embed={heroVideoEmbed} t={t.video} />
           <div>
-            <p className={`${KICKER} text-accent`}>Vídeo</p>
+            <p className={`${KICKER} text-accent`}>{t.video.kicker}</p>
             <h2 id="video-titulo" className="mt-3.5 font-display text-[44px] leading-[0.95] text-white sm:text-[56px]">
-              O Núcleo em movimento
+              {t.video.title}
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-sand/70">Conheça de perto a rotina do Núcleo.</p>
+            <p className="mt-4 text-[15px] leading-relaxed text-sand/70">{t.video.lead}</p>
             <ul className="mt-7 border-t border-sand/10 text-xs font-semibold uppercase tracking-[0.14em] text-sand/60">
-              {VIDEO_PIECES.map((piece) => (
+              {t.video.pieces.map((piece) => (
                 <li key={piece} className="border-b border-sand/10 py-3.5">
                   {piece}
                 </li>
@@ -353,31 +315,34 @@ export default async function HomePage() {
       {/* Parceiros */}
       <section id="parceiros" className="scroll-mt-20 bg-cream text-night">
         <div className={`${WRAP} ${SECTION_Y}`}>
-          <p className={`${KICKER} text-accent-deep`}>Ecossistema de parceiros</p>
+          <p className={`${KICKER} text-accent-deep`}>{t.partners.kicker}</p>
           <h2 className={`mt-3.5 max-w-[760px] ${H2}`}>
-            Cada estudante conectado ao parceiro certo para o seu destino.
+            {t.partners.title}
           </h2>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {Object.entries(PARTNERS).map(([id, p]) => (
+            {Object.entries(PARTNERS).map(([id, p]) => {
+              const copy = t.partners.items[id as keyof typeof PARTNERS];
+              return (
               <article
                 key={id}
                 className="flex flex-wrap items-center gap-x-7 gap-y-6 rounded-[20px] border border-night/10 bg-white p-8"
               >
                 <div className="relative h-24 w-[180px] shrink-0">
-                  <Image src={p.logo.src} alt={p.logo.alt} fill sizes="180px" className="object-contain" />
+                  <Image src={p.logo.src} alt={copy.alt} fill sizes="180px" className="object-contain" />
                 </div>
                 <div className="min-w-0 flex-[1_1_200px]">
                   <h3 className="text-[22px] font-bold text-navy">{p.name}</h3>
-                  <p className={`mt-2 ${KICKER} tracking-[0.14em] text-accent-deep`}>{p.focus}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-night/70">{p.brands}</p>
+                  <p className={`mt-2 ${KICKER} tracking-[0.14em] text-accent-deep`}>{copy.focus}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-night/70">{copy.brands}</p>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
 
           <div className="mt-11 border-t border-night/10 pt-7">
-            <p className={`mb-5 ${KICKER} text-night/55`}>Também na rede</p>
+            <p className={`mb-5 ${KICKER} text-night/55`}>{t.partners.network}</p>
             <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               {PARTNER_NETWORK.map((logo) => (
                 <li key={logo.src} className="relative h-24 rounded-[14px] border border-night/10 bg-white">
@@ -392,7 +357,7 @@ export default async function HomePage() {
       {/* Citação */}
       <section
         id="cases"
-        aria-label="Citação"
+        aria-label={t.quote.label}
         className="scroll-mt-20 bg-navy"
         style={{
           backgroundImage: "radial-gradient(ellipse 60% 80% at 100% 0%, rgba(194,160,104,0.18), rgba(35,50,100,0) 60%)",
@@ -403,10 +368,10 @@ export default async function HomePage() {
             <path d="M0 40V22C0 9 7 1.5 20 0l2 5c-7 2-10 6-10.5 12H20v23H0Zm26 0V22C26 9 33 1.5 46 0l2 5c-7 2-10 6-10.5 12H46v23H26Z" />
           </svg>
           <blockquote className="mt-6 max-w-[960px] font-display text-[40px] leading-[0.98] text-white sm:text-[56px] lg:text-[72px]">
-            Educação não transforma o mundo. Educação muda as pessoas.{" "}
-            <span className="text-accent">Pessoas transformam o mundo.</span>
+            {t.quote.text}{" "}
+            <span className="text-accent">{t.quote.accent}</span>
           </blockquote>
-          <p className={`mt-7 ${KICKER} text-white/70`}>— Anísio Teixeira</p>
+          <p className={`mt-7 ${KICKER} text-white/70`}>{t.quote.author}</p>
         </div>
       </section>
 
@@ -414,10 +379,10 @@ export default async function HomePage() {
       <section id="agenda" className="scroll-mt-20 bg-cream text-night">
         <div className={`${WRAP} ${SECTION_Y} grid gap-12 md:grid-cols-2`}>
           <div>
-            <p className={`${KICKER} text-accent-deep`}>Agenda</p>
-            <h2 className={`mt-3.5 ${H2}`}>Próximos eventos</h2>
+            <p className={`${KICKER} text-accent-deep`}>{t.agenda.kicker}</p>
+            <h2 className={`mt-3.5 ${H2}`}>{t.agenda.title}</h2>
             <ul className="mt-8 border-t border-night/10">
-              {EVENTS.map((e, i) => (
+              {t.agenda.events.map((e, i) => (
                 <li key={e} className="flex gap-5 border-b border-night/10 py-4 font-medium text-navy">
                   <span className="w-7 shrink-0 text-xs font-bold text-accent-deep">0{i + 1}</span>
                   {e}
@@ -426,9 +391,9 @@ export default async function HomePage() {
             </ul>
           </div>
           <div>
-            <p className={`mb-4 ${KICKER} text-night/55`}>Últimos no Instagram · @{INSTAGRAM_HANDLE}</p>
+            <p className={`mb-4 ${KICKER} text-night/55`}>{t.agenda.instagramLatest} · @{INSTAGRAM_HANDLE}</p>
             <div className="grid grid-cols-3 gap-3 sm:gap-3.5">
-              {INSTAGRAM_POSTS.map((post) => (
+              {INSTAGRAM_POSTS.map((post, i) => (
                 <a
                   key={post.image.src}
                   href={INSTAGRAM_URL}
@@ -438,13 +403,13 @@ export default async function HomePage() {
                 >
                   <MediaFrame
                     src={post.image.src}
-                    alt={post.image.alt}
+                    alt={t.agenda.posts[i].alt}
                     ratio="4 / 5"
                     sizes="(max-width: 640px) 33vw, 200px"
                     className="rounded-[14px] border border-night/10 transition group-hover:border-accent-deep"
                   />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-accent-deep sm:text-[11px]">{post.tag}</span>
-                  <span className="text-xs font-semibold leading-snug group-hover:underline sm:text-sm">{post.title}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-accent-deep sm:text-[11px]">{t.agenda.posts[i].tag}</span>
+                  <span className="text-xs font-semibold leading-snug group-hover:underline sm:text-sm">{t.agenda.posts[i].title}</span>
                 </a>
               ))}
             </div>
@@ -455,7 +420,7 @@ export default async function HomePage() {
               className="mt-6 inline-flex min-h-12 items-center gap-2.5 rounded-full border border-navy px-6 text-xs font-bold uppercase tracking-[0.14em] text-navy transition-colors hover:bg-navy hover:text-white"
             >
               <InstagramIcon />
-              Seguir @{INSTAGRAM_HANDLE}
+              {t.agenda.follow} @{INSTAGRAM_HANDLE}
             </a>
           </div>
         </div>
@@ -471,19 +436,17 @@ export default async function HomePage() {
       >
         <div className={`${WRAP} ${SECTION_Y} grid gap-12 md:grid-cols-[0.85fr_1.15fr]`}>
           <div>
-            <p className={`${KICKER} text-accent`}>Próximo passo</p>
-            <h2 className={`mt-3.5 ${H2} text-white`}>Comece a trajetória internacional deste aluno.</h2>
+            <p className={`${KICKER} text-accent`}>{t.inscricao.kicker}</p>
+            <h2 className={`mt-3.5 ${H2} text-white`}>{t.inscricao.title}</h2>
             <p className={`mt-5 max-w-[480px] ${LEAD} text-sand/70`}>
-              Deixe seus dados e o time do Núcleo retoma o contato pelo WhatsApp para agendar uma visita, tirar
-              dúvidas sobre a dupla diplomação e os summer camps, e mostrar qual solução combina com o momento
-              escolar do aluno.
+              {t.inscricao.lead}
             </p>
             <div className="mt-9 border-t border-sand/10 pt-6">
-              <p className={`mb-3.5 ${KICKER} tracking-[0.16em] text-sand/55`}>Prefere falar agora?</p>
-              <WhatsappButton label={CTA.whatsapp} />
+              <p className={`mb-3.5 ${KICKER} tracking-[0.16em] text-sand/55`}>{t.inscricao.talkNow}</p>
+              <WhatsappButton label={t.cta.whatsapp} message={t.whatsappMessage} />
             </div>
           </div>
-          <InscricaoForm />
+          <InscricaoForm lang={lang} t={t.form} message={t.whatsappMessage} />
         </div>
       </section>
     </>

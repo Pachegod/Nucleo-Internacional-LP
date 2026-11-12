@@ -4,14 +4,21 @@
 // resposta inválida) cai de volta pros valores padrão já hardcoded na página.
 
 import { TOOL_URL } from "./config";
+import type { Locale } from "./i18n/locales";
 
 export type LpContentType = "image" | "text" | "video" | "social" | "color";
 
 export type LpContentItem = {
   key: string;
   type: LpContentType;
+  /** Valor em PT-BR (ou URL/cor/link, iguais em todos os idiomas). */
   value: string;
   alt: string;
+  /** Traduções (vazio = sem tradução). Podem faltar enquanto a API antiga estiver no ar. */
+  valueEn?: string;
+  valueEs?: string;
+  altEn?: string;
+  altEs?: string;
 };
 
 export const DEFAULT_ACCENT = "#c2a068";
@@ -37,16 +44,37 @@ function findItem(items: LpContentItem[], type: LpContentType, key: string) {
   return items.find((i) => i.type === type && i.key === key);
 }
 
-export function getText(items: LpContentItem[], key: string, fallback: string): string {
-  return findItem(items, "text", key)?.value.trim() || fallback;
+/**
+ * Campo traduzido de um item do CMS. Em PT usa o campo base; em EN/ES usa
+ * só o campo do idioma — NUNCA cai no PT, para não misturar idiomas na
+ * página. Vazio/ausente devolve "" e quem chama usa o dicionário.
+ */
+function localized(item: LpContentItem | undefined, field: "value" | "alt", lang: Locale): string {
+  if (!item) return "";
+  const raw =
+    lang === "pt"
+      ? item[field]
+      : item[`${field}${lang === "en" ? "En" : "Es"}` as "valueEn" | "valueEs" | "altEn" | "altEs"];
+  return typeof raw === "string" ? raw.trim() : "";
 }
 
+/** Texto do CMS no idioma pedido → senão o fallback do dicionário desse idioma. */
+export function getText(items: LpContentItem[], key: string, lang: Locale, fallback: string): string {
+  return localized(findItem(items, "text", key), "value", lang) || fallback;
+}
+
+/**
+ * Imagem do CMS (mesma URL em todos os idiomas). O alt segue a regra do
+ * texto: alt do idioma → senão o fallbackAlt do dicionário desse idioma.
+ */
 export function getImage(
   items: LpContentItem[],
-  key: string
+  key: string,
+  lang: Locale,
+  fallbackAlt = ""
 ): { src: string; alt: string } | undefined {
   const item = findItem(items, "image", key);
-  return item?.value ? { src: item.value, alt: item.alt } : undefined;
+  return item?.value ? { src: item.value, alt: localized(item, "alt", lang) || fallbackAlt } : undefined;
 }
 
 export function getVideo(items: LpContentItem[], key: string): string | undefined {

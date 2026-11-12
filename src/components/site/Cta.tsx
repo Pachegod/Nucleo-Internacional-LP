@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { CTA, CTA_LINE } from "@/lib/content";
 import { ArrowRightIcon } from "./icons";
 
 const VARIANTS = {
@@ -13,12 +12,12 @@ const VARIANTS = {
 
 /** Botão de CTA — sempre aponta para o formulário de inscrição (#inscrever). */
 export function CtaButton({
-  label = CTA.visit,
+  label,
   variant = "solid",
   arrow = variant !== "outline",
   className = "",
 }: {
-  label?: string;
+  label: string;
   variant?: keyof typeof VARIANTS;
   arrow?: boolean;
   className?: string;
@@ -35,9 +34,9 @@ export function CtaButton({
 }
 
 /** Faixa dourada de largura total que pontua a rolagem entre as seções. */
-export function CtaBand({ line = CTA_LINE, label = CTA.enroll }: { line?: string; label?: string }) {
+export function CtaBand({ line, label, ariaLabel }: { line: string; label: string; ariaLabel: string }) {
   return (
-    <section aria-label="Matrículas abertas" className="bg-accent text-accent-ink">
+    <section aria-label={ariaLabel} className="bg-accent text-accent-ink">
       <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-x-8 gap-y-4 px-5 py-7 sm:px-10 lg:px-14">
         <p className="font-display text-[26px] leading-[1.05] sm:text-[34px]">{line}</p>
         <CtaButton label={label} variant="dark" />

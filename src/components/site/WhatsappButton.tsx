@@ -1,5 +1,5 @@
 import { whatsappLink, interestMessage } from "@/lib/config";
-import { CTA } from "@/lib/content";
+import type { Dictionary } from "@/lib/i18n/pt";
 
 function WhatsappGlyph({ className = "" }: { className?: string }) {
   return (
@@ -10,10 +10,18 @@ function WhatsappGlyph({ className = "" }: { className?: string }) {
 }
 
 /** Link direto para o WhatsApp do Núcleo, sem passar pelo formulário. */
-export function WhatsappButton({ label = CTA.whatsapp, className = "" }: { label?: string; className?: string }) {
+export function WhatsappButton({
+  label,
+  message,
+  className = "",
+}: {
+  label: string;
+  message: Dictionary["whatsappMessage"];
+  className?: string;
+}) {
   return (
     <a
-      href={whatsappLink(interestMessage())}
+      href={whatsappLink(interestMessage(message))}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex min-h-[52px] items-center gap-3 rounded-full border border-sand/30 px-6 text-xs font-bold uppercase tracking-[0.14em] text-white transition-colors hover:border-[#25D366] hover:text-[#25D366] ${className}`}

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
+import { DEFAULT_LOCALE, hasLocale } from "@/lib/i18n/locales";
 
 export const dynamic = "force-dynamic";
 
@@ -10,6 +11,8 @@ type Payload = {
   email?: string;
   whatsapp?: string;
   unidade?: string;
+  /** Idioma da página em que a família preencheu (pt, en, es). */
+  lang?: string;
 };
 
 // Modo dual, igual à ferramenta: sem DATABASE_URL a inscrição só é
@@ -27,6 +30,7 @@ async function persist(row: {
   email: string;
   whatsapp: string;
   unidade: string;
+  lang: string;
 }) {
   if (!DATABASE_URL) return false;
   const sql = neon(DATABASE_URL);
@@ -42,12 +46,14 @@ async function persist(row: {
       unidade     text NOT NULL DEFAULT ''
     )
   `;
+  // Tabelas criadas antes do i18n não têm a coluna — adiciona sob demanda.
+  await sql`ALTER TABLE lp_inscricoes ADD COLUMN IF NOT EXISTS lang text NOT NULL DEFAULT 'pt'`;
   await sql`
     INSERT INTO lp_inscricoes
-      (id, created_at, responsavel, aluno, serie, email, whatsapp, unidade)
+      (id, created_at, responsavel, aluno, serie, email, whatsapp, unidade, lang)
     VALUES
       (${row.id}, ${row.createdAt}, ${row.responsavel}, ${row.aluno},
-       ${row.serie}, ${row.email}, ${row.whatsapp}, ${row.unidade})
+       ${row.serie}, ${row.email}, ${row.whatsapp}, ${row.unidade}, ${row.lang})
   `;
   return true;
 }
@@ -69,6 +75,8 @@ export async function POST(request: Request) {
     email: (data.email ?? "").trim(),
     whatsapp: (data.whatsapp ?? "").trim(),
     unidade: (data.unidade ?? "").trim(),
+    // Valor desconhecido/ausente (cliente antigo) cai no padrão, sem erro.
+    lang: hasLocale(data.lang) ? data.lang : DEFAULT_LOCALE,
   };
 
   if (!row.responsavel || !row.aluno || !row.email || !row.whatsapp) {

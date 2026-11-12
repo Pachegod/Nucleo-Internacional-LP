@@ -3,13 +3,14 @@
 import { useState } from "react";
 import { MediaFrame } from "./MediaFrame";
 import { PlayIcon } from "./icons";
+import type { Dictionary } from "@/lib/i18n/pt";
 
 type Embed = { kind: "iframe" | "video"; src: string };
 
-const POSTER = { src: "/media/video-poster.jpg", alt: "Estudantes estudando juntos com notebook ao ar livre" };
+const POSTER_SRC = "/media/video-poster.jpg";
 
 /** Capa com botão de play; troca pelo embed real só quando clicado (evita carregar o vídeo à toa). */
-export function VideoEmbed({ embed }: { embed?: Embed }) {
+export function VideoEmbed({ embed, t }: { embed?: Embed; t: Dictionary["video"] }) {
   const [playing, setPlaying] = useState(false);
 
   if (embed && playing) {
@@ -18,7 +19,7 @@ export function VideoEmbed({ embed }: { embed?: Embed }) {
         {embed.kind === "iframe" ? (
           <iframe
             src={`${embed.src}?autoplay=1`}
-            title="Vídeo institucional"
+            title={t.iframeTitle}
             className="h-full w-full"
             allow="autoplay; encrypted-media; picture-in-picture"
             allowFullScreen
@@ -32,12 +33,12 @@ export function VideoEmbed({ embed }: { embed?: Embed }) {
 
   return (
     <div className="relative overflow-hidden rounded-[22px] border border-sand/10">
-      <MediaFrame {...POSTER} ratio="16 / 9" sizes="(max-width: 768px) 100vw, 60vw" imgClassName="brightness-[0.7]" />
+      <MediaFrame src={POSTER_SRC} alt={t.posterAlt} ratio="16 / 9" sizes="(max-width: 768px) 100vw, 60vw" imgClassName="brightness-[0.7]" />
       {embed && (
         <button
           type="button"
           onClick={() => setPlaying(true)}
-          aria-label="Assistir ao vídeo institucional"
+          aria-label={t.play}
           className="absolute left-1/2 top-1/2 flex h-[84px] w-[84px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-accent-ink shadow-[0_0_0_10px_var(--accent-soft)] transition hover:scale-105"
         >
           <PlayIcon />
