@@ -95,8 +95,8 @@ export type CityPhoto = {
   landmark: string;
   /** Vista aérea (drone/avião) ou do alto. */
   aerial?: boolean;
-  /** Atribuição — exigida pelas licenças CC do Wikimedia Commons; cortesia no Pexels. */
-  credit: { author: string; license: string; url: string };
+  /** Atribuição — exigida pelas licenças CC do Wikimedia Commons; cortesia no Pexels. Ausente em foto cedida. */
+  credit?: { author: string; license: string; url: string };
 };
 
 /**
@@ -135,8 +135,9 @@ export const COC_SC_UNITS: {
   {
     city: "Porto Belo", slug: "porto-belo", units: 1, x: 340, y: 192, label: "right",
     photos: [
-      { src: "/media/cidades/porto-belo-aerea.jpg", landmark: "Vista aérea da enseada", aerial: true,
-        credit: { author: "Flavio Luiz Koch", license: "Pexels", url: "https://www.pexels.com/photo/forest-in-bay-on-seashore-20695550/" } },
+      // Foto cedida por um amigo do Núcleo (uso autorizado) — trocar pelo arquivo
+      // original em alta resolução e preencher o crédito quando houver.
+      { src: "/media/cidades/porto-belo-orla.jpg", landmark: "Vista aérea da orla ao entardecer", aerial: true },
       { src: "/media/cidades/porto-belo.jpg", landmark: "Enseada de Porto Belo",
         credit: { author: "Rachmaninoff", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Porto_Belo_boats_sunset.jpg" } },
     ],
