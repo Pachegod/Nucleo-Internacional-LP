@@ -226,10 +226,43 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                   <p className="mt-1.5 text-sm leading-snug text-night/75">{step.text}</p>
                 </li>
               ))}
-              <li className="bg-navy px-5 py-5 text-sm leading-snug text-white/85 sm:col-span-2 lg:col-span-1">
-                {t.about.regional.expansion}
+              {/* 12ª célula: fecha a grade (3 e 4 colunas) e aponta para os próximos passos */}
+              <li className="flex items-end bg-navy px-5 py-5">
+                <p className={`${KICKER} flex items-center gap-2 text-accent`}>
+                  {t.about.regional.expansion.kicker}
+                  <span aria-hidden="true" className="text-base">↓</span>
+                </p>
               </li>
             </ol>
+          </div>
+
+          {/* Próximos passos — expansão da rede */}
+          <div
+            className="relative mt-6 overflow-hidden rounded-[20px] bg-deep p-7 text-white sm:p-10"
+            style={{
+              backgroundImage:
+                "radial-gradient(ellipse 55% 90% at 100% 0%, rgba(194,160,104,0.22), rgba(5,7,13,0) 65%)",
+            }}
+          >
+            <p className={`${KICKER} text-accent`}>{t.about.regional.expansion.kicker}</p>
+            <h4 className="mt-3 max-w-[720px] font-display text-[40px] leading-[0.95] sm:text-[56px]">
+              {t.about.regional.expansion.title}
+            </h4>
+            <p className="mt-4 max-w-[560px] text-[15px] leading-relaxed text-sand/70">
+              {t.about.regional.expansion.lead}
+            </p>
+            <ul className="mt-8 grid gap-4 md:grid-cols-2">
+              {t.about.regional.expansion.items.map((item, i) => (
+                <li key={item.name} className="rounded-2xl border border-accent/30 bg-white/[0.04] p-6">
+                  <span className={`${NUM} text-[44px] text-accent`}>0{i + 1}</span>
+                  <h5 className="mt-3 text-xl font-bold leading-tight">{item.name}</h5>
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-sand/55">
+                    {item.place}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-sand/80">{item.detail}</p>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* 03 · Núcleo Polaris */}

@@ -135,7 +135,24 @@ export const pt = {
         { year: "2025", text: "COC Itajaí" },
         { year: "2026", text: "COC Porto Belo" },
       ],
-      expansion: "Próximos passos: COC Colinas Global School e a nova unidade de Educação Infantil, ambas em Balneário Camboriú.",
+      expansion: {
+        kicker: "Próximos passos",
+        title: "O próximo capítulo já está em obras.",
+        lead: "A rede continua crescendo — e cresce olhando para o mundo.",
+        items: [
+          {
+            name: "COC Colinas Global School",
+            place: "Balneário Camboriú",
+            detail:
+              "Um investimento de R$ 25 milhões em uma escola bilíngue de cerca de 8 mil m², num bairro planejado — pensada desde o projeto para a formação internacional.",
+          },
+          {
+            name: "Educação Infantil",
+            place: "Balneário Camboriú",
+            detail: "Uma nova unidade dedicada à primeira infância: a trajetória global começando ainda mais cedo.",
+          },
+        ],
+      },
       mapTitle: "Mapa das unidades COC em Santa Catarina",
       mapCaption: "Unidades COC em Santa Catarina · mapa ilustrativo",
     },

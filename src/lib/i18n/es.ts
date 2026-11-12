@@ -126,7 +126,24 @@ export const es: Dictionary = {
         { year: "2025", text: "COC Itajaí" },
         { year: "2026", text: "COC Porto Belo" },
       ],
-      expansion: "Próximos pasos: COC Colinas Global School y la nueva sede de Educación Infantil, ambas en Balneário Camboriú.",
+      expansion: {
+        kicker: "Próximos pasos",
+        title: "El próximo capítulo ya está en obras.",
+        lead: "La red sigue creciendo — y crece mirando al mundo.",
+        items: [
+          {
+            name: "COC Colinas Global School",
+            place: "Balneário Camboriú",
+            detail:
+              "Una inversión de R$ 25 millones en una escuela bilingüe de cerca de 8 mil m², en un barrio planificado — pensada desde el proyecto para la formación internacional.",
+          },
+          {
+            name: "Educación Infantil",
+            place: "Balneário Camboriú",
+            detail: "Una nueva sede dedicada a la primera infancia: la trayectoria global empezando aún más temprano.",
+          },
+        ],
+      },
       mapTitle: "Mapa de las sedes COC en Santa Catarina",
       mapCaption: "Sedes COC en Santa Catarina · mapa ilustrativo",
     },
