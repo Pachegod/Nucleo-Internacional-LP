@@ -113,14 +113,29 @@ export const pt = {
       title: "COC — tradição em educação desde 1963",
       text:
         "Fundado em Ribeirão Preto (SP), o COC é uma das redes de ensino mais tradicionais do Brasil, com metodologia, material didático e avaliações próprios presentes em escolas de todo o país.",
-      stats: ["Fundação", "Escolas parceiras no Brasil", "Alunos na rede", "Estados"],
+      stats: ["Fundação", "Escolas parceiras no Brasil"],
     },
     regional: {
       tag: "02 · Santa Catarina",
       title: "COC Santa Catarina — Grupo Nota Máxima",
       text:
-        "O Grupo Nota Máxima leva o COC a Santa Catarina, com unidades no interior e no litoral do estado — do Vale do Itajaí e da Serra até a costa.",
-      stats: ["Cidades", "Unidades", "Alunos", "Anos em SC"],
+        "Desde 1999 o Grupo Nota Máxima constrói o COC em Santa Catarina — do interior ao litoral, do Vale do Itajaí e da Serra até a costa. Uma rede reconhecida por resultados, com alunos aprovados em mais de 70 universidades no Brasil e no exterior.",
+      stats: ["Cidades", "Desde", "Universidades com alunos aprovados", "Universidades no exterior com aprovados"],
+      timelineTitle: "Nossa trajetória em Santa Catarina",
+      timeline: [
+        { year: "1999", text: "Início em Rio do Sul" },
+        { year: "2003", text: "Chegada a Lages" },
+        { year: "2012", text: "Unificação no sistema COC" },
+        { year: "2017", text: "Balneário Camboriú" },
+        { year: "2018", text: "Blumenau" },
+        { year: "2019", text: "Aquisição em Lages e novas unidades em Rio do Sul e Balneário Camboriú" },
+        { year: "2021", text: "Aquisição da escola Áster" },
+        { year: "2023", text: "Balneário Camboriú — Unidade 3" },
+        { year: "2024", text: "Nova unidade em Lages e escola de campo" },
+        { year: "2025", text: "COC Itajaí" },
+        { year: "2026", text: "COC Porto Belo" },
+      ],
+      expansion: "Próximo passo: COC Colinas, nova escola em Camboriú.",
       mapTitle: "Mapa das unidades COC em Santa Catarina",
       mapCaption: "Unidades COC em Santa Catarina · mapa ilustrativo",
     },
@@ -129,15 +144,11 @@ export const pt = {
       title: "Como nasceu o Núcleo",
       text:
         "[a confirmar: quando e por que o Núcleo Polaris foi criado, quem idealizou o projeto e qual necessidade das famílias e escolas ele veio resolver.]",
-      milestones: [
-        { year: "—", text: "[a confirmar: marco 1 — criação do Núcleo]" },
-        { year: "—", text: "[a confirmar: marco 2 — primeiras parcerias internacionais]" },
-        { year: "—", text: "[a confirmar: marco 3 — hoje]" },
-      ],
     },
     counseling: {
       tag: "04 · Counseling",
       title: "International Counseling",
+      approvalsTitle: "Aprovações internacionais de alunos da rede",
       text:
         "O coração do Núcleo é o counseling: um acompanhamento individual do estudante e da família, do Fundamental II à universidade, que transforma interesse em uma candidatura sólida — e em um aluno preparado para chegar à sua instituição.",
       items: [

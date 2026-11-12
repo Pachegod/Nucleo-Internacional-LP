@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { SOLUTIONS, PARTNERS, PARTNER_NETWORK, INSTAGRAM_POSTS, ABOUT_STATS, COC_SC_UNITS } from "@/lib/content";
+import { SOLUTIONS, PARTNERS, PARTNER_NETWORK, INSTAGRAM_POSTS, ABOUT_STATS, COC_SC_UNITS, INTERNATIONAL_APPROVALS } from "@/lib/content";
 import { UnitsConstellation } from "@/components/site/UnitsConstellation";
 import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from "@/lib/config";
 import { MediaFrame } from "@/components/site/MediaFrame";
@@ -216,27 +216,29 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
             <UnitsConstellation title={t.about.regional.mapTitle} caption={t.about.regional.mapCaption} />
           </div>
 
-          {/* 03 · Núcleo Polaris */}
-          <div className="mt-12 grid items-start gap-8 border-t border-night/10 pt-10 md:grid-cols-2">
-            <div>
-              <p className={`${KICKER} text-accent-deep`}>{t.about.nucleo.tag}</p>
-              <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">
-                {t.about.nucleo.title}
-              </h3>
-              <p className={`mt-4 max-w-[520px] ${LEAD} text-night/70`}>{t.about.nucleo.text}</p>
-            </div>
-            <ol className="border-l-2 border-accent-deep/40 pl-6">
-              {t.about.nucleo.milestones.map((m, i) => (
-                <li key={i} className="relative pb-7 last:pb-0">
-                  <span
-                    aria-hidden="true"
-                    className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-cream bg-accent-deep"
-                  />
-                  <p className={`${NUM} text-[32px] text-accent-deep`}>{m.year}</p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-night/70">{m.text}</p>
+          {/* Linha do tempo do grupo em SC */}
+          <div className="mt-10">
+            <p className={`${KICKER} text-night/55`}>{t.about.regional.timelineTitle}</p>
+            <ol className="mt-5 grid gap-px overflow-hidden rounded-[18px] border border-night/10 bg-night/10 sm:grid-cols-3 lg:grid-cols-4">
+              {t.about.regional.timeline.map((step) => (
+                <li key={step.year} className="bg-white px-5 py-5">
+                  <p className={`${NUM} text-[32px] text-accent-deep`}>{step.year}</p>
+                  <p className="mt-1.5 text-sm leading-snug text-night/75">{step.text}</p>
                 </li>
               ))}
+              <li className="bg-navy px-5 py-5 text-sm leading-snug text-white/85 sm:col-span-2 lg:col-span-1">
+                {t.about.regional.expansion}
+              </li>
             </ol>
+          </div>
+
+          {/* 03 · Núcleo Polaris */}
+          <div className="mt-12 border-t border-night/10 pt-10">
+            <p className={`${KICKER} text-accent-deep`}>{t.about.nucleo.tag}</p>
+            <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">
+              {t.about.nucleo.title}
+            </h3>
+            <p className={`mt-4 max-w-[760px] ${LEAD} text-night/70`}>{t.about.nucleo.text}</p>
           </div>
 
           {/* 04 · Counseling */}
@@ -256,6 +258,16 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                 </li>
               ))}
             </ul>
+            <div className="border-t border-white/15 pt-6 md:col-span-2">
+              <p className={`${KICKER} text-accent`}>{t.about.counseling.approvalsTitle}</p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {INTERNATIONAL_APPROVALS.map((u) => (
+                  <li key={u} className="rounded-full border border-white/20 px-3.5 py-1.5 text-xs font-semibold text-white/85">
+                    {u}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>

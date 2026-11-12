@@ -104,14 +104,29 @@ export const es: Dictionary = {
       title: "COC — tradición educativa desde 1963",
       text:
         "Fundado en Ribeirão Preto (São Paulo), el COC es una de las redes educativas más tradicionales de Brasil, con metodología, material didáctico y evaluaciones propios presentes en escuelas de todo el país.",
-      stats: ["Fundación", "Escuelas asociadas en Brasil", "Alumnos en la red", "Estados"],
+      stats: ["Fundación", "Escuelas asociadas en Brasil"],
     },
     regional: {
       tag: "02 · Santa Catarina",
       title: "COC Santa Catarina — Grupo Nota Máxima",
       text:
-        "El Grupo Nota Máxima lleva el COC al estado de Santa Catarina, en el sur de Brasil, con sedes en el interior y en el litoral — del Valle del Itajaí y la sierra hasta la costa.",
-      stats: ["Ciudades", "Sedes", "Alumnos", "Años en el estado"],
+        "Desde 1999 el Grupo Nota Máxima construye el COC en el estado de Santa Catarina, en el sur de Brasil — del Valle del Itajaí y la sierra hasta la costa. Una red reconocida por sus resultados, con alumnos aprobados en más de 70 universidades en Brasil y en el exterior.",
+      stats: ["Ciudades", "Desde", "Universidades con alumnos aprobados", "Universidades en el exterior con aprobados"],
+      timelineTitle: "Nuestra trayectoria en Santa Catarina",
+      timeline: [
+        { year: "1999", text: "Inicio en Rio do Sul" },
+        { year: "2003", text: "Llegada a Lages" },
+        { year: "2012", text: "Unificación en el sistema COC" },
+        { year: "2017", text: "Balneário Camboriú" },
+        { year: "2018", text: "Blumenau" },
+        { year: "2019", text: "Adquisición en Lages y nuevas sedes en Rio do Sul y Balneário Camboriú" },
+        { year: "2021", text: "Adquisición de la escuela Áster" },
+        { year: "2023", text: "Balneário Camboriú — Sede 3" },
+        { year: "2024", text: "Nueva sede en Lages y escuela de campo" },
+        { year: "2025", text: "COC Itajaí" },
+        { year: "2026", text: "COC Porto Belo" },
+      ],
+      expansion: "Próximo paso: COC Colinas, nueva escuela en Camboriú.",
       mapTitle: "Mapa de las sedes COC en Santa Catarina",
       mapCaption: "Sedes COC en Santa Catarina · mapa ilustrativo",
     },
@@ -120,15 +135,11 @@ export const es: Dictionary = {
       title: "Cómo nació el Núcleo",
       text:
         "[por confirmar: cuándo y por qué se creó el Núcleo Polaris, quién lo ideó y qué necesidad de las familias y escuelas vino a resolver.]",
-      milestones: [
-        { year: "—", text: "[por confirmar: hito 1 — creación del Núcleo]" },
-        { year: "—", text: "[por confirmar: hito 2 — primeras alianzas internacionales]" },
-        { year: "—", text: "[por confirmar: hito 3 — hoy]" },
-      ],
     },
     counseling: {
       tag: "04 · Counseling",
       title: "International Counseling",
+      approvalsTitle: "Admisiones internacionales de alumnos de la red",
       text:
         "El corazón del Núcleo es el counseling: un acompañamiento individual del estudiante y su familia, de la secundaria a la universidad, que convierte el interés en una postulación sólida — y en un alumno preparado para llegar a su institución.",
       items: [

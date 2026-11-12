@@ -60,12 +60,36 @@ export const INSTAGRAM_POSTS = [
  * todos os idiomas; os rótulos ficam nos dicionários (mesma ordem).
  * `null` = dado ainda não confirmado — a página mostra "—" destacado.
  */
+/**
+ * Universidades no exterior com alunos da rede COC SC aprovados
+ * (Convenção COC SC 2026). Nomes próprios — iguais em todos os idiomas.
+ */
+export const INTERNATIONAL_APPROVALS = [
+  "Yale University",
+  "University of Florida",
+  "Florida Institute of Technology",
+  "Temple University",
+  "University of British Columbia",
+  "University of Washington",
+  "Indiana University",
+  "University of South Carolina",
+  "Florida International University",
+  "University of Utah",
+  "University of Oklahoma",
+  "University of Iowa",
+  "DePaul University",
+  "University of Tampa",
+  "UNC Charlotte",
+];
+
+const INTERNATIONAL_APPROVALS_COUNT = INTERNATIONAL_APPROVALS.length;
+
 export const ABOUT_STATS = {
-  // Fundação · escolas parceiras no Brasil · alunos na rede · estados
-  // 1963 (Ribeirão Preto/SP) e "mais de 500 escolas" vêm de fontes públicas — confirmar com o COC.
-  national: ["1963", "500+", null, null] as (string | null)[],
-  // Cidades · unidades · alunos · anos em SC
-  regional: ["6", null, null, null] as (string | null)[],
+  // Fundação · escolas parceiras no Brasil (fontes públicas — confirmar com o COC)
+  national: ["1963", "500+"] as (string | null)[],
+  // Cidades · desde (grupo em SC) · universidades com aprovados · universidades no exterior com aprovados
+  // Fonte: apresentação da Convenção COC SC 2026 (sem números do vestibular 2026).
+  regional: ["6", "1999", "70+", String(INTERNATIONAL_APPROVALS_COUNT)] as (string | null)[],
 };
 
 /**
