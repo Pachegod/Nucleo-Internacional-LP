@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { LOGIN_URL, INSTAGRAM_URL, INSTAGRAM_HANDLE, whatsappLink, interestMessage } from "@/lib/config";
+import { LOGIN_URL, CONTACT_EMAIL, INSTAGRAM_URL, INSTAGRAM_HANDLE, whatsappLink, interestMessage } from "@/lib/config";
 import { Logo } from "./Logo";
-import { InstagramIcon } from "./icons";
+import { InstagramIcon, MailIcon } from "./icons";
 import type { Dictionary } from "@/lib/i18n/pt";
 
 type SocialLink = { key: string; label: string; url: string };
@@ -47,6 +47,14 @@ export function SiteFooter({
           <span className={HEADING}>{f.contact}</span>
           <a href={whatsappLink(interestMessage(t.whatsappMessage))} target="_blank" rel="noopener noreferrer" className={LINK}>
             {f.whatsapp}
+          </a>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            aria-label={`${f.email}: ${CONTACT_EMAIL}`}
+            className={`inline-flex items-center gap-2 break-all ${LINK}`}
+          >
+            <MailIcon className="shrink-0" />
+            {CONTACT_EMAIL}
           </a>
           <Link href="#inscrever" className={LINK}>{f.enroll}</Link>
           <a href={LOGIN_URL} className={LINK}>{f.staffLogin}</a>

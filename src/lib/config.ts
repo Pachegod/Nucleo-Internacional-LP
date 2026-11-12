@@ -16,6 +16,9 @@ export const LOGIN_URL = `${TOOL_URL}/login`;
 export const INSTAGRAM_HANDLE = "nucleo_inter";
 export const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
 
+// E-mail de contato do Núcleo — exibido no rodapé (bloco "Contato").
+export const CONTACT_EMAIL = "contato@nucleopolaris.com.br";
+
 // Número de WhatsApp de destino dos CTAs — só dígitos, com DDI.
 // Sobrescreva com NEXT_PUBLIC_WHATSAPP (Vercel → Project Settings →
 // Environment Variables) sem precisar mexer no código.

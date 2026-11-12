@@ -38,6 +38,7 @@ export const pt = {
     contact: "Contato",
     networks: "Redes",
     whatsapp: "WhatsApp",
+    email: "E-mail",
     enroll: "Inscreva-se",
     staffLogin: "Entrar (equipe)",
     legal: "Grupo Nota Máxima · Rede COC Santa Catarina",

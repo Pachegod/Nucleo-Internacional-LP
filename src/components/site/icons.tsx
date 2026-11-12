@@ -55,3 +55,12 @@ export function ChevronDownIcon({ size = 12, className = "" }: IconProps) {
     </svg>
   );
 }
+
+export function MailIcon({ size = 18, className = "" }: IconProps) {
+  return (
+    <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="3" y="5" width="18" height="14" rx="3" />
+      <path d="m4 7 8 6 8-6" />
+    </svg>
+  );
+}

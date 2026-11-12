@@ -37,6 +37,7 @@ export const en: Dictionary = {
     contact: "Contact",
     networks: "Social",
     whatsapp: "WhatsApp",
+    email: "Email",
     enroll: "Apply now",
     staffLogin: "Staff log in",
     legal: "Grupo Nota Máxima · COC Santa Catarina Network",
