@@ -9,7 +9,7 @@ import { LangSwitcher } from "./LangSwitcher";
 import { localePath, type Locale } from "@/lib/i18n/locales";
 import type { Dictionary } from "@/lib/i18n/pt";
 
-const NAV_KEYS = ["trajetoria", "solucoes", "summer", "parceiros", "agenda"] as const;
+const NAV_KEYS = ["quem-somos", "trajetoria", "solucoes", "summer", "parceiros", "agenda"] as const;
 
 const LOGIN_CLASS =
   "inline-flex min-h-11 items-center gap-2 rounded-full border border-sand/30 px-[18px] text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:border-accent hover:text-accent";
@@ -37,9 +37,9 @@ export function SiteHeader({
           <Logo logo={logo} alt={logoAlt} className="h-10 sm:h-11" />
         </Link>
 
-        <nav aria-label={t.navLabel} className="hidden items-center gap-7 text-[13px] font-medium md:flex">
+        <nav aria-label={t.navLabel} className="hidden items-center gap-5 text-[13px] font-medium md:flex lg:gap-7">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="py-3 text-sand/80 transition-colors hover:text-accent">
+            <Link key={link.href} href={link.href} className="whitespace-nowrap py-3 text-sand/80 transition-colors hover:text-accent">
               {link.label}
             </Link>
           ))}

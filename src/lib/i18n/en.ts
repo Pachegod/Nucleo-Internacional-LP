@@ -2,9 +2,9 @@ import type { Dictionary } from "./pt";
 
 export const en: Dictionary = {
   meta: {
-    title: "Núcleo Internacional — Polaris COC Santa Catarina",
+    title: "Núcleo Internacional — Institutional Partnerships",
     description:
-      "Global education, dual diploma and international admissions counseling for Colégio COC students in Santa Catarina, Brazil.",
+      "Become a Núcleo Internacional partner: connect your high school, university, language school or academy with Brazilian students prepared from middle school onwards across the COC school network.",
   },
 
   langSwitcher: {
@@ -17,155 +17,260 @@ export const en: Dictionary = {
   header: {
     navLabel: "Sections",
     nav: {
-      trajetoria: "Pathway",
-      solucoes: "Programs",
-      summer: "Summer Camps",
-      parceiros: "Partners",
+      "quem-somos": "About us",
+      trajetoria: "How it works",
+      solucoes: "Partnerships",
+      summer: "Programs",
+      parceiros: "Network",
       agenda: "Events",
     },
     login: "Log in",
-    loginAria: "Staff log in",
+    loginAria: "Staff and partner log in",
     openMenu: "Open menu",
     closeMenu: "Close menu",
   },
 
   footer: {
-    tagline: "From school to the world",
+    tagline: "From Brazilian schools to the world",
     description:
-      "Global education, dual diploma and international admissions counseling — Colégio COC Santa Catarina.",
+      "Institutional partnerships between the COC school network and educational institutions worldwide — high schools, universities, language schools and academies.",
     nucleo: "Núcleo",
     contact: "Contact",
     networks: "Social",
     whatsapp: "WhatsApp",
     email: "Email",
-    enroll: "Apply now",
-    staffLogin: "Staff log in",
+    enroll: "Become a partner",
+    staffLogin: "Staff & partner log in",
     legal: "Grupo Nota Máxima · COC Santa Catarina Network",
   },
 
   cta: {
-    visit: "Schedule a visit",
-    enroll: "Apply now",
+    visit: "Become a partner institution",
+    enroll: "Become a partner",
     meeting: "Book a meeting",
     whatsapp: "Chat on WhatsApp",
-    pricing: "Ask about tuition",
-    summerSpots: "Ask about available spots",
-    line: "Enrollment is open — talk to the Núcleo before spots run out.",
-    bandLabel: "Enrollment open",
+    pricing: "See the model",
+    summerSpots: "Host a group",
+    line: "New partnerships open for the next intake — talk to the Núcleo.",
+    bandLabel: "Partnerships open",
   },
 
   hero: {
-    kicker: "International Center · Colégio COC",
-    titleA: "A global education,",
-    titleAccent: "from the early years",
-    titleB: "of school life.",
+    kicker: "Núcleo Internacional · Institutional Partnerships",
+    titleA: "Your institution,",
+    titleAccent: "the next stop",
+    titleB: "for global students.",
     lead:
-      "From middle school through high school, we build a real international pathway — the American Junior High certification, a Brazil/USA dual diploma and English immersion from an early age. For students already looking ahead, we also guide admissions to universities abroad.",
-    secondary: "Explore the program",
+      "Núcleo Internacional prepares Brazilian students from middle school onwards — English, an international curriculum, a dual diploma and career planning. We are now opening our network to new partner institutions: high schools, universities, language schools and academies ready to welcome these students, fully prepared and supported.",
+    secondary: "See how it works",
     proof: [
-      "English",
-      "Global Competencies",
-      "International Experiences",
-      "Planning",
-      "Life Project",
-      "Scholarships",
+      "High Schools",
+      "Boarding Schools",
+      "Universities",
+      "Language Schools",
+      "Academies",
+      "Summer Programs",
     ],
     globeAlt: "Planet Earth in space, with the Polaris star shining above",
     polaris: "Polaris · the guiding star",
   },
 
   pillars: {
-    label: "Program pillars",
+    label: "What the partnership delivers",
     items: [
       {
-        title: "International Education",
-        items: ["Dual Diploma", "Certifications", "International Curriculum", "Junior High", "High School"],
+        title: "Qualified Students",
+        items: ["Academic profile", "Assessed English", "Clear goals", "Aligned budget", "Engaged families"],
       },
       {
-        title: "Student Development",
-        items: ["Planning", "Extracurriculars", "Summer Camps", "Mentoring"],
+        title: "Platform & Training",
+        items: ["Institutional Match", "Student CRM", "Staff training", "Recruitment materials", "Dedicated coordination"],
       },
       {
-        title: "University Abroad",
-        items: ["Admissions", "Essays", "SAT, TOEFL, IELTS", "Applications", "Scholarships"],
+        title: "New Enrollments",
+        items: ["New revenue stream", "International diversity", "Brazilian market", "Joint programs"],
       },
     ],
   },
 
+  about: {
+    kicker: "About us",
+    title: "Before the partnership, introductions.",
+    lead:
+      "A good partnership starts with knowing who is on the other side. From a national school system to the Núcleo team, this is the path that brings each student to your institution.",
+    pending: "to be confirmed",
+    national: {
+      tag: "01 · National network",
+      title: "COC — a tradition in education since 1963",
+      text:
+        "Founded in Ribeirão Preto, São Paulo, COC is an education platform with more than 60 years of history — its own methodology, learning materials, assessments and bilingual curriculum, used by schools across Brazil.",
+      stats: ["Partner schools in 24 states and the Federal District", "Students in the network", "Students in the Be bilingual curriculum", "Pass rate in international exams"],
+      values: ["500+", "160k+", "70k+", "95%"],
+    },
+    regional: {
+      tag: "02 · Santa Catarina",
+      title: "COC Santa Catarina — Grupo Nota Máxima",
+      text:
+        "Since 1999, Grupo Nota Máxima has been building COC in the state of Santa Catarina, in southern Brazil: today 10 schools in 6 cities, from the Itajaí Valley and the highlands to the coast. A network known for results, with students admitted to more than 70 universities in Brazil and abroad.",
+      stats: ["Cities", "Schools", "Since", "Universities with admitted students"],
+      unitsSuffix: "schools",
+      timelineTitle: "Our journey in Santa Catarina",
+      timeline: [
+        { year: "1999", text: "First school in Rio do Sul" },
+        { year: "2003", text: "Arrival in Lages" },
+        { year: "2012", text: "Joining the COC system" },
+        { year: "2017", text: "Balneário Camboriú" },
+        { year: "2018", text: "Blumenau and Aletech — the group's startup and COC Online, its online learning platform" },
+        { year: "2019", text: "New building in Lages and new schools in Rio do Sul and Balneário Camboriú" },
+        { year: "2021", text: "Balneário Camboriú — Campus 2 opens" },
+        { year: "2023", text: "Balneário Camboriú — Campus 3" },
+        { year: "2024", text: "New school in Lages and a countryside campus" },
+        { year: "2025", text: "COC Itajaí" },
+        { year: "2026", text: "COC Porto Belo" },
+      ],
+      expansion: {
+        kicker: "What's next",
+        title: "The next chapter is already under construction.",
+        lead: "The network keeps growing — and it grows with the world in view.",
+        items: [
+          {
+            name: "COC Colinas Global School",
+            place: "Balneário Camboriú",
+            detail:
+              "A bilingual school of about 8,000 m² in a planned neighborhood — designed from day one for an international education.",
+          },
+          {
+            name: "Early Childhood",
+            place: "Balneário Camboriú",
+            detail: "A new campus dedicated to the early years: the global pathway starting even sooner.",
+          },
+        ],
+      },
+      mapTitle: "Map of COC schools in Santa Catarina",
+      mapCaption: "COC schools in Santa Catarina · illustrative map",
+    },
+    nucleo: {
+      tag: "03 · Núcleo Polaris",
+      title: "How the Núcleo began",
+      text:
+        "The world has changed — and academic opportunities no longer have borders. Leading universities now look for students with strong English, international experience, initiative and leadership, far beyond good grades. The International Center was born inside COC Santa Catarina to prepare students for that reality from the early school years, supporting each of them along the entire international journey.",
+      frontsTitle: "Two tracks that move together",
+      fronts: [
+        {
+          name: "Without mobility · the world inside the school",
+          detail:
+            "Bilingual curriculum, dual diploma, proficiency exam preparation and classes with experts from international institutions — without leaving Brazil.",
+        },
+        {
+          name: "With mobility · the world beyond the school",
+          detail:
+            "Short programs and summer camps, a High School Experience abroad and applications to international universities, with support before, during and after.",
+        },
+      ],
+      partnerNote:
+        "Built with academic partners such as Instituto Cultural, which trained and certified the Núcleo team to multiply the methodology across the network's schools — and in new partner institutions.",
+    },
+    counseling: {
+      tag: "04 · Counseling",
+      title: "International Counseling",
+      approvalsTitle: "International admissions of students from our network",
+      text:
+        "Counseling is the heart of the Núcleo: one-on-one guidance for each student and family, from middle school to university, that turns interest into a strong application — and into a student who arrives at your institution ready.",
+      items: [
+        "Academic planning from middle school",
+        "Extracurriculars, mentoring and life planning",
+        "SAT, TOEFL and IELTS preparation",
+        "Essays, interviews and applications",
+        "Scholarship search and financial guidance for families",
+        "Support all the way to departure",
+      ],
+    },
+  },
+
   abertura: {
     alt: "Students walking out through the gate of a university campus",
-    figLabel: "Fig. 01 — Opening",
-    caption: "The next step starts at school",
+    figLabel: "Fig. 01 — Our cities",
+    carouselLabel: "Cities with COC schools in Santa Catarina",
+    prev: "Previous city",
+    next: "Next city",
+    goTo: "Go to",
+    pause: "Pause",
+    play: "Play",
+    photoBy: "Photo:",
+    caption: "From Brazilian schools to your institution",
   },
 
   trajetoria: {
-    kicker: "The pathway",
-    title: "One continuous path — from 6th grade to an international diploma.",
+    kicker: "How it works",
+    title: "From the first call to an enrolled student.",
     lead:
-      "International education doesn't start in high school. It is built year after year, within the COC school routine, until students reach their final years with a dual diploma and — if they wish — applications to universities abroad.",
+      "This is not a contact list. Your institution joins the Núcleo platform, our team gets to know your programs in depth and starts referring — and preparing — the students who truly match your profile.",
     imageAlt: "Graduates throwing their caps in the air",
     steps: [
       {
-        phase: "Middle School",
-        label: "Grades 6 to 9",
-        detail: "Early English immersion and the foundations of the international curriculum, built into the COC routine.",
+        phase: "Discovery",
+        label: "First conversation",
+        detail: "We learn your programs, admission criteria, tuition ranges and the student profile you are looking for.",
       },
       {
-        phase: "Junior High Certification",
-        label: "American certification",
-        detail: "A U.S. Junior High certification taken alongside Brazilian middle school.",
+        phase: "Platform",
+        label: "Institutional Match",
+        detail: "Your institution joins the platform's partner base and is shown to students with a compatible profile.",
       },
       {
-        phase: "High School",
-        label: "Grades 10 to 12",
-        detail: "Brazil/USA dual diploma: an American High School diploma earned alongside the COC diploma.",
+        phase: "Training",
+        label: "Team & materials",
+        detail: "We train the Núcleo coordinators on your institution and co-create live sessions, events and recruitment materials.",
       },
       {
-        phase: "Next step",
-        label: "University abroad",
-        detail: "For students aiming abroad, full guidance on admissions to international universities.",
+        phase: "Enrollment",
+        label: "Student ready",
+        detail: "We refer prepared students and support each family all the way to departure — a new source of enrollments and revenue.",
       },
     ],
   },
 
   solutions: {
-    kicker: "Three strategic programs",
-    title: "Every student has a path — we don't guess, we plan.",
+    kicker: "Three partnership tracks",
+    title: "A model for every kind of institution.",
     lead:
-      "Based on the student's academic profile, school stage and family goals, our team recommends which of the three programs is the best fit for each student.",
+      "From middle school to university, the Núcleo supports students along the entire pathway — and each stage opens a different partnership track for your institution.",
     items: {
       "dupla-diplomacao": {
-        name: "International Dual Diploma",
-        tagline: "An American High School diploma alongside COC.",
-        alt: "Students working together on laptops in a classroom",
+        name: "High Schools & Boarding Schools",
+        tagline:
+          "Dual diploma, Junior High and High School programs for students already following an international curriculum within the network.",
+        alt: "Students in a classroom working together on laptops",
       },
       "high-school": {
-        name: "High School Counseling",
-        tagline: "Planning for middle school and high school.",
+        name: "Language Schools & Academies",
+        tagline:
+          "Language courses, certifications and sports or arts programs that complement each student's education.",
         alt: "Two students planning their studies with a laptop and a book",
       },
       college: {
-        name: "College Counseling",
-        tagline: "Complete preparation for admission to universities abroad.",
+        name: "Universities & Colleges",
+        tagline:
+          "Applicants who planned early, with tests (SAT, TOEFL, IELTS), essays and applications guided by our team.",
         alt: "Students climbing the steps of a university, seen through the campus gate",
       },
     },
   },
 
   summer: {
-    kicker: "Summer Camps",
-    title: "In the summer, the international pathway comes to life.",
+    kicker: "Short-term programs",
+    title: "Host Núcleo groups at your institution.",
     description:
-      "During school breaks, Núcleo students join summer camps abroad — weeks of English immersion, campus life and local culture that accelerate everything else in their education.",
+      "Summer camps, holiday courses and short immersions are the gateway to an international pathway. Your institution welcomes groups of Brazilian students already organized by the Núcleo — and gets to know the students who may return for longer programs.",
     points: [
-      "English immersion in a fully native-speaking environment",
-      "A taste of campus life and the routine of an international student",
-      "Groups accompanied by the Núcleo coordination team",
-      "Limited spots each season",
+      "Groups accompanied by Núcleo coordinators",
+      "Paperwork, logistics and families handled by us",
+      "Programs designed together with your team",
+      "A showcase for your long-term programs",
     ],
     images: [
       "A group of students taking a selfie on a street in an American city",
-      "Students talking on the steps of a campus",
+      "Students chatting on the steps of a campus",
       "A group of teenagers gathered on a campus lawn",
     ],
     caption: "Summer season · Núcleo groups",
@@ -174,25 +279,25 @@ export const en: Dictionary = {
   video: {
     kicker: "Video",
     title: "The Núcleo in motion",
-    lead: "Get a closer look at life at the Núcleo.",
-    pieces: ["Family testimonial", "Bilingual program tour", "Certification ceremony"],
-    posterAlt: "Students studying together with a laptop outdoors",
+    lead: "Meet the team that will introduce your institution to Brazilian families.",
+    pieces: ["A family's testimonial", "Bilingual program tour", "Certification ceremony"],
+    posterAlt: "Students studying together outdoors with a laptop",
     play: "Watch the institutional video",
     iframeTitle: "Institutional video",
   },
 
   partners: {
-    kicker: "Partner ecosystem",
-    title: "Every student connected to the right partner for their destination.",
-    network: "Also in our network",
+    kicker: "Partner network",
+    title: "Your institution alongside those already in the network.",
+    network: "Also in the network",
     items: {
       "instituto-cultural": {
-        focus: "Focus: United States",
+        focus: "Pathway partner: United States",
         brands: "EducationUSA · Griggs",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
       },
       worlded: {
-        focus: "Focus: other international destinations",
+        focus: "Pathway partner: other international destinations",
         brands: "Programs across different countries and education systems",
         alt: "WorldEd School",
       },
@@ -208,12 +313,12 @@ export const en: Dictionary = {
 
   agenda: {
     kicker: "Events",
-    title: "Upcoming events",
+    title: "Where your institution shows up",
     events: [
+      "Live sessions with partner institutions",
+      "School visits and presentations",
       "Parents Meeting",
-      "Opening Ceremony",
-      "Community Service",
-      "Workshops and Academic Meetings",
+      "Workshops with coordinators and families",
       "Annual Certification Ceremony",
     ],
     instagramLatest: "Latest on Instagram",
@@ -221,8 +326,8 @@ export const en: Dictionary = {
     posts: [
       {
         tag: "Live · Nov 11",
-        title: "Studying in the U.S. with Wilbraham & Monson Academy",
-        alt: "Live: the experience of studying in the U.S. with Wilbraham & Monson Academy",
+        title: "Studying in the US with Wilbraham & Monson Academy",
+        alt: "Live session: what it's like to study in the US with Wilbraham & Monson Academy",
       },
       {
         tag: "Training · Nov 6",
@@ -231,7 +336,7 @@ export const en: Dictionary = {
       },
       {
         tag: "Free guide",
-        title: "Going to study abroad? Get ready for the interview",
+        title: "Studying abroad? Get ready for the interview",
         alt: "Free guide: get ready for your admissions interview",
       },
     ],
@@ -239,43 +344,43 @@ export const en: Dictionary = {
 
   inscricao: {
     kicker: "Next step",
-    title: "Start this student's international pathway.",
+    title: "Let's build this partnership.",
     lead:
-      "Leave your details and the Núcleo team will get back to you on WhatsApp to schedule a visit, answer questions about the dual diploma and summer camps, and show which program fits the student's school stage.",
-    talkNow: "Prefer to talk now?",
+      "Share your institution's details and the Núcleo team will reach out to book a meeting and walk you through the network, the platform and the partnership model that fits you best.",
+    talkNow: "Rather talk right now?",
   },
 
   form: {
-    ariaLabel: "Application form",
-    responsavel: "Parent or guardian's name *",
-    aluno: "Student's name *",
-    serie: "Grade the student will attend",
-    unidade: "School / city",
-    unidadePlaceholder: "e.g. Balneário Camboriú, SC",
+    ariaLabel: "Partnership form",
+    contato: "Your name *",
+    cargo: "Role",
+    cargoPlaceholder: "E.g. Director of Admissions",
+    instituicao: "Institution *",
+    tipo: "Type of institution",
+    local: "Country / city",
+    localPlaceholder: "E.g. Boston, USA",
     email: "Email *",
-    whatsapp: "WhatsApp *",
+    whatsapp: "WhatsApp / phone *",
     whatsappPlaceholder: "+1 555 000 0000",
-    error: "We couldn't send your details right now. Please try again.",
+    error: "We couldn't send it right now. Please try again.",
     sending: "Sending…",
     submit: "Send and chat on WhatsApp",
-    note: "When you submit, a WhatsApp chat with the Núcleo team will open.",
-    serieOptions: [
-      "6th grade",
-      "7th grade",
-      "8th grade",
-      "9th grade",
-      "10th grade (1st year of high school)",
-      "11th grade (2nd year of high school)",
-      "12th grade (3rd year of high school)",
-      "Already finished high school",
+    note: "Submitting opens a WhatsApp chat with the Núcleo partnerships team.",
+    tipoOptions: [
+      "High School / Boarding School",
+      "University / College",
+      "Language school",
+      "Academy (sports, arts)",
+      "Summer camp / short-term program",
+      "Other",
     ],
   },
 
   whatsappMessage: {
-    base: "Hello! I found the Núcleo Internacional page and would like to learn more about the international education program (from middle school through high school).",
-    responsavel: "Parent/guardian",
-    aluno: "Student",
-    unidade: "School/city",
+    base: "Hello! I found the Núcleo Internacional partnerships page and would like to talk about becoming a partner institution.",
+    contato: "Contact",
+    instituicao: "Institution",
+    local: "Country/city",
     email: "Email",
   },
 };

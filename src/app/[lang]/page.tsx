@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { SOLUTIONS, PARTNERS, PARTNER_NETWORK, INSTAGRAM_POSTS } from "@/lib/content";
+import { SOLUTIONS, PARTNERS, PARTNER_NETWORK, INSTAGRAM_POSTS, ABOUT_STATS, COC_SC_UNITS, INTERNATIONAL_APPROVALS } from "@/lib/content";
+import { UnitsConstellation } from "@/components/site/UnitsConstellation";
+import { CityCarousel } from "@/components/site/CityCarousel";
 import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from "@/lib/config";
 import { MediaFrame } from "@/components/site/MediaFrame";
 import { VideoEmbed } from "@/components/site/VideoEmbed";
@@ -12,8 +14,6 @@ import { InstagramIcon } from "@/components/site/icons";
 import { getLpContent, getImage, getVideo, parseVideoEmbed } from "@/lib/cms";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 
-const ABERTURA_SRC = "/media/abertura.jpg";
-
 // Classes compartilhadas
 const WRAP = "mx-auto max-w-[1240px] px-5 sm:px-10 lg:px-14";
 const SECTION_Y = "py-16 sm:py-24 lg:py-28";
@@ -22,13 +22,48 @@ const H2 = "font-display text-[44px] leading-[0.95] sm:text-[56px] lg:text-[68px
 const LEAD = "text-base leading-[1.75]";
 const NUM = "font-display leading-none";
 
+/** Grade de números da seção "Quem somos"; `null` aparece como "—" destacado (dado a confirmar). */
+function StatGrid({
+  values,
+  labels,
+  pending,
+  dark = false,
+}: {
+  values: (string | null)[];
+  labels: string[];
+  pending: string;
+  dark?: boolean;
+}) {
+  return (
+    <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-[18px] border border-night/10 bg-night/10">
+      {labels.map((label, i) => {
+        const value = values[i];
+        return (
+          <div key={label} className={`px-5 py-6 ${dark ? "bg-navy" : "bg-white"}`}>
+            <dt
+              className={`text-[11px] font-semibold uppercase tracking-[0.14em] ${dark ? "text-white/60" : "text-night/55"}`}
+            >
+              {label}
+            </dt>
+            <dd
+              title={value ? undefined : pending}
+              className={`${NUM} mt-2 text-[48px] ${value ? (dark ? "text-accent" : "text-accent-deep") : "text-night/25"}`}
+            >
+              {value ?? "—"}
+            </dd>
+          </div>
+        );
+      })}
+    </dl>
+  );
+}
+
 export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const t = getDictionary(lang);
 
   const items = await getLpContent();
-  const aberturaImage = getImage(items, "hero", lang, t.abertura.alt) ?? { src: ABERTURA_SRC, alt: t.abertura.alt };
   const heroVideoUrl = getVideo(items, "hero-video");
   const heroVideoEmbed = heroVideoUrl ? parseVideoEmbed(heroVideoUrl) : undefined;
 
@@ -135,24 +170,184 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
 
-      {/* Imagem de abertura */}
-      <figure className="bg-night">
-        <MediaFrame
-          src={aberturaImage.src}
-          alt={aberturaImage.alt}
-          height="clamp(280px, 38vw, 540px)"
-          focus="center 55%"
-          sizes="100vw"
-        />
-        <figcaption
-          className={`${WRAP} flex flex-wrap justify-between gap-x-6 gap-y-2 py-3.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-sand/55`}
-        >
-          <span>{t.abertura.figLabel}</span>
-          <span>{t.abertura.caption}</span>
-        </figcaption>
-      </figure>
+      {/* Quem somos — de cima para baixo: COC Nacional → COC SC → Núcleo Polaris → Counseling */}
+      <section id="quem-somos" className="scroll-mt-20 bg-cream text-night">
+        <div className={`${WRAP} ${SECTION_Y}`}>
+          <p className={`${KICKER} text-accent-deep`}>{t.about.kicker}</p>
+          <h2 className={`mt-3.5 max-w-[820px] ${H2}`}>{t.about.title}</h2>
+          <p className={`mt-5 max-w-[640px] ${LEAD} text-night/70`}>{t.about.lead}</p>
 
-      {/* Trajetória — Fundamental II ao Ensino Médio */}
+          {/* 01 · COC Nacional */}
+          <div className="mt-14 grid items-start gap-8 border-t border-night/10 pt-10 md:grid-cols-2">
+            <div>
+              <p className={`${KICKER} text-accent-deep`}>{t.about.national.tag}</p>
+              <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">
+                {t.about.national.title}
+              </h3>
+              <p className={`mt-4 max-w-[520px] ${LEAD} text-night/70`}>{t.about.national.text}</p>
+            </div>
+            <StatGrid values={t.about.national.values} labels={t.about.national.stats} pending={t.about.pending} />
+          </div>
+
+          {/* 02 · COC Santa Catarina */}
+          <div className="mt-12 grid items-start gap-8 border-t border-night/10 pt-10 md:grid-cols-2">
+            <div>
+              <p className={`${KICKER} text-accent-deep`}>{t.about.regional.tag}</p>
+              <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">
+                {t.about.regional.title}
+              </h3>
+              <p className={`mt-4 max-w-[520px] ${LEAD} text-night/70`}>{t.about.regional.text}</p>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {COC_SC_UNITS.map((u) => (
+                  <li
+                    key={u.city}
+                    className="rounded-full border border-night/15 bg-white px-3.5 py-1.5 text-xs font-semibold text-navy"
+                  >
+                    COC {u.city}
+                    {u.units > 1 && (
+                      <span className="ml-1.5 text-accent-deep">· {u.units} {t.about.regional.unitsSuffix}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <StatGrid values={ABOUT_STATS.regional} labels={t.about.regional.stats} pending={t.about.pending} />
+              </div>
+            </div>
+            <UnitsConstellation title={t.about.regional.mapTitle} caption={t.about.regional.mapCaption} />
+          </div>
+
+          {/* Linha do tempo do grupo em SC */}
+          <div className="mt-10">
+            <p className={`${KICKER} text-night/55`}>{t.about.regional.timelineTitle}</p>
+            <ol className="mt-5 grid gap-px overflow-hidden rounded-[18px] border border-night/10 bg-night/10 sm:grid-cols-3 lg:grid-cols-4">
+              {t.about.regional.timeline.map((step) => (
+                <li key={step.year} className="bg-white px-5 py-5">
+                  <p className={`${NUM} text-[32px] text-accent-deep`}>{step.year}</p>
+                  <p className="mt-1.5 text-sm leading-snug text-night/75">{step.text}</p>
+                </li>
+              ))}
+              {/* 12ª célula: fecha a grade (3 e 4 colunas) e aponta para os próximos passos */}
+              <li className="flex items-end bg-navy px-5 py-5">
+                <p className={`${KICKER} flex items-center gap-2 text-accent`}>
+                  {t.about.regional.expansion.kicker}
+                  <span aria-hidden="true" className="text-base">↓</span>
+                </p>
+              </li>
+            </ol>
+          </div>
+
+          {/* Próximos passos — expansão da rede */}
+          <div
+            className="relative mt-6 overflow-hidden rounded-[20px] bg-deep p-7 text-white sm:p-10"
+            style={{
+              backgroundImage:
+                "radial-gradient(ellipse 55% 90% at 100% 0%, rgba(194,160,104,0.22), rgba(5,7,13,0) 65%)",
+            }}
+          >
+            <p className={`${KICKER} text-accent`}>{t.about.regional.expansion.kicker}</p>
+            <h4 className="mt-3 max-w-[720px] font-display text-[40px] leading-[0.95] sm:text-[56px]">
+              {t.about.regional.expansion.title}
+            </h4>
+            <p className="mt-4 max-w-[560px] text-[15px] leading-relaxed text-sand/70">
+              {t.about.regional.expansion.lead}
+            </p>
+            <ul className="mt-8 grid gap-4 md:grid-cols-2">
+              {t.about.regional.expansion.items.map((item, i) => (
+                <li key={item.name} className="rounded-2xl border border-accent/30 bg-white/[0.04] p-6">
+                  <span className={`${NUM} text-[44px] text-accent`}>0{i + 1}</span>
+                  <h5 className="mt-3 text-xl font-bold leading-tight">{item.name}</h5>
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-sand/55">
+                    {item.place}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-sand/80">{item.detail}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 03 · Núcleo Polaris */}
+          <div className="mt-12 grid items-start gap-8 border-t border-night/10 pt-10 md:grid-cols-2">
+            <div>
+              <p className={`${KICKER} text-accent-deep`}>{t.about.nucleo.tag}</p>
+              <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">
+                {t.about.nucleo.title}
+              </h3>
+              <p className={`mt-4 max-w-[560px] ${LEAD} text-night/70`}>{t.about.nucleo.text}</p>
+              <p className="mt-6 max-w-[560px] border-l-2 border-accent-deep pl-4 text-sm leading-relaxed text-night/75">
+                {t.about.nucleo.partnerNote}
+              </p>
+            </div>
+            <div>
+              <p className={`${KICKER} text-night/55`}>{t.about.nucleo.frontsTitle}</p>
+              <ul className="mt-4 grid gap-3">
+                {t.about.nucleo.fronts.map((front, i) => (
+                  <li key={front.name} className="rounded-[18px] border border-night/10 bg-white p-6">
+                    <span className={`${NUM} text-[36px] text-accent-deep`}>0{i + 1}</span>
+                    <h4 className="mt-2 text-lg font-bold text-navy">{front.name}</h4>
+                    <p className="mt-2 text-sm leading-relaxed text-night/70">{front.detail}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* 04 · Counseling */}
+          <div className="mt-12 grid gap-8 rounded-[20px] bg-navy p-7 text-white sm:p-10 md:grid-cols-2">
+            <div>
+              <p className={`${KICKER} text-accent`}>{t.about.counseling.tag}</p>
+              <h3 className="mt-3 font-display text-[34px] leading-none sm:text-[40px]">
+                {t.about.counseling.title}
+              </h3>
+              <p className={`mt-4 ${LEAD} text-white/75`}>{t.about.counseling.text}</p>
+            </div>
+            <ul className="border-t border-white/15">
+              {t.about.counseling.items.map((item, i) => (
+                <li key={item} className="flex gap-4 border-b border-white/15 py-3.5 text-[15px] text-white/85">
+                  <span className="w-6 shrink-0 text-xs font-bold text-accent">0{i + 1}</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="border-t border-white/15 pt-6 md:col-span-2">
+              <p className={`${KICKER} text-accent`}>{t.about.counseling.approvalsTitle}</p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {INTERNATIONAL_APPROVALS.map((u) => (
+                  <li key={u} className="rounded-full border border-white/20 px-3.5 py-1.5 text-xs font-semibold text-white/85">
+                    {u}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Abertura — carrossel com as cidades das unidades (pontos turísticos e paisagens) */}
+      <CityCarousel
+        slides={COC_SC_UNITS.flatMap((u) => {
+          const unitsLabel = u.units > 1 ? `${u.units} ${t.about.regional.unitsSuffix}` : "";
+          // Até 2 fotos por cidade: CMS (cidade-<slug>, cidade-<slug>-2) vence a foto local.
+          const count = Math.max(u.photos.length, 1);
+          return Array.from({ length: count }, (_, i) => {
+            const local = u.photos[i];
+            const alt = `${local?.landmark ?? u.city} — ${u.city}, Santa Catarina`;
+            const cms = getImage(items, i === 0 ? `cidade-${u.slug}` : `cidade-${u.slug}-${i + 1}`, lang, alt);
+            return {
+              key: `${u.slug}-${i}`,
+              city: u.city,
+              landmark: cms ? "" : (local?.landmark ?? ""),
+              unitsLabel,
+              image: cms ?? (local ? { src: local.src, alt } : undefined),
+              // Crédito só vale para a foto local; foto do CMS é responsabilidade de quem subiu.
+              credit: cms ? undefined : local?.credit,
+            };
+          });
+        })}
+        labels={{ ...t.abertura }}
+      />
+
+      {/* Como funciona — etapas da parceria (âncora #trajetoria mantida) */}
       <section id="trajetoria" className="scroll-mt-20 bg-cream text-night">
         <div className={`${WRAP} ${SECTION_Y}`}>
           <div className="grid items-end gap-10 md:grid-cols-2">
@@ -202,7 +397,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       {/* CTA #2 — início-meio da rolagem */}
       <CtaBand line={t.cta.line} label={t.cta.enroll} ariaLabel={t.cta.bandLabel} />
 
-      {/* Soluções */}
+      {/* Frentes de parceria */}
       <section id="solucoes" className="scroll-mt-20 bg-night">
         <div className={`${WRAP} ${SECTION_Y}`}>
           <p className={`${KICKER} text-accent`}>{t.solutions.kicker}</p>
@@ -244,7 +439,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
 
-      {/* Summer Camps */}
+      {/* Programas de curta duração (summer) */}
       <section id="summer" className="scroll-mt-20 bg-navy">
         <div className={`${WRAP} ${SECTION_Y} grid items-center gap-12 md:grid-cols-2`}>
           <div>

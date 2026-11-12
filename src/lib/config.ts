@@ -31,23 +31,24 @@ export function whatsappLink(message: string, number: string = WHATSAPP_NUMBER) 
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }
 
-/** Mensagem padrão de interesse (no idioma da página), com os dados do formulário quando houver. */
+/** Mensagem padrão de interesse (no idioma da página), com os dados do formulário de parceria quando houver. */
 export function interestMessage(
   t: Dictionary["whatsappMessage"],
   fields?: {
-    responsavel?: string;
-    aluno?: string;
-    serie?: string;
-    unidade?: string;
+    contato?: string;
+    cargo?: string;
+    instituicao?: string;
+    tipo?: string;
+    local?: string;
     email?: string;
   }
 ) {
   if (!fields) return t.base;
 
   const linhas = [
-    fields.responsavel && `${t.responsavel}: ${fields.responsavel}`,
-    fields.aluno && `${t.aluno}: ${fields.aluno}${fields.serie ? ` — ${fields.serie}` : ""}`,
-    fields.unidade && `${t.unidade}: ${fields.unidade}`,
+    fields.contato && `${t.contato}: ${fields.contato}${fields.cargo ? ` — ${fields.cargo}` : ""}`,
+    fields.instituicao && `${t.instituicao}: ${fields.instituicao}${fields.tipo ? ` (${fields.tipo})` : ""}`,
+    fields.local && `${t.local}: ${fields.local}`,
     fields.email && `${t.email}: ${fields.email}`,
   ].filter(Boolean);
 

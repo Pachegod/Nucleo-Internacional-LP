@@ -2,9 +2,9 @@ import type { Dictionary } from "./pt";
 
 export const es: Dictionary = {
   meta: {
-    title: "Núcleo Internacional — Polaris COC Santa Catarina",
+    title: "Núcleo Internacional — Alianzas Institucionales",
     description:
-      "Formación global, doble titulación y asesoría de admisión internacional para alumnos del Colégio COC en Santa Catarina, Brasil.",
+      "Sea una institución aliada del Núcleo Internacional: conecte su high school, universidad, escuela de idiomas o academia con estudiantes brasileños preparados desde la secundaria en la red COC.",
   },
 
   langSwitcher: {
@@ -17,151 +17,256 @@ export const es: Dictionary = {
   header: {
     navLabel: "Secciones",
     nav: {
-      trajetoria: "Trayectoria",
-      solucoes: "Programas",
-      summer: "Summer Camps",
-      parceiros: "Socios",
+      "quem-somos": "Quiénes somos",
+      trajetoria: "Cómo funciona",
+      solucoes: "Alianzas",
+      summer: "Programas",
+      parceiros: "Red",
       agenda: "Agenda",
     },
     login: "Ingresar",
-    loginAria: "Ingresar al área del equipo",
+    loginAria: "Ingreso del equipo y de los aliados",
     openMenu: "Abrir menú",
     closeMenu: "Cerrar menú",
   },
 
   footer: {
-    tagline: "De la escuela al mundo",
+    tagline: "De la escuela brasileña al mundo",
     description:
-      "Formación global, doble titulación y asesoría de admisión internacional — Colégio COC Santa Catarina.",
+      "Alianzas institucionales entre la red COC e instituciones educativas de todo el mundo — high schools, universidades, escuelas de idiomas y academias.",
     nucleo: "Núcleo",
     contact: "Contacto",
     networks: "Redes",
     whatsapp: "WhatsApp",
-    email: "Correo electrónico",
-    enroll: "Inscríbete",
-    staffLogin: "Ingresar (equipo)",
+    email: "Correo",
+    enroll: "Sea aliada",
+    staffLogin: "Ingresar (equipo y aliados)",
     legal: "Grupo Nota Máxima · Red COC Santa Catarina",
   },
 
   cta: {
-    visit: "Agenda una visita",
-    enroll: "Inscríbete",
-    meeting: "Agenda una reunión",
+    visit: "Sea una institución aliada",
+    enroll: "Quiero ser aliada",
+    meeting: "Agende una reunión",
     whatsapp: "Hablar por WhatsApp",
-    pricing: "Consultar valores",
-    summerSpots: "Quiero saber de las plazas",
-    line: "Inscripciones abiertas — habla con el Núcleo antes de que se agoten las plazas.",
-    bandLabel: "Inscripciones abiertas",
+    pricing: "Conocer el modelo",
+    summerSpots: "Recibir un grupo",
+    line: "Nuevas alianzas abiertas para el próximo ciclo — hable con el Núcleo.",
+    bandLabel: "Alianzas abiertas",
   },
 
   hero: {
-    kicker: "Núcleo de Internacionalización · Colégio COC",
-    titleA: "Formación global,",
-    titleAccent: "desde los primeros años",
-    titleB: "de la vida escolar.",
+    kicker: "Núcleo Internacional · Alianzas Institucionales",
+    titleA: "Su institución,",
+    titleAccent: "la próxima parada",
+    titleB: "de estudiantes globales.",
     lead:
-      "Desde la secundaria básica hasta la preparatoria, construimos una trayectoria internacional real — certificación estadounidense Junior High, doble titulación Brasil/EE. UU. e inmersión en inglés desde temprano. Para quienes ya miran el siguiente paso, también orientamos la admisión en universidades en el exterior.",
-    secondary: "Conocer el programa",
+      "El Núcleo Internacional prepara a estudiantes brasileños desde la secundaria — inglés, currículo internacional, doble titulación y planificación de carrera. Ahora abrimos la red a nuevas instituciones aliadas: high schools, universidades, escuelas de idiomas y academias que quieren recibir a estos alumnos, preparados y acompañados.",
+    secondary: "Ver cómo funciona",
     proof: [
-      "Inglés",
-      "Competencias Globales",
-      "Experiencias Internacionales",
-      "Planificación",
-      "Proyecto de Vida",
-      "Becas",
+      "High Schools",
+      "Boarding Schools",
+      "Universidades",
+      "Escuelas de Idiomas",
+      "Academias",
+      "Summer Programs",
     ],
     globeAlt: "El planeta Tierra en el espacio, con la estrella Polaris brillando arriba",
     polaris: "Polaris · la estrella que guía",
   },
 
   pillars: {
-    label: "Pilares del programa",
+    label: "Lo que entrega la alianza",
     items: [
       {
-        title: "Formación Internacional",
-        items: ["Doble Titulación", "Certificaciones", "Currículo Internacional", "Junior High", "High School"],
+        title: "Estudiantes Calificados",
+        items: ["Perfil académico", "Inglés evaluado", "Objetivo definido", "Presupuesto alineado", "Familias comprometidas"],
       },
       {
-        title: "Desarrollo del Estudiante",
-        items: ["Planificación", "Actividades extracurriculares", "Summer Camps", "Mentorías"],
+        title: "Plataforma y Formación",
+        items: ["Match Institucional", "CRM de alumnos", "Capacitación", "Material de captación", "Coordinación dedicada"],
       },
       {
-        title: "Universidad Internacional",
-        items: ["Admisiones", "Ensayos", "SAT, TOEFL, IELTS", "Postulaciones", "Becas"],
+        title: "Nuevas Matrículas",
+        items: ["Nueva fuente de ingresos", "Diversidad internacional", "Mercado brasileño", "Programas conjuntos"],
       },
     ],
   },
 
+  about: {
+    kicker: "Quiénes somos",
+    title: "Antes de la alianza, las presentaciones.",
+    lead:
+      "Una buena alianza empieza por conocer a quien está del otro lado. Del sistema educativo nacional al equipo del Núcleo, este es el camino que lleva a cada estudiante hasta su institución.",
+    pending: "por confirmar",
+    national: {
+      tag: "01 · Red nacional",
+      title: "COC — tradición educativa desde 1963",
+      text:
+        "Fundado en Ribeirão Preto (São Paulo), el COC es una plataforma educativa con más de 60 años de trayectoria — metodología, material didáctico, evaluaciones y currículo bilingüe propios, presentes en escuelas de todo Brasil.",
+      stats: ["Escuelas asociadas en 24 estados y el DF", "Estudiantes en la red", "Estudiantes en el currículo bilingüe Be", "Aprobación en exámenes internacionales"],
+      values: ["500+", "160 mil+", "70 mil+", "95%"],
+    },
+    regional: {
+      tag: "02 · Santa Catarina",
+      title: "COC Santa Catarina — Grupo Nota Máxima",
+      text:
+        "Desde 1999 el Grupo Nota Máxima construye el COC en el estado de Santa Catarina, en el sur de Brasil: hoy son 10 sedes en 6 ciudades, del Valle del Itajaí y la sierra hasta el litoral. Una red reconocida por sus resultados, con alumnos aprobados en más de 70 universidades en Brasil y en el exterior.",
+      stats: ["Ciudades", "Sedes", "Desde", "Universidades con alumnos aprobados"],
+      unitsSuffix: "sedes",
+      timelineTitle: "Nuestra trayectoria en Santa Catarina",
+      timeline: [
+        { year: "1999", text: "Inicio en Rio do Sul" },
+        { year: "2003", text: "Llegada a Lages" },
+        { year: "2012", text: "Unificación en el sistema COC" },
+        { year: "2017", text: "Balneário Camboriú" },
+        { year: "2018", text: "Blumenau y Aletech — startup del grupo y plataforma de clases en línea COC Online" },
+        { year: "2019", text: "Construcción en Lages y nuevas sedes en Rio do Sul y Balneário Camboriú" },
+        { year: "2021", text: "Llegada de la Sede 2 de Balneário Camboriú" },
+        { year: "2023", text: "Balneário Camboriú — Sede 3" },
+        { year: "2024", text: "Nueva sede en Lages y escuela de campo" },
+        { year: "2025", text: "COC Itajaí" },
+        { year: "2026", text: "COC Porto Belo" },
+      ],
+      expansion: {
+        kicker: "Próximos pasos",
+        title: "El próximo capítulo ya está en obras.",
+        lead: "La red sigue creciendo — y crece mirando al mundo.",
+        items: [
+          {
+            name: "COC Colinas Global School",
+            place: "Balneário Camboriú",
+            detail:
+              "Una escuela bilingüe de cerca de 8 mil m², en un barrio planificado — pensada desde el proyecto para la formación internacional.",
+          },
+          {
+            name: "Educación Infantil",
+            place: "Balneário Camboriú",
+            detail: "Una nueva sede dedicada a la primera infancia: la trayectoria global empezando aún más temprano.",
+          },
+        ],
+      },
+      mapTitle: "Mapa de las sedes COC en Santa Catarina",
+      mapCaption: "Sedes COC en Santa Catarina · mapa ilustrativo",
+    },
+    nucleo: {
+      tag: "03 · Núcleo Polaris",
+      title: "Cómo nació el Núcleo",
+      text:
+        "El mundo cambió — y las oportunidades académicas dejaron de tener fronteras. Las mejores universidades pasaron a valorar a estudiantes con dominio del inglés, vivencias internacionales, protagonismo y liderazgo, mucho más allá de las buenas notas. El Núcleo de Internacionalización nace dentro del COC Santa Catarina para preparar a los alumnos para esa realidad desde los primeros años de la vida escolar, acompañando a cada uno en toda la trayectoria internacional.",
+      frontsTitle: "Dos frentes que avanzan juntos",
+      fronts: [
+        {
+          name: "Sin movilidad · el mundo dentro de la escuela",
+          detail:
+            "Currículo bilingüe, doble titulación, preparación para exámenes de dominio del idioma y clases con especialistas de instituciones internacionales — sin salir de Brasil.",
+        },
+        {
+          name: "Con movilidad · el mundo fuera de la escuela",
+          detail:
+            "Short programs y summer camps, High School Experience en el exterior y postulación a universidades internacionales, con acompañamiento antes, durante y después.",
+        },
+      ],
+      partnerNote:
+        "Construido con aliados académicos como el Instituto Cultural, que formó y certificó al equipo del Núcleo para multiplicar la metodología en las sedes de la red — y en nuevas instituciones aliadas.",
+    },
+    counseling: {
+      tag: "04 · Counseling",
+      title: "International Counseling",
+      approvalsTitle: "Admisiones internacionales de alumnos de la red",
+      text:
+        "El corazón del Núcleo es el counseling: un acompañamiento individual del estudiante y su familia, de la secundaria a la universidad, que convierte el interés en una postulación sólida — y en un alumno preparado para llegar a su institución.",
+      items: [
+        "Planificación académica desde la secundaria",
+        "Extracurriculares, mentorías y proyecto de vida",
+        "Preparación para SAT, TOEFL e IELTS",
+        "Essays, entrevistas y applications",
+        "Búsqueda de becas y orientación financiera a la familia",
+        "Acompañamiento hasta el viaje",
+      ],
+    },
+  },
+
   abertura: {
     alt: "Estudiantes saliendo por el portón de un campus universitario",
-    figLabel: "Fig. 01 — Apertura",
-    caption: "El siguiente paso empieza dentro de la escuela",
+    figLabel: "Fig. 01 — Nuestras ciudades",
+    carouselLabel: "Ciudades con sedes COC en Santa Catarina",
+    prev: "Ciudad anterior",
+    next: "Ciudad siguiente",
+    goTo: "Ir a",
+    pause: "Pausar",
+    play: "Reproducir",
+    photoBy: "Foto:",
+    caption: "De la escuela brasileña a su institución",
   },
 
   trajetoria: {
-    kicker: "La trayectoria",
-    title: "Un camino continuo — del 6.º año al diploma internacional.",
+    kicker: "Cómo funciona",
+    title: "De la primera conversación al alumno matriculado.",
     lead:
-      "La formación internacional no empieza en la preparatoria. Se construye año tras año, dentro de la rutina del COC, hasta que el alumno llega a la recta final con doble titulación y — si lo desea — postulación a universidades en el exterior.",
+      "La alianza no es una lista de contactos. Su institución entra en la plataforma del Núcleo, nuestro equipo conoce sus programas a fondo y empieza a recomendar — y preparar — a los estudiantes que realmente encajan con su perfil.",
     imageAlt: "Graduados lanzando sus birretes al aire",
     steps: [
       {
-        phase: "Secundaria básica",
-        label: "Del 6.º al 9.º año",
-        detail: "Inmersión en inglés desde temprano y la base del currículo internacional, integradas a la rutina del COC.",
+        phase: "Diagnóstico",
+        label: "Conversación inicial",
+        detail: "Entendemos sus programas, criterios de admisión, rangos de inversión y el perfil de alumno que busca.",
       },
       {
-        phase: "Certificación Junior High",
-        label: "Certificación estadounidense",
-        detail: "Certificación estadounidense de Junior High cursada en paralelo a la secundaria básica.",
+        phase: "Plataforma",
+        label: "Match Institucional",
+        detail: "Su institución entra en la base de aliados de la plataforma y aparece para los alumnos con perfil compatible.",
       },
       {
-        phase: "Preparatoria",
-        label: "1.º a 3.º año (Ensino Médio)",
-        detail: "Doble titulación Brasil/EE. UU.: el diploma de High School estadounidense sumado al del COC.",
+        phase: "Formación",
+        label: "Equipo y materiales",
+        detail: "Capacitamos a la coordinación del Núcleo sobre su institución y creamos juntos lives, eventos y material de captación.",
       },
       {
-        phase: "Siguiente paso",
-        label: "Universidad en el exterior",
-        detail: "Para quienes miran hacia fuera, orientación completa de admisión en universidades internacionales.",
+        phase: "Matrícula",
+        label: "Alumno listo",
+        detail: "Recomendamos estudiantes preparados y acompañamos a cada familia hasta el viaje — una nueva fuente de matrículas e ingresos.",
       },
     ],
   },
 
   solutions: {
-    kicker: "Tres soluciones estratégicas",
-    title: "Cada alumno tiene un camino — no adivinamos, lo planificamos.",
+    kicker: "Tres frentes de alianza",
+    title: "Un modelo para cada tipo de institución.",
     lead:
-      "A partir del perfil académico, del momento escolar y del objetivo de la familia, nuestro equipo indica cuál de las tres soluciones se adapta mejor a cada alumno.",
+      "De la secundaria a la universidad, el Núcleo acompaña al alumno en toda la trayectoria — y cada etapa abre un frente de alianza distinto para su institución.",
     items: {
       "dupla-diplomacao": {
-        name: "Doble Titulación Internacional",
-        tagline: "Diploma de High School estadounidense en paralelo al COC.",
-        alt: "Alumnos en el aula trabajando juntos en computadoras portátiles",
+        name: "High Schools y Boarding Schools",
+        tagline:
+          "Doble titulación, Junior High y programas de High School para alumnos que ya cursan el currículo internacional dentro de la red.",
+        alt: "Alumnos en un aula trabajando juntos en computadoras portátiles",
       },
       "high-school": {
-        name: "Asesoría High School",
-        tagline: "Planificación para la secundaria básica y la preparatoria.",
+        name: "Escuelas de Idiomas y Academias",
+        tagline:
+          "Cursos de idiomas, certificaciones y programas deportivos o artísticos que complementan la formación del estudiante.",
         alt: "Dos estudiantes planificando sus estudios con una computadora portátil y un libro",
       },
       college: {
-        name: "Asesoría College",
-        tagline: "Preparación completa para el ingreso a universidades en el exterior.",
+        name: "Universidades y Colleges",
+        tagline:
+          "Postulantes con planificación temprana, exámenes (SAT, TOEFL, IELTS), essays y applications orientados por nuestro equipo.",
         alt: "Estudiantes subiendo la escalinata de una universidad, vistos a través del portón del campus",
       },
     },
   },
 
   summer: {
-    kicker: "Summer Camps",
-    title: "En verano, la trayectoria internacional se hace realidad.",
+    kicker: "Programas de corta duración",
+    title: "Reciba grupos del Núcleo en su institución.",
     description:
-      "En las vacaciones, los alumnos del Núcleo participan en summer camps en el exterior — semanas de inmersión en inglés, vida de campus y cultura local que aceleran todo el resto de su formación.",
+      "Summer camps, cursos de vacaciones e inmersiones cortas son la puerta de entrada a la trayectoria internacional. Su institución recibe grupos de estudiantes brasileños ya organizados por el Núcleo — y conoce de cerca a los alumnos que pueden volver para programas más largos.",
     points: [
-      "Inmersión en inglés en un entorno 100 % nativo",
-      "Vivencia de campus y de la rutina de un estudiante internacional",
       "Grupos acompañados por la coordinación del Núcleo",
-      "Plazas limitadas por temporada",
+      "Documentación, logística y familias organizadas por nosotros",
+      "Programas diseñados junto con su equipo",
+      "Una vitrina para sus programas de larga duración",
     ],
     images: [
       "Grupo de estudiantes tomándose una selfie en una calle de una ciudad estadounidense",
@@ -174,25 +279,25 @@ export const es: Dictionary = {
   video: {
     kicker: "Video",
     title: "El Núcleo en movimiento",
-    lead: "Conoce de cerca la rutina del Núcleo.",
+    lead: "Conozca la estructura que presentará su institución a las familias brasileñas.",
     pieces: ["Testimonio de una familia", "Recorrido por el programa bilingüe", "Ceremonia de certificación"],
-    posterAlt: "Estudiantes estudiando juntos con una computadora portátil al aire libre",
+    posterAlt: "Estudiantes estudiando juntos al aire libre con una computadora portátil",
     play: "Ver el video institucional",
     iframeTitle: "Video institucional",
   },
 
   partners: {
-    kicker: "Ecosistema de socios",
-    title: "Cada estudiante conectado con el socio adecuado para su destino.",
+    kicker: "Red de aliados",
+    title: "Su institución junto a quienes ya forman parte de la red.",
     network: "También en la red",
     items: {
       "instituto-cultural": {
-        focus: "Prioridad: Estados Unidos",
+        focus: "Aliado de ruta: Estados Unidos",
         brands: "EducationUSA · Griggs",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
       },
       worlded: {
-        focus: "Prioridad: otros destinos internacionales",
+        focus: "Aliado de ruta: otros destinos internacionales",
         brands: "Programas en distintos países y sistemas educativos",
         alt: "WorldEd School",
       },
@@ -208,16 +313,16 @@ export const es: Dictionary = {
 
   agenda: {
     kicker: "Agenda",
-    title: "Próximos eventos",
+    title: "Dónde aparece su institución",
     events: [
+      "Lives con instituciones aliadas",
+      "Visitas y presentaciones en las sedes",
       "Parents Meeting",
-      "Ceremonia de Apertura",
-      "Community Service",
-      "Talleres y Encuentros Académicos",
+      "Talleres con coordinadores y familias",
       "Ceremonia Anual de Certificación",
     ],
     instagramLatest: "Lo último en Instagram",
-    follow: "Seguir a",
+    follow: "Seguir",
     posts: [
       {
         tag: "Live · 11/11",
@@ -226,56 +331,56 @@ export const es: Dictionary = {
       },
       {
         tag: "Entrenamiento · 06/11",
-        title: "Básquetbol con Andre White Sr. — COC Balneário Camboriú",
-        alt: "Entrenamiento especial de básquetbol con Andre White Sr.",
+        title: "Básquet con Andre White Sr. — COC Balneário Camboriú",
+        alt: "Entrenamiento especial de básquet con Andre White Sr.",
       },
       {
         tag: "Guía gratuita",
-        title: "¿Vas a estudiar fuera? Prepárate para la entrevista",
+        title: "¿Vas a estudiar afuera? Prepárate para la entrevista",
         alt: "Guía gratuita: prepárate para la entrevista de admisión",
       },
     ],
   },
 
   inscricao: {
-    kicker: "Siguiente paso",
-    title: "Empieza la trayectoria internacional de este alumno.",
+    kicker: "Próximo paso",
+    title: "Construyamos esta alianza.",
     lead:
-      "Deja tus datos y el equipo del Núcleo se pondrá en contacto por WhatsApp para agendar una visita, resolver dudas sobre la doble titulación y los summer camps, y mostrarte qué solución se adapta al momento escolar del alumno.",
-    talkNow: "¿Prefieres hablar ahora?",
+      "Deje los datos de su institución y el equipo del Núcleo retomará el contacto para agendar una reunión y presentar la red, la plataforma y el modelo de alianza que tiene sentido para ustedes.",
+    talkNow: "¿Prefiere hablar ahora?",
   },
 
   form: {
-    ariaLabel: "Formulario de inscripción",
-    responsavel: "Nombre del padre, madre o tutor *",
-    aluno: "Nombre del alumno(a) *",
-    serie: "Año que va a cursar",
-    unidade: "Escuela / ciudad",
-    unidadePlaceholder: "Ej.: Balneário Camboriú, SC",
-    email: "Correo electrónico *",
-    whatsapp: "WhatsApp *",
-    whatsappPlaceholder: "+54 9 11 0000-0000",
-    error: "No fue posible enviar ahora. Inténtalo de nuevo.",
+    ariaLabel: "Formulario de alianza",
+    contato: "Su nombre *",
+    cargo: "Cargo",
+    cargoPlaceholder: "Ej.: Director(a) de Admisiones",
+    instituicao: "Institución *",
+    tipo: "Tipo de institución",
+    local: "País / ciudad",
+    localPlaceholder: "Ej.: Madrid, España",
+    email: "Correo *",
+    whatsapp: "WhatsApp / teléfono *",
+    whatsappPlaceholder: "+34 600 000 000",
+    error: "No fue posible enviarlo ahora. Inténtelo de nuevo.",
     sending: "Enviando…",
     submit: "Enviar y hablar por WhatsApp",
-    note: "Al enviar, se abrirá una conversación por WhatsApp con el equipo del Núcleo.",
-    serieOptions: [
-      "6.º año",
-      "7.º año",
-      "8.º año",
-      "9.º año",
-      "1.º año de preparatoria (Ensino Médio)",
-      "2.º año de preparatoria (Ensino Médio)",
-      "3.º año de preparatoria (Ensino Médio)",
-      "Ya terminé la preparatoria",
+    note: "Al enviar, se abre una conversación por WhatsApp con el equipo de alianzas del Núcleo.",
+    tipoOptions: [
+      "High School / Boarding School",
+      "Universidad / College",
+      "Escuela de idiomas",
+      "Academia (deportes, artes)",
+      "Summer camp / corta duración",
+      "Otro",
     ],
   },
 
   whatsappMessage: {
-    base: "¡Hola! Llegué por la página del Núcleo Internacional y quiero saber más sobre el programa de formación internacional (desde la secundaria básica hasta la preparatoria).",
-    responsavel: "Responsable",
-    aluno: "Alumno(a)",
-    unidade: "Escuela/ciudad",
+    base: "¡Hola! Llegué por la página de alianzas del Núcleo Internacional y quiero conversar sobre convertir nuestra institución en aliada.",
+    contato: "Contacto",
+    instituicao: "Institución",
+    local: "País/ciudad",
     email: "Correo",
   },
 };

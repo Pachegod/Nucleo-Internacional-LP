@@ -8,22 +8,19 @@ import type { Dictionary } from "@/lib/i18n/pt";
 const inputClass =
   "min-h-12 w-full rounded-xl border border-night/20 bg-white px-3.5 text-[15px] text-night outline-none transition-colors focus:border-navy";
 
+/** Formulário B2B: quem preenche é a instituição interessada em ser parceira. */
 type Fields = {
-  responsavel: string;
-  aluno: string;
-  serie: string;
+  contato: string;
+  cargo: string;
+  instituicao: string;
+  tipo: string;
+  local: string;
   email: string;
   whatsapp: string;
-  unidade: string;
 };
 
-
 function Label({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="mb-2 block text-xs font-semibold text-navy">
-      {children}
-    </span>
-  );
+  return <span className="mb-2 block text-xs font-semibold text-navy">{children}</span>;
 }
 
 export function InscricaoForm({
@@ -36,12 +33,13 @@ export function InscricaoForm({
   message: Dictionary["whatsappMessage"];
 }) {
   const [fields, setFields] = useState<Fields>({
-    responsavel: "",
-    aluno: "",
-    serie: t.serieOptions[0],
+    contato: "",
+    cargo: "",
+    instituicao: "",
+    tipo: t.tipoOptions[0],
+    local: "",
     email: "",
     whatsapp: "",
-    unidade: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -51,8 +49,8 @@ export function InscricaoForm({
   }
 
   const missing =
-    !fields.responsavel.trim() ||
-    !fields.aluno.trim() ||
+    !fields.contato.trim() ||
+    !fields.instituicao.trim() ||
     !fields.email.trim() ||
     !fields.whatsapp.trim();
 
@@ -62,13 +60,12 @@ export function InscricaoForm({
     setStatus("sending");
     setErrorMsg("");
 
-    // Grava a inscrição (quando o banco está configurado) e, dê certo ou
-    // não, encaminha a família para o WhatsApp com a mensagem de interesse.
+    // Grava o contato (quando o banco está configurado) e, dê certo ou
+    // não, encaminha a instituição para o WhatsApp com a mensagem de interesse.
     try {
       await fetch("/api/inscricao", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // `lang` = idioma em que a família preencheu (o backend pode ignorar).
         body: JSON.stringify({ ...fields, lang }),
       });
     } catch {
@@ -77,10 +74,11 @@ export function InscricaoForm({
 
     window.location.href = whatsappLink(
       interestMessage(message, {
-        responsavel: fields.responsavel.trim(),
-        aluno: fields.aluno.trim(),
-        serie: fields.serie,
-        unidade: fields.unidade.trim(),
+        contato: fields.contato.trim(),
+        cargo: fields.cargo.trim(),
+        instituicao: fields.instituicao.trim(),
+        tipo: fields.tipo,
+        local: fields.local.trim(),
         email: fields.email.trim(),
       })
     );
@@ -92,47 +90,55 @@ export function InscricaoForm({
       aria-label={t.ariaLabel}
       className="grid gap-x-4 gap-y-[18px] rounded-3xl bg-cream p-6 text-night sm:grid-cols-2 sm:p-10"
     >
-      <label className="sm:col-span-1">
-        <Label>{t.responsavel}</Label>
+      <label>
+        <Label>{t.contato}</Label>
         <input
           className={inputClass}
-          value={fields.responsavel}
-          onChange={(e) => set("responsavel", e.target.value)}
+          value={fields.contato}
+          onChange={(e) => set("contato", e.target.value)}
           autoComplete="name"
         />
       </label>
-      <label className="sm:col-span-1">
-        <Label>{t.aluno}</Label>
+      <label>
+        <Label>{t.cargo}</Label>
         <input
           className={inputClass}
-          value={fields.aluno}
-          onChange={(e) => set("aluno", e.target.value)}
+          value={fields.cargo}
+          onChange={(e) => set("cargo", e.target.value)}
+          placeholder={t.cargoPlaceholder}
+          autoComplete="organization-title"
         />
       </label>
-      <label className="sm:col-span-1">
-        <Label>{t.serie}</Label>
-        <select
+      <label>
+        <Label>{t.instituicao}</Label>
+        <input
           className={inputClass}
-          value={fields.serie}
-          onChange={(e) => set("serie", e.target.value)}
-        >
-          {t.serieOptions.map((s) => (
+          value={fields.instituicao}
+          onChange={(e) => set("instituicao", e.target.value)}
+          autoComplete="organization"
+        />
+      </label>
+      <label>
+        <Label>{t.tipo}</Label>
+        <select className={inputClass} value={fields.tipo} onChange={(e) => set("tipo", e.target.value)}>
+          {t.tipoOptions.map((s) => (
             <option key={s} value={s}>
               {s}
             </option>
           ))}
         </select>
       </label>
-      <label className="sm:col-span-1">
-        <Label>{t.unidade}</Label>
+      <label className="sm:col-span-2">
+        <Label>{t.local}</Label>
         <input
           className={inputClass}
-          value={fields.unidade}
-          onChange={(e) => set("unidade", e.target.value)}
-          placeholder={t.unidadePlaceholder}
+          value={fields.local}
+          onChange={(e) => set("local", e.target.value)}
+          placeholder={t.localPlaceholder}
+          autoComplete="country-name"
         />
       </label>
-      <label className="sm:col-span-1">
+      <label>
         <Label>{t.email}</Label>
         <input
           type="email"
@@ -142,9 +148,10 @@ export function InscricaoForm({
           autoComplete="email"
         />
       </label>
-      <label className="sm:col-span-1">
+      <label>
         <Label>{t.whatsapp}</Label>
         <input
+          type="tel"
           className={inputClass}
           value={fields.whatsapp}
           onChange={(e) => set("whatsapp", e.target.value)}
@@ -167,9 +174,7 @@ export function InscricaoForm({
         >
           {status === "sending" ? t.sending : t.submit}
         </button>
-        <span className="text-xs leading-relaxed text-night/60">
-          {t.note}
-        </span>
+        <span className="text-xs leading-relaxed text-night/60">{t.note}</span>
       </div>
     </form>
   );
