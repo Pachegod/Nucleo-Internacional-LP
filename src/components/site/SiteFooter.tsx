@@ -37,6 +37,7 @@ export function SiteFooter({
 
         <div className="flex flex-col gap-2.5 text-sm">
           <span className={HEADING}>{f.nucleo}</span>
+          <Link href="#quem-somos" className={LINK}>{nav["quem-somos"]}</Link>
           <Link href="#trajetoria" className={LINK}>{nav.trajetoria}</Link>
           <Link href="#solucoes" className={LINK}>{nav.solucoes}</Link>
           <Link href="#summer" className={LINK}>{nav.summer}</Link>

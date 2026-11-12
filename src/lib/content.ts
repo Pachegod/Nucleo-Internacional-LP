@@ -53,3 +53,31 @@ export const INSTAGRAM_POSTS = [
   { image: { src: "/media/instagram/treinamento-andre-white.jpg" } },
   { image: { src: "/media/instagram/guia-entrevista.jpg" } },
 ];
+
+/**
+ * Seção "Quem somos" (de cima para baixo: COC Nacional → COC Santa Catarina
+ * → Núcleo Polaris → Counseling). Números ficam aqui por serem iguais em
+ * todos os idiomas; os rótulos ficam nos dicionários (mesma ordem).
+ * `null` = dado ainda não confirmado — a página mostra "—" destacado.
+ */
+export const ABOUT_STATS = {
+  // Fundação · escolas parceiras no Brasil · alunos na rede · estados
+  // 1963 (Ribeirão Preto/SP) e "mais de 500 escolas" vêm de fontes públicas — confirmar com o COC.
+  national: ["1963", "500+", null, null] as (string | null)[],
+  // Cidades · unidades · alunos · anos em SC
+  regional: ["6", null, null, null] as (string | null)[],
+};
+
+/**
+ * Unidades COC em Santa Catarina. `x`/`y` posicionam cada cidade no
+ * mapa-constelação (viewBox 520×270) — geografia aproximada, espaçada
+ * para leitura: interior à esquerda/baixo, litoral à direita.
+ */
+export const COC_SC_UNITS = [
+  { city: "Blumenau", x: 245, y: 92, label: "top" },
+  { city: "Itajaí", x: 345, y: 58, label: "top" },
+  { city: "Balneário Camboriú", x: 380, y: 118, label: "bottom" },
+  { city: "Porto Belo", x: 340, y: 192, label: "right" },
+  { city: "Rio do Sul", x: 150, y: 150, label: "bottom" },
+  { city: "Lages", x: 62, y: 222, label: "right" },
+] as const;

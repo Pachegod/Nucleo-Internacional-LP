@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { SOLUTIONS, PARTNERS, PARTNER_NETWORK, INSTAGRAM_POSTS } from "@/lib/content";
+import { SOLUTIONS, PARTNERS, PARTNER_NETWORK, INSTAGRAM_POSTS, ABOUT_STATS, COC_SC_UNITS } from "@/lib/content";
+import { UnitsConstellation } from "@/components/site/UnitsConstellation";
 import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from "@/lib/config";
 import { MediaFrame } from "@/components/site/MediaFrame";
 import { VideoEmbed } from "@/components/site/VideoEmbed";
@@ -21,6 +22,42 @@ const KICKER = "text-[11px] font-bold uppercase tracking-[0.2em]";
 const H2 = "font-display text-[44px] leading-[0.95] sm:text-[56px] lg:text-[68px]";
 const LEAD = "text-base leading-[1.75]";
 const NUM = "font-display leading-none";
+
+/** Grade de números da seção "Quem somos"; `null` aparece como "—" destacado (dado a confirmar). */
+function StatGrid({
+  values,
+  labels,
+  pending,
+  dark = false,
+}: {
+  values: (string | null)[];
+  labels: string[];
+  pending: string;
+  dark?: boolean;
+}) {
+  return (
+    <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-[18px] border border-night/10 bg-night/10">
+      {labels.map((label, i) => {
+        const value = values[i];
+        return (
+          <div key={label} className={`px-5 py-6 ${dark ? "bg-navy" : "bg-white"}`}>
+            <dt
+              className={`text-[11px] font-semibold uppercase tracking-[0.14em] ${dark ? "text-white/60" : "text-night/55"}`}
+            >
+              {label}
+            </dt>
+            <dd
+              title={value ? undefined : pending}
+              className={`${NUM} mt-2 text-[48px] ${value ? (dark ? "text-accent" : "text-accent-deep") : "text-night/25"}`}
+            >
+              {value ?? "—"}
+            </dd>
+          </div>
+        );
+      })}
+    </dl>
+  );
+}
 
 export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -132,6 +169,94 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
               </ul>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Quem somos — de cima para baixo: COC Nacional → COC SC → Núcleo Polaris → Counseling */}
+      <section id="quem-somos" className="scroll-mt-20 bg-cream text-night">
+        <div className={`${WRAP} ${SECTION_Y}`}>
+          <p className={`${KICKER} text-accent-deep`}>{t.about.kicker}</p>
+          <h2 className={`mt-3.5 max-w-[820px] ${H2}`}>{t.about.title}</h2>
+          <p className={`mt-5 max-w-[640px] ${LEAD} text-night/70`}>{t.about.lead}</p>
+
+          {/* 01 · COC Nacional */}
+          <div className="mt-14 grid items-start gap-8 border-t border-night/10 pt-10 md:grid-cols-2">
+            <div>
+              <p className={`${KICKER} text-accent-deep`}>{t.about.national.tag}</p>
+              <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">
+                {t.about.national.title}
+              </h3>
+              <p className={`mt-4 max-w-[520px] ${LEAD} text-night/70`}>{t.about.national.text}</p>
+            </div>
+            <StatGrid values={ABOUT_STATS.national} labels={t.about.national.stats} pending={t.about.pending} />
+          </div>
+
+          {/* 02 · COC Santa Catarina */}
+          <div className="mt-12 grid items-start gap-8 border-t border-night/10 pt-10 md:grid-cols-2">
+            <div>
+              <p className={`${KICKER} text-accent-deep`}>{t.about.regional.tag}</p>
+              <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">
+                {t.about.regional.title}
+              </h3>
+              <p className={`mt-4 max-w-[520px] ${LEAD} text-night/70`}>{t.about.regional.text}</p>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {COC_SC_UNITS.map((u) => (
+                  <li
+                    key={u.city}
+                    className="rounded-full border border-night/15 bg-white px-3.5 py-1.5 text-xs font-semibold text-navy"
+                  >
+                    COC {u.city}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <StatGrid values={ABOUT_STATS.regional} labels={t.about.regional.stats} pending={t.about.pending} />
+              </div>
+            </div>
+            <UnitsConstellation title={t.about.regional.mapTitle} caption={t.about.regional.mapCaption} />
+          </div>
+
+          {/* 03 · Núcleo Polaris */}
+          <div className="mt-12 grid items-start gap-8 border-t border-night/10 pt-10 md:grid-cols-2">
+            <div>
+              <p className={`${KICKER} text-accent-deep`}>{t.about.nucleo.tag}</p>
+              <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">
+                {t.about.nucleo.title}
+              </h3>
+              <p className={`mt-4 max-w-[520px] ${LEAD} text-night/70`}>{t.about.nucleo.text}</p>
+            </div>
+            <ol className="border-l-2 border-accent-deep/40 pl-6">
+              {t.about.nucleo.milestones.map((m, i) => (
+                <li key={i} className="relative pb-7 last:pb-0">
+                  <span
+                    aria-hidden="true"
+                    className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-cream bg-accent-deep"
+                  />
+                  <p className={`${NUM} text-[32px] text-accent-deep`}>{m.year}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-night/70">{m.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          {/* 04 · Counseling */}
+          <div className="mt-12 grid gap-8 rounded-[20px] bg-navy p-7 text-white sm:p-10 md:grid-cols-2">
+            <div>
+              <p className={`${KICKER} text-accent`}>{t.about.counseling.tag}</p>
+              <h3 className="mt-3 font-display text-[34px] leading-none sm:text-[40px]">
+                {t.about.counseling.title}
+              </h3>
+              <p className={`mt-4 ${LEAD} text-white/75`}>{t.about.counseling.text}</p>
+            </div>
+            <ul className="border-t border-white/15">
+              {t.about.counseling.items.map((item, i) => (
+                <li key={item} className="flex gap-4 border-b border-white/15 py-3.5 text-[15px] text-white/85">
+                  <span className="w-6 shrink-0 text-xs font-bold text-accent">0{i + 1}</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

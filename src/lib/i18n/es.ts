@@ -17,6 +17,7 @@ export const es: Dictionary = {
   header: {
     navLabel: "Secciones",
     nav: {
+      "quem-somos": "Quiénes somos",
       trajetoria: "Cómo funciona",
       solucoes: "Alianzas",
       summer: "Programas",
@@ -90,6 +91,55 @@ export const es: Dictionary = {
         items: ["Nueva fuente de ingresos", "Diversidad internacional", "Mercado brasileño", "Programas conjuntos"],
       },
     ],
+  },
+
+  about: {
+    kicker: "Quiénes somos",
+    title: "Antes de la alianza, las presentaciones.",
+    lead:
+      "Una buena alianza empieza por conocer a quien está del otro lado. Del sistema educativo nacional al equipo del Núcleo, este es el camino que lleva a cada estudiante hasta su institución.",
+    pending: "por confirmar",
+    national: {
+      tag: "01 · Red nacional",
+      title: "COC — tradición educativa desde 1963",
+      text:
+        "Fundado en Ribeirão Preto (São Paulo), el COC es una de las redes educativas más tradicionales de Brasil, con metodología, material didáctico y evaluaciones propios presentes en escuelas de todo el país.",
+      stats: ["Fundación", "Escuelas asociadas en Brasil", "Alumnos en la red", "Estados"],
+    },
+    regional: {
+      tag: "02 · Santa Catarina",
+      title: "COC Santa Catarina — Grupo Nota Máxima",
+      text:
+        "El Grupo Nota Máxima lleva el COC al estado de Santa Catarina, en el sur de Brasil, con sedes en el interior y en el litoral — del Valle del Itajaí y la sierra hasta la costa.",
+      stats: ["Ciudades", "Sedes", "Alumnos", "Años en el estado"],
+      mapTitle: "Mapa de las sedes COC en Santa Catarina",
+      mapCaption: "Sedes COC en Santa Catarina · mapa ilustrativo",
+    },
+    nucleo: {
+      tag: "03 · Núcleo Polaris",
+      title: "Cómo nació el Núcleo",
+      text:
+        "[por confirmar: cuándo y por qué se creó el Núcleo Polaris, quién lo ideó y qué necesidad de las familias y escuelas vino a resolver.]",
+      milestones: [
+        { year: "—", text: "[por confirmar: hito 1 — creación del Núcleo]" },
+        { year: "—", text: "[por confirmar: hito 2 — primeras alianzas internacionales]" },
+        { year: "—", text: "[por confirmar: hito 3 — hoy]" },
+      ],
+    },
+    counseling: {
+      tag: "04 · Counseling",
+      title: "International Counseling",
+      text:
+        "El corazón del Núcleo es el counseling: un acompañamiento individual del estudiante y su familia, de la secundaria a la universidad, que convierte el interés en una postulación sólida — y en un alumno preparado para llegar a su institución.",
+      items: [
+        "Planificación académica desde la secundaria",
+        "Extracurriculares, mentorías y proyecto de vida",
+        "Preparación para SAT, TOEFL e IELTS",
+        "Essays, entrevistas y applications",
+        "Búsqueda de becas y orientación financiera a la familia",
+        "Acompañamiento hasta el viaje",
+      ],
+    },
   },
 
   abertura: {

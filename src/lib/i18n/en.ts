@@ -17,6 +17,7 @@ export const en: Dictionary = {
   header: {
     navLabel: "Sections",
     nav: {
+      "quem-somos": "About us",
       trajetoria: "How it works",
       solucoes: "Partnerships",
       summer: "Programs",
@@ -90,6 +91,55 @@ export const en: Dictionary = {
         items: ["New revenue stream", "International diversity", "Brazilian market", "Joint programs"],
       },
     ],
+  },
+
+  about: {
+    kicker: "About us",
+    title: "Before the partnership, introductions.",
+    lead:
+      "A good partnership starts with knowing who is on the other side. From a national school system to the Núcleo team, this is the path that brings each student to your institution.",
+    pending: "to be confirmed",
+    national: {
+      tag: "01 · National network",
+      title: "COC — a tradition in education since 1963",
+      text:
+        "Founded in Ribeirão Preto, São Paulo, COC is one of Brazil's most established school networks, with its own methodology, learning materials and assessments used by schools across the country.",
+      stats: ["Founded", "Partner schools in Brazil", "Students in the network", "States"],
+    },
+    regional: {
+      tag: "02 · Santa Catarina",
+      title: "COC Santa Catarina — Grupo Nota Máxima",
+      text:
+        "Grupo Nota Máxima brings COC to the state of Santa Catarina, in southern Brazil, with schools both inland and on the coast — from the Itajaí Valley and the highlands to the shore.",
+      stats: ["Cities", "Schools", "Students", "Years in the state"],
+      mapTitle: "Map of COC schools in Santa Catarina",
+      mapCaption: "COC schools in Santa Catarina · illustrative map",
+    },
+    nucleo: {
+      tag: "03 · Núcleo Polaris",
+      title: "How the Núcleo began",
+      text:
+        "[to be confirmed: when and why Núcleo Polaris was created, who founded it and which need of families and schools it set out to meet.]",
+      milestones: [
+        { year: "—", text: "[to be confirmed: milestone 1 — the Núcleo is founded]" },
+        { year: "—", text: "[to be confirmed: milestone 2 — first international partnerships]" },
+        { year: "—", text: "[to be confirmed: milestone 3 — today]" },
+      ],
+    },
+    counseling: {
+      tag: "04 · Counseling",
+      title: "International Counseling",
+      text:
+        "Counseling is the heart of the Núcleo: one-on-one guidance for each student and family, from middle school to university, that turns interest into a strong application — and into a student who arrives at your institution ready.",
+      items: [
+        "Academic planning from middle school",
+        "Extracurriculars, mentoring and life planning",
+        "SAT, TOEFL and IELTS preparation",
+        "Essays, interviews and applications",
+        "Scholarship search and financial guidance for families",
+        "Support all the way to departure",
+      ],
+    },
   },
 
   abertura: {
