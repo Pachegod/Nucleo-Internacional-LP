@@ -118,7 +118,7 @@ export const en: Dictionary = {
         { year: "2003", text: "Arrival in Lages" },
         { year: "2012", text: "Joining the COC system" },
         { year: "2017", text: "Balneário Camboriú" },
-        { year: "2018", text: "Blumenau" },
+        { year: "2018", text: "Blumenau and Aletech — the group's startup and COC Online, its online learning platform" },
         { year: "2019", text: "New building in Lages and new schools in Rio do Sul and Balneário Camboriú" },
         { year: "2021", text: "Balneário Camboriú — Campus 2 opens" },
         { year: "2023", text: "Balneário Camboriú — Campus 3" },

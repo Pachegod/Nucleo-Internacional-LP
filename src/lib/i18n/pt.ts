@@ -127,7 +127,7 @@ export const pt = {
         { year: "2003", text: "Chegada a Lages" },
         { year: "2012", text: "Unificação no sistema COC" },
         { year: "2017", text: "Balneário Camboriú" },
-        { year: "2018", text: "Blumenau" },
+        { year: "2018", text: "Blumenau e Aletech — startup do grupo e plataforma de aulas on-line COC Online" },
         { year: "2019", text: "Construção em Lages e novas unidades em Rio do Sul e Balneário Camboriú" },
         { year: "2021", text: "Chegada da Unidade 2 de Balneário Camboriú" },
         { year: "2023", text: "Balneário Camboriú — Unidade 3" },
