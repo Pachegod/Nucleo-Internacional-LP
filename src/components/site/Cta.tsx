@@ -1,50 +1,46 @@
 import Link from "next/link";
 import { CTA, CTA_LINE } from "@/lib/content";
+import { ArrowRightIcon } from "./icons";
 
-const SHELL = "mx-auto max-w-[1240px] border-x border-line";
+const VARIANTS = {
+  /** Dourado sólido — CTA principal. */
+  solid: "bg-accent text-accent-ink hover:brightness-110 min-h-[52px] px-7",
+  /** Contorno dourado — CTA secundário sobre fundo escuro. */
+  outline: "border border-accent text-accent hover:bg-accent hover:text-accent-ink min-h-11 px-5 text-[11px]",
+  /** Sólido escuro — sobre a faixa dourada. */
+  dark: "bg-night text-white hover:bg-navy min-h-[52px] px-7",
+} as const;
 
 /** Botão de CTA — sempre aponta para o formulário de inscrição (#inscrever). */
 export function CtaButton({
   label = CTA.visit,
   variant = "solid",
+  arrow = variant !== "outline",
   className = "",
 }: {
   label?: string;
-  variant?: "solid" | "ghost";
+  variant?: keyof typeof VARIANTS;
+  arrow?: boolean;
   className?: string;
 }) {
-  const base =
-    "inline-flex items-center justify-center text-sm font-semibold transition-colors";
-  const styles =
-    variant === "solid"
-      ? "bg-accent px-[26px] py-3.5 text-accent-ink hover:bg-accent-deep"
-      : "border-b-2 border-accent pb-0.5 font-medium text-ink-soft hover:text-ink";
-
   return (
-    <Link href="#inscrever" className={`${base} ${styles} ${className}`}>
+    <Link
+      href="#inscrever"
+      className={`inline-flex items-center justify-center gap-3 rounded-full text-xs font-bold uppercase tracking-[0.16em] transition ${VARIANTS[variant]} ${className}`}
+    >
       {label}
+      {arrow && <ArrowRightIcon />}
     </Link>
   );
 }
 
-/**
- * Faixa de CTA de largura total, para pontuar a rolagem entre as seções.
- * Usada no início-meio e reforçada perto do fim da página.
- */
-export function CtaBand({
-  line = CTA_LINE,
-  label = CTA.enroll,
-}: {
-  line?: string;
-  label?: string;
-}) {
+/** Faixa dourada de largura total que pontua a rolagem entre as seções. */
+export function CtaBand({ line = CTA_LINE, label = CTA.enroll }: { line?: string; label?: string }) {
   return (
-    <section className={`${SHELL} border-b-2 border-rule bg-accent-tint`}>
-      <div className="flex flex-col gap-5 px-6 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-10">
-        <p className="max-w-[620px] text-[19px] font-medium leading-snug -tracking-[0.01em] text-ink">
-          {line}
-        </p>
-        <CtaButton label={label} className="shrink-0 self-start sm:self-auto" />
+    <section aria-label="Matrículas abertas" className="bg-accent text-accent-ink">
+      <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-x-8 gap-y-4 px-5 py-7 sm:px-10 lg:px-14">
+        <p className="font-display text-[26px] leading-[1.05] sm:text-[34px]">{line}</p>
+        <CtaButton label={label} variant="dark" />
       </div>
     </section>
   );

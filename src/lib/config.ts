@@ -9,6 +9,11 @@ export const TOOL_URL =
 // entrar, a própria ferramenta leva o usuário para dentro dela.
 export const LOGIN_URL = `${TOOL_URL}/login`;
 
+// Instagram do Núcleo — usado no rodapé e na seção de agenda. Se o admin
+// cadastrar outro link (chave social-instagram), o rodapé usa o do mini-CMS.
+export const INSTAGRAM_HANDLE = "nucleo_inter";
+export const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
+
 // Número de WhatsApp de destino dos CTAs — só dígitos, com DDI.
 // Sobrescreva com NEXT_PUBLIC_WHATSAPP (Vercel → Project Settings →
 // Environment Variables) sem precisar mexer no código.

@@ -1,50 +1,47 @@
 import Image from "next/image";
 
 type Props = {
-  /** Caminho em /public, ex. "/media/hero.jpg". Sem src, mostra o placeholder. */
-  src?: string;
-  alt?: string;
-  /** Texto do placeholder — descreva a imagem esperada e o tamanho ideal. */
-  placeholder: string;
+  /** Caminho em /public (ex. "/media/abertura.jpg") ou URL do mini-CMS. */
+  src: string;
+  alt: string;
   /** Proporção do quadro, ex. "16 / 9" ou "3 / 4". */
   ratio?: string;
-  /** Altura fixa em px, quando a proporção não serve. */
-  height?: number;
+  /** Altura fixa (qualquer valor CSS), quando a proporção não serve. */
+  height?: string;
+  /** Ponto focal da foto (object-position). */
+  focus?: string;
+  /** Tamanhos para o srcset do next/image. */
+  sizes?: string;
+  preload?: boolean;
   className?: string;
+  imgClassName?: string;
 };
 
-/**
- * Quadro de mídia do Núcleo: borda de 1px, canto reto, imagem sempre em P&B.
- * Sem src, renderiza o placeholder rotulado usado nos mocks.
- */
+/** Quadro de foto do Núcleo: recorte por proporção (ou altura fixa), foto colorida em object-cover. */
 export function MediaFrame({
   src,
-  alt = "",
-  placeholder,
-  ratio,
+  alt,
+  ratio = "16 / 9",
   height,
+  focus = "center",
+  sizes = "(max-width: 768px) 100vw, 50vw",
+  preload = false,
   className = "",
+  imgClassName = "",
 }: Props) {
-  const style = height ? { height } : { aspectRatio: ratio ?? "16 / 9" };
+  const style = height ? { height } : { aspectRatio: ratio };
 
   return (
-    <div
-      className={`relative overflow-hidden border border-line bg-surface ${className}`}
-      style={style}
-    >
-      {src ? (
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover grayscale"
-        />
-      ) : (
-        <span className="absolute inset-0 flex items-center justify-center p-4 text-center font-mono text-[11px] uppercase leading-relaxed tracking-[0.14em] text-ink-faint">
-          {placeholder}
-        </span>
-      )}
+    <div className={`relative overflow-hidden bg-night ${className}`} style={style}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        preload={preload}
+        className={`object-cover ${imgClassName}`}
+        style={{ objectPosition: focus }}
+      />
     </div>
   );
 }

@@ -7,16 +7,19 @@
 export const SOLUTIONS = {
   "dupla-diplomacao": {
     name: "Dupla Diplomação Internacional",
+    image: { src: "/media/solucao-dupla-diplomacao.jpg", alt: "Alunos em sala de aula trabalhando juntos em notebooks", focus: "center" },
     shortName: "Junior High International Program",
     tagline: "Diploma de High School americano em paralelo ao COC.",
   },
   "high-school": {
     name: "Consultoria High School",
+    image: { src: "/media/solucao-high-school.jpg", alt: "Dois estudantes planejando os estudos com notebook e livro", focus: "center" },
     shortName: "International Counselling",
     tagline: "Planejamento para Fundamental II e Ensino Médio.",
   },
   college: {
     name: "Consultoria College",
+    image: { src: "/media/solucao-college.jpg", alt: "Estudantes subindo a escadaria de uma universidade, vistos pelo portão do campus", focus: "center 62%" },
     shortName: "College Admissions Program",
     tagline: "Preparação completa para ingresso em universidades no exterior.",
   },
@@ -25,15 +28,25 @@ export const SOLUTIONS = {
 export const PARTNERS = {
   "instituto-cultural": {
     name: "Instituto Cultural",
-    focus: "Prioridade: Estados Unidos 🇺🇸",
+    focus: "Prioridade: Estados Unidos",
     brands: "EducationUSA · Griggs",
+    logo: { src: "/media/parceiros/instituto-cultural.webp", alt: "Instituto Cultural Brasileiro Norte-Americano" },
   },
   worlded: {
     name: "WorldEd",
-    focus: "Prioridade: demais destinos internacionais 🌎",
+    focus: "Prioridade: demais destinos internacionais",
     brands: "Programas em diferentes países e sistemas educacionais",
+    logo: { src: "/media/parceiros/worlded.webp", alt: "WorldEd School" },
   },
 } as const;
+
+/** Demais marcas da rede de parceiros (faixa de logos). */
+export const PARTNER_NETWORK = [
+  { src: "/media/parceiros/be.webp", alt: "Be Currículo Bilíngue" },
+  { src: "/media/parceiros/griggs.webp", alt: "Griggs International Academy" },
+  { src: "/media/parceiros/nba-school.webp", alt: "NBA Basketball School" },
+  { src: "/media/parceiros/psg-academy.webp", alt: "PSG Academy" },
+];
 
 // ---------------------------------------------------------------------------
 // Landing page — copy dos CTAs e das seções novas.
@@ -102,4 +115,27 @@ export const SERIE_OPTIONS = [
   "2ª série do Ensino Médio",
   "3ª série do Ensino Médio",
   "Já concluí o Ensino Médio",
+];
+
+/**
+ * Últimos posts do Instagram (@nucleo_inter) destacados na seção de agenda.
+ * Atualize as imagens em /public/media/instagram e os textos aqui quando
+ * houver eventos novos.
+ */
+export const INSTAGRAM_POSTS = [
+  {
+    tag: "Live · 11/11",
+    title: "Estudar nos EUA com a Wilbraham & Monson Academy",
+    image: { src: "/media/instagram/live-wilbraham-monson.jpg", alt: "Live: a experiência de estudar nos EUA com a Wilbraham & Monson Academy" },
+  },
+  {
+    tag: "Treinamento · 06/11",
+    title: "Basquete com Andre White Sr. — COC Balneário Camboriú",
+    image: { src: "/media/instagram/treinamento-andre-white.jpg", alt: "Treinamento especial de basquete com Andre White Sr." },
+  },
+  {
+    tag: "Guia gratuito",
+    title: "Vai estudar fora? Prepare-se para a entrevista",
+    image: { src: "/media/instagram/guia-entrevista.jpg", alt: "Guia gratuito: prepare-se para a entrevista de admissão" },
+  },
 ];

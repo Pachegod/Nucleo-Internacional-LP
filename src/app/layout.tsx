@@ -1,30 +1,22 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
-import { Archivo, Archivo_Narrow } from "next/font/google";
+import { Bebas_Neue, Montserrat } from "next/font/google";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { ThemeScript } from "@/components/site/ThemeScript";
 import { getLpContent, getAccentColor, getAccentInk, getImage, getSocialLinks, DEFAULT_ACCENT } from "@/lib/cms";
 import "./globals.css";
 
-// Modernist: Archivo em tudo. --font-mono passa a ser Archivo Narrow,
-// usada nos rótulos em caixa alta (as classes font-mono existentes continuam valendo).
-const archivo = Archivo({
+// Títulos em Bebas Neue (caixa alta condensada), texto corrido em Montserrat.
+const display = Bebas_Neue({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "400",
 });
 
-const archivoBody = Archivo({
+const body = Montserrat({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
-
-const archivoNarrow = Archivo_Narrow({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -37,8 +29,8 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   const items = await getLpContent();
   const accent = getAccentColor(items);
   // Só sobrescreve --accent/--accent-ink quando o admin de fato escolheu uma
-  // cor diferente do padrão — assim, sem nada configurado (ou com a API fora
-  // do ar), cada tema mantém seu próprio azul já ajustado em globals.css.
+  // cor diferente do padrão — sem nada configurado (ou com a API fora do ar),
+  // vale o dourado definido em globals.css.
   const accentStyle =
     accent !== DEFAULT_ACCENT
       ? ({ "--accent": accent, "--accent-ink": getAccentInk(accent) } as CSSProperties)
@@ -47,18 +39,11 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   const socialLinks = getSocialLinks(items);
 
   return (
-    <html
-      lang="pt-BR"
-      suppressHydrationWarning
-      className={`${archivo.variable} ${archivoBody.variable} ${archivoNarrow.variable} h-full antialiased`}
-    >
-      <head>
-        <ThemeScript />
-      </head>
-      <body className="min-h-full flex flex-col bg-paper text-ink font-body" style={accentStyle}>
+    <html lang="pt-BR" className={`${display.variable} ${body.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col bg-night font-body text-sand" style={accentStyle}>
         <SiteHeader logo={logo} />
         <main className="flex-1">{children}</main>
-        <SiteFooter socialLinks={socialLinks} />
+        <SiteFooter logo={logo} socialLinks={socialLinks} />
       </body>
     </html>
   );

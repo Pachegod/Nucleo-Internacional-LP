@@ -5,7 +5,7 @@ import { whatsappLink, interestMessage } from "@/lib/config";
 import { SERIE_OPTIONS } from "@/lib/content";
 
 const inputClass =
-  "w-full border border-line bg-surface px-3.5 py-2.5 text-sm text-ink outline-none transition-colors focus:border-accent";
+  "min-h-12 w-full rounded-xl border border-night/20 bg-white px-3.5 text-[15px] text-night outline-none transition-colors focus:border-navy";
 
 type Fields = {
   responsavel: string;
@@ -27,7 +27,7 @@ const EMPTY: Fields = {
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <span className="mb-1.5 block font-mono text-[11px] uppercase tracking-[0.12em] text-ink-faint">
+    <span className="mb-2 block text-xs font-semibold text-navy">
       {children}
     </span>
   );
@@ -78,7 +78,11 @@ export function InscricaoForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
+    <form
+      onSubmit={handleSubmit}
+      aria-label="Formulário de inscrição"
+      className="grid gap-x-4 gap-y-[18px] rounded-3xl bg-cream p-6 text-night sm:grid-cols-2 sm:p-10"
+    >
       <label className="sm:col-span-1">
         <Label>Nome do responsável *</Label>
         <input
@@ -141,20 +145,20 @@ export function InscricaoForm() {
       </label>
 
       {status === "error" && (
-        <p className="sm:col-span-2 border border-danger bg-danger-soft px-3.5 py-2.5 text-sm text-danger">
+        <p className="rounded-xl border border-red-700 bg-red-50 px-3.5 py-2.5 text-sm text-red-800 sm:col-span-2">
           {errorMsg || "Não foi possível enviar agora. Tente novamente."}
         </p>
       )}
 
-      <div className="mt-1 flex flex-col gap-2.5 sm:col-span-2 sm:flex-row sm:items-center">
+      <div className="mt-1 flex flex-col gap-3 sm:col-span-2">
         <button
           type="submit"
           disabled={missing || status === "sending"}
-          className="bg-accent px-[26px] py-3.5 text-sm font-semibold text-accent-ink transition-colors hover:bg-accent-deep disabled:cursor-not-allowed disabled:opacity-40"
+          className="min-h-14 rounded-full bg-navy px-7 text-xs font-bold uppercase tracking-[0.16em] text-white transition-colors hover:bg-night disabled:cursor-not-allowed disabled:opacity-40"
         >
           {status === "sending" ? "Enviando…" : "Enviar e falar no WhatsApp"}
         </button>
-        <span className="font-mono text-[11px] leading-relaxed tracking-[0.06em] text-ink-faint">
+        <span className="text-xs leading-relaxed text-night/60">
           Ao enviar, você abre uma conversa no WhatsApp com o time do Núcleo.
         </span>
       </div>

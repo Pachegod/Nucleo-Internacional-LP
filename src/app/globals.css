@@ -2,116 +2,83 @@
 
 /* ---------------------------------------------------------------------------
    Núcleo Internacional — tokens
-   Tema claro é o padrão. O tema escuro é ativado por data-theme="dark" no <html>,
-   escrito pelo ThemeScript antes da primeira pintura (sem flash).
+   Noite estrelada + dourado: seções escuras (night/deep/navy) alternadas com
+   seções claras (cream). O dourado é a cor de destaque e pode ser sobrescrito
+   pelo admin via mini-CMS (--accent), por isso os derivados usam color-mix.
    --------------------------------------------------------------------------- */
 
 :root {
-  --paper: #f4f5f7;
-  --surface: #ffffff;
-  --ink: #101114;
-  --ink-soft: #55585f;
-  --ink-faint: #8a8d96;
-  --line: #e0e2e8;
-  --rule: #101114;
+  --deep: #05070d;
+  --night: #0a0e1a;
+  --navy: #233264;
+  --cream: #f5f4f0;
+  --sand: #e8e4dc;
 
-  --accent: #1f3cff;
-  --accent-ink: #ffffff;
-  /* Derivados do accent (que o admin pode sobrescrever via mini-CMS) em vez de
-     hex fixo, pra tint/deep acompanharem qualquer cor escolhida automaticamente. */
-  --accent-tint: color-mix(in srgb, var(--accent) 12%, var(--paper));
-  --accent-deep: color-mix(in srgb, var(--accent) 75%, var(--ink));
-
-  --danger: #b3261e;
-  --danger-soft: #fbe9e7;
-}
-
-:root[data-theme="dark"] {
-  --paper: #08090a;
-  --surface: #111214;
-  --ink: #f4f5f7;
-  --ink-soft: #a8acb4;
-  --ink-faint: #71757d;
-  --line: #23262b;
-  --rule: #f4f5f7;
-
-  --accent: #5a74ff;
-  --accent-ink: #06070c;
-  --accent-tint: color-mix(in srgb, var(--accent) 12%, var(--paper));
-  --accent-deep: color-mix(in srgb, var(--accent) 75%, var(--ink));
-
-  --danger: #ff9b8f;
-  --danger-soft: #2a1512;
+  --accent: #c2a068;
+  --accent-ink: #0a0e1a;
+  /* Versão escura do destaque — legível sobre o fundo creme. */
+  --accent-deep: color-mix(in srgb, var(--accent) 62%, #000);
+  --accent-soft: color-mix(in srgb, var(--accent) 22%, transparent);
 }
 
 @theme inline {
-  --color-paper: var(--paper);
-  --color-surface: var(--surface);
-  --color-ink: var(--ink);
-  --color-ink-soft: var(--ink-soft);
-  --color-ink-faint: var(--ink-faint);
-  --color-line: var(--line);
-  --color-rule: var(--rule);
+  --color-deep: var(--deep);
+  --color-night: var(--night);
+  --color-navy: var(--navy);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
 
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
-  --color-accent-tint: var(--accent-tint);
   --color-accent-deep: var(--accent-deep);
-
-  --color-danger: var(--danger);
-  --color-danger-soft: var(--danger-soft);
-
-  /* Aliases da paleta antiga, para que arquivos ainda não migrados compilem.
-     Remova quando não houver mais bg-navy / text-teal / text-gold no código. */
-  --color-navy: var(--accent);
-  --color-navy-ink: var(--accent-ink);
-  --color-teal: var(--accent);
-  --color-gold: var(--accent);
-  --color-tag-bg: var(--surface);
-  --color-line-strong: var(--line);
+  --color-accent-soft: var(--accent-soft);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
-  --font-mono: var(--font-mono);
-
-  /* Modernist: nada arredondado. */
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
-  --radius-xl: 0px;
-  --radius-2xl: 0px;
-  --radius-full: 0px;
-}
-
-* {
-  border-color: var(--line);
 }
 
 html {
-  color-scheme: light;
-}
-
-html[data-theme="dark"] {
   color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--night);
+  color: var(--sand);
 }
 
 ::selection {
-  background: var(--accent-tint);
-  color: var(--accent-deep);
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 
 :focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
-/* Toda fotografia de conteúdo entra em preto e branco. */
-.grayscale-media img,
-img.grayscale-media {
-  filter: grayscale(1);
+/* Brilho da estrela Polaris no hero. */
+@keyframes polaris-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+.polaris-star {
+  animation: polaris-pulse 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .polaris-star {
+    animation: none;
+  }
 }

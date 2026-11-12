@@ -2,22 +2,19 @@
 
 import { useState } from "react";
 import { MediaFrame } from "./MediaFrame";
+import { PlayIcon } from "./icons";
 
 type Embed = { kind: "iframe" | "video"; src: string };
 
-const PLACEHOLDER = "Still do vídeo institucional (1920×1080)";
+const POSTER = { src: "/media/video-poster.jpg", alt: "Estudantes estudando juntos com notebook ao ar livre" };
 
-/** Still com botão de play; troca pelo embed real só quando clicado (evita carregar o vídeo à toa). */
+/** Capa com botão de play; troca pelo embed real só quando clicado (evita carregar o vídeo à toa). */
 export function VideoEmbed({ embed }: { embed?: Embed }) {
   const [playing, setPlaying] = useState(false);
 
-  if (!embed) {
-    return <MediaFrame placeholder={PLACEHOLDER} ratio="16 / 9" />;
-  }
-
-  if (playing) {
+  if (embed && playing) {
     return (
-      <div className="relative overflow-hidden border border-line bg-surface" style={{ aspectRatio: "16 / 9" }}>
+      <div className="relative overflow-hidden rounded-[22px] border border-sand/10 bg-deep" style={{ aspectRatio: "16 / 9" }}>
         {embed.kind === "iframe" ? (
           <iframe
             src={`${embed.src}?autoplay=1`}
@@ -34,14 +31,18 @@ export function VideoEmbed({ embed }: { embed?: Embed }) {
   }
 
   return (
-    <button type="button" onClick={() => setPlaying(true)} className="relative block w-full text-left">
-      <MediaFrame placeholder={PLACEHOLDER} ratio="16 / 9" />
-      <span className="pointer-events-none absolute bottom-6 left-6 flex items-center gap-3 bg-accent px-4.5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-accent-ink">
-        <svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true">
-          <path d="M0 0l10 6-10 6z" fill="currentColor" />
-        </svg>
-        Play
-      </span>
-    </button>
+    <div className="relative overflow-hidden rounded-[22px] border border-sand/10">
+      <MediaFrame {...POSTER} ratio="16 / 9" sizes="(max-width: 768px) 100vw, 60vw" imgClassName="brightness-[0.7]" />
+      {embed && (
+        <button
+          type="button"
+          onClick={() => setPlaying(true)}
+          aria-label="Assistir ao vídeo institucional"
+          className="absolute left-1/2 top-1/2 flex h-[84px] w-[84px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-accent-ink shadow-[0_0_0_10px_var(--accent-soft)] transition hover:scale-105"
+        >
+          <PlayIcon />
+        </button>
+      )}
+    </div>
   );
 }

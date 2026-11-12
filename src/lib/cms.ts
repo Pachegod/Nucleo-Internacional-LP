@@ -14,7 +14,11 @@ export type LpContentItem = {
   alt: string;
 };
 
-export const DEFAULT_ACCENT = "#1f3cff";
+export const DEFAULT_ACCENT = "#c2a068";
+
+/** Fundo escuro predominante da LP — o destaque precisa ser legível sobre ele. */
+const NIGHT = "#0a0e1a";
+const MIN_ACCENT_CONTRAST = 4.5;
 
 export async function getLpContent(): Promise<LpContentItem[]> {
   try {
@@ -52,19 +56,29 @@ export function getVideo(items: LpContentItem[], key: string): string | undefine
 const HEX_RE = /^#[0-9a-f]{6}$/i;
 
 export function getAccentColor(items: LpContentItem[]): string {
-  const value = findItem(items, "color", "accent-color")?.value.trim();
-  return value && HEX_RE.test(value) ? value : DEFAULT_ACCENT;
+  const value = findItem(items, "color", "accent-color")?.value.trim().toLowerCase();
+  if (!value || !HEX_RE.test(value)) return DEFAULT_ACCENT;
+  // A LP é majoritariamente escura: uma cor escura demais some sobre o fundo
+  // (botões e títulos ficam ilegíveis). Nesse caso mantém o dourado padrão.
+  return contrastRatio(value, NIGHT) >= MIN_ACCENT_CONTRAST ? value : DEFAULT_ACCENT;
+}
+
+function luminance(hex: string): number {
+  const n = parseInt(hex.slice(1), 16);
+  const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((c) => c / 255);
+  const linear = (c: number) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+  return 0.2126 * linear(r) + 0.7152 * linear(g) + 0.0722 * linear(b);
+}
+
+function contrastRatio(a: string, b: string): number {
+  const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+  return (hi + 0.05) / (lo + 0.05);
 }
 
 /** Preto ou branco conforme a luminância do hex — texto legível sobre a cor de destaque, qualquer que seja ela. */
 export function getAccentInk(hex: string): string {
-  const match = HEX_RE.exec(hex);
-  if (!match) return "#ffffff";
-  const n = parseInt(hex.slice(1), 16);
-  const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((c) => c / 255);
-  const linear = (c: number) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
-  const luminance = 0.2126 * linear(r) + 0.7152 * linear(g) + 0.0722 * linear(b);
-  return luminance > 0.5 ? "#0a0a0a" : "#ffffff";
+  if (!HEX_RE.test(hex)) return "#ffffff";
+  return luminance(hex) > 0.5 ? "#0a0e1a" : "#ffffff";
 }
 
 const SOCIAL_NETWORKS: { key: string; label: string }[] = [
