@@ -152,10 +152,12 @@ export const COC_SC_UNITS: {
     ],
   },
   {
-    // Sem foto livre de Rio do Sul (aérea ou das cachoeiras) — o slide usa a arte
-    // Polaris até o admin subir as fotos nas chaves cidade-rio-do-sul / -2.
     city: "Rio do Sul", slug: "rio-do-sul", units: 2, x: 150, y: 150, label: "bottom",
-    photos: [],
+    // Fotos enviadas pela equipe — preencher o crédito quando houver.
+    photos: [
+      { src: "/media/cidades/rio-do-sul-aerea.jpg", landmark: "Vista aérea do centro e do Rio Itajaí-Açu", aerial: true },
+      { src: "/media/cidades/rio-do-sul-catedral.jpg", landmark: "Catedral São João Batista", aerial: true },
+    ],
   },
   {
     city: "Lages", slug: "lages", units: 1, x: 62, y: 222, label: "right",
