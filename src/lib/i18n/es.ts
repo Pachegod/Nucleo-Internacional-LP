@@ -189,7 +189,13 @@ export const es: Dictionary = {
 
   abertura: {
     alt: "Estudiantes saliendo por el portón de un campus universitario",
-    figLabel: "Fig. 01 — Apertura",
+    figLabel: "Fig. 01 — Nuestras ciudades",
+    carouselLabel: "Ciudades con sedes COC en Santa Catarina",
+    prev: "Ciudad anterior",
+    next: "Ciudad siguiente",
+    goTo: "Ir a",
+    pause: "Pausar",
+    play: "Reproducir",
     caption: "De la escuela brasileña a su institución",
   },
 

@@ -90,15 +90,17 @@ export const ABOUT_STATS = {
 };
 
 /**
- * Unidades COC em Santa Catarina. `x`/`y` posicionam cada cidade no
+ * Unidades COC em Santa Catarina. `slug` monta a chave da foto no mini-CMS
+ * (cidade-<slug>) usada no carrossel de abertura; `landmark` é o ponto turístico
+ * ou paisagem retratada e `photo` uma foto local em /public (opcional — o CMS vence). `x`/`y` posicionam cada cidade no
  * mapa-constelação (viewBox 520×270) — geografia aproximada, espaçada
  * para leitura: interior à esquerda/baixo, litoral à direita.
  */
 export const COC_SC_UNITS = [
-  { city: "Blumenau", x: 245, y: 92, label: "top", units: 1 },
-  { city: "Itajaí", x: 345, y: 58, label: "top", units: 1 },
-  { city: "Balneário Camboriú", x: 380, y: 118, label: "bottom", units: 4 },
-  { city: "Porto Belo", x: 340, y: 192, label: "right", units: 1 },
-  { city: "Rio do Sul", x: 150, y: 150, label: "bottom", units: 2 },
-  { city: "Lages", x: 62, y: 222, label: "right", units: 1 },
+  { city: "Blumenau", slug: "blumenau", landmark: "Vila Germânica", photo: undefined as string | undefined, x: 245, y: 92, label: "top", units: 1 },
+  { city: "Itajaí", slug: "itajai", landmark: "Praia Brava", photo: undefined as string | undefined, x: 345, y: 58, label: "top", units: 1 },
+  { city: "Balneário Camboriú", slug: "balneario-camboriu", landmark: "Praia Central e Parque Unipraias", photo: undefined as string | undefined, x: 380, y: 118, label: "bottom", units: 4 },
+  { city: "Porto Belo", slug: "porto-belo", landmark: "Ilha de Porto Belo", photo: undefined as string | undefined, x: 340, y: 192, label: "right", units: 1 },
+  { city: "Rio do Sul", slug: "rio-do-sul", landmark: "Alto Vale do Itajaí", photo: undefined as string | undefined, x: 150, y: 150, label: "bottom", units: 2 },
+  { city: "Lages", slug: "lages", landmark: "Serra Catarinense", photo: undefined as string | undefined, x: 62, y: 222, label: "right", units: 1 },
 ] as const;

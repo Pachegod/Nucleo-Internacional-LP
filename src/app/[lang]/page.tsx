@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SOLUTIONS, PARTNERS, PARTNER_NETWORK, INSTAGRAM_POSTS, ABOUT_STATS, COC_SC_UNITS, INTERNATIONAL_APPROVALS } from "@/lib/content";
 import { UnitsConstellation } from "@/components/site/UnitsConstellation";
+import { CityCarousel } from "@/components/site/CityCarousel";
 import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from "@/lib/config";
 import { MediaFrame } from "@/components/site/MediaFrame";
 import { VideoEmbed } from "@/components/site/VideoEmbed";
@@ -12,8 +13,6 @@ import { WhatsappButton } from "@/components/site/WhatsappButton";
 import { InstagramIcon } from "@/components/site/icons";
 import { getLpContent, getImage, getVideo, parseVideoEmbed } from "@/lib/cms";
 import { getDictionary, hasLocale } from "@/lib/i18n";
-
-const ABERTURA_SRC = "/media/abertura.jpg";
 
 // Classes compartilhadas
 const WRAP = "mx-auto max-w-[1240px] px-5 sm:px-10 lg:px-14";
@@ -65,7 +64,6 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const t = getDictionary(lang);
 
   const items = await getLpContent();
-  const aberturaImage = getImage(items, "hero", lang, t.abertura.alt) ?? { src: ABERTURA_SRC, alt: t.abertura.alt };
   const heroVideoUrl = getVideo(items, "hero-video");
   const heroVideoEmbed = heroVideoUrl ? parseVideoEmbed(heroVideoUrl) : undefined;
 
@@ -325,22 +323,20 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
 
-      {/* Imagem de abertura */}
-      <figure className="bg-night">
-        <MediaFrame
-          src={aberturaImage.src}
-          alt={aberturaImage.alt}
-          height="clamp(280px, 38vw, 540px)"
-          focus="center 55%"
-          sizes="100vw"
-        />
-        <figcaption
-          className={`${WRAP} flex flex-wrap justify-between gap-x-6 gap-y-2 py-3.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-sand/55`}
-        >
-          <span>{t.abertura.figLabel}</span>
-          <span>{t.abertura.caption}</span>
-        </figcaption>
-      </figure>
+      {/* Abertura — carrossel com as cidades das unidades (pontos turísticos e paisagens) */}
+      <CityCarousel
+        slides={COC_SC_UNITS.map((u) => {
+          const fallbackAlt = `${u.landmark} — ${u.city}, Santa Catarina`;
+          const photo = getImage(items, `cidade-${u.slug}`, lang, fallbackAlt) ?? (u.photo ? { src: u.photo, alt: fallbackAlt } : undefined);
+          return {
+            city: u.city,
+            landmark: u.landmark,
+            unitsLabel: u.units > 1 ? `${u.units} ${t.about.regional.unitsSuffix}` : "",
+            image: photo,
+          };
+        })}
+        labels={{ ...t.abertura }}
+      />
 
       {/* Como funciona — etapas da parceria (âncora #trajetoria mantida) */}
       <section id="trajetoria" className="scroll-mt-20 bg-cream text-night">

@@ -198,7 +198,13 @@ export const pt = {
 
   abertura: {
     alt: "Estudantes saindo pelo portão de um campus universitário",
-    figLabel: "Fig. 01 — Abertura",
+    figLabel: "Fig. 01 — Nossas cidades",
+    carouselLabel: "Cidades com unidades COC em Santa Catarina",
+    prev: "Cidade anterior",
+    next: "Próxima cidade",
+    goTo: "Ir para",
+    pause: "Pausar",
+    play: "Reproduzir",
     caption: "Da escola brasileira à sua instituição",
   },
 
