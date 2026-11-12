@@ -327,12 +327,14 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <CityCarousel
         slides={COC_SC_UNITS.map((u) => {
           const fallbackAlt = `${u.landmark} — ${u.city}, Santa Catarina`;
-          const photo = getImage(items, `cidade-${u.slug}`, lang, fallbackAlt) ?? (u.photo ? { src: u.photo, alt: fallbackAlt } : undefined);
+          const cms = getImage(items, `cidade-${u.slug}`, lang, fallbackAlt);
           return {
             city: u.city,
             landmark: u.landmark,
             unitsLabel: u.units > 1 ? `${u.units} ${t.about.regional.unitsSuffix}` : "",
-            image: photo,
+            image: cms ?? (u.photo ? { src: u.photo, alt: fallbackAlt } : undefined),
+            // Crédito só vale para a foto local; foto do CMS é responsabilidade de quem subiu.
+            credit: cms ? undefined : u.credit,
           };
         })}
         labels={{ ...t.abertura }}

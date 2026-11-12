@@ -196,6 +196,7 @@ export const en: Dictionary = {
     goTo: "Go to",
     pause: "Pause",
     play: "Play",
+    photoBy: "Photo:",
     caption: "From Brazilian schools to your institution",
   },
 

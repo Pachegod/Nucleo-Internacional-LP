@@ -196,6 +196,7 @@ export const es: Dictionary = {
     goTo: "Ir a",
     pause: "Pausar",
     play: "Reproducir",
+    photoBy: "Foto:",
     caption: "De la escuela brasileña a su institución",
   },
 

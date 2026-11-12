@@ -205,6 +205,7 @@ export const pt = {
     goTo: "Ir para",
     pause: "Pausar",
     play: "Reproduzir",
+    photoBy: "Foto:",
     caption: "Da escola brasileira à sua instituição",
   },
 

@@ -11,6 +11,8 @@ export type CitySlide = {
   unitsLabel: string;
   /** Foto do mini-CMS (chave cidade-<slug>). Sem foto, o slide usa a arte Polaris. */
   image?: { src: string; alt: string };
+  /** Atribuição exigida pela licença da foto. */
+  credit?: { author: string; license: string; url: string };
 };
 
 type Labels = {
@@ -22,6 +24,7 @@ type Labels = {
   play: string;
   figLabel: string;
   caption: string;
+  photoBy: string;
 };
 
 const INTERVAL_MS = 5000;
@@ -82,7 +85,10 @@ export function CityCarousel({ slides, labels }: { slides: CitySlide[]; labels: 
             <div
               aria-hidden="true"
               className="absolute inset-0"
-              style={{ background: "linear-gradient(180deg, rgba(5,7,13,0) 45%, rgba(5,7,13,0.85) 100%)" }}
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(5,7,13,0.25) 0%, rgba(5,7,13,0) 28%, rgba(5,7,13,0.35) 55%, rgba(5,7,13,0.92) 100%), linear-gradient(90deg, rgba(5,7,13,0.55) 0%, rgba(5,7,13,0) 55%)",
+              }}
             />
             <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1240px] px-5 pb-8 sm:px-10 sm:pb-10 lg:px-14">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-accent">
@@ -93,6 +99,17 @@ export function CityCarousel({ slides, labels }: { slides: CitySlide[]; labels: 
               </p>
               <p className="mt-2 text-sm font-medium text-white/80 sm:text-base">{slide.landmark}</p>
             </div>
+            {slide.image && slide.credit && (
+              <a
+                href={slide.credit.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={i === index ? 0 : -1}
+                className="absolute bottom-2 right-3 text-[10px] text-white/55 hover:text-white sm:right-5"
+              >
+                {labels.photoBy} {slide.credit.author} · {slide.credit.license}
+              </a>
+            )}
           </div>
         ))}
 
