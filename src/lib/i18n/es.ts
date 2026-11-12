@@ -135,7 +135,7 @@ export const es: Dictionary = {
             name: "COC Colinas Global School",
             place: "Balneário Camboriú",
             detail:
-              "Una inversión de R$ 25 millones en una escuela bilingüe de cerca de 8 mil m², en un barrio planificado — pensada desde el proyecto para la formación internacional.",
+              "Una escuela bilingüe de cerca de 8 mil m², en un barrio planificado — pensada desde el proyecto para la formación internacional.",
           },
           {
             name: "Educación Infantil",

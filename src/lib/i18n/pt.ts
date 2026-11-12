@@ -144,7 +144,7 @@ export const pt = {
             name: "COC Colinas Global School",
             place: "Balneário Camboriú",
             detail:
-              "Um investimento de R$ 25 milhões em uma escola bilíngue de cerca de 8 mil m², num bairro planejado — pensada desde o projeto para a formação internacional.",
+              "Uma escola bilíngue de cerca de 8 mil m², num bairro planejado — pensada desde o projeto para a formação internacional.",
           },
           {
             name: "Educação Infantil",
