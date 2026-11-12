@@ -1,11 +1,16 @@
 // Dicionário PT-BR — idioma padrão da LP (rota "/"). O tipo `Dictionary`
 // nasce daqui: en.ts e es.ts precisam cobrir exatamente as mesmas chaves.
+//
+// Posicionamento: esta LP é B2B — fala com instituições de ensino do mundo
+// todo (high schools, universidades, escolas de idioma, academies) que
+// querem ser parceiras do Núcleo. A LP para famílias (B2C) é a
+// lp.nucleopolaris.com.br.
 
 export const pt = {
   meta: {
-    title: "Núcleo Internacional — Polaris COC Santa Catarina",
+    title: "Núcleo Internacional — Parcerias Institucionais",
     description:
-      "Formação global, dupla diplomação e consultoria de admissão internacional para alunos do Colégio COC.",
+      "Seja uma instituição parceira do Núcleo Internacional: conecte sua high school, universidade, escola de idiomas ou academy a estudantes brasileiros preparados desde o Fundamental II na rede COC.",
   },
 
   langSwitcher: {
@@ -18,79 +23,79 @@ export const pt = {
   header: {
     navLabel: "Seções",
     nav: {
-      trajetoria: "Trajetória",
-      solucoes: "Soluções",
-      summer: "Summer Camps",
-      parceiros: "Parceiros",
+      trajetoria: "Como funciona",
+      solucoes: "Parcerias",
+      summer: "Programas",
+      parceiros: "Rede",
       agenda: "Agenda",
     },
     login: "Entrar",
-    loginAria: "Entrar na área da equipe",
+    loginAria: "Entrar na área da equipe e dos parceiros",
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
   },
 
   footer: {
-    tagline: "Da escola ao mundo",
+    tagline: "Da escola brasileira ao mundo",
     description:
-      "Formação global, dupla diplomação e consultoria de admissão internacional — Colégio COC Santa Catarina.",
+      "Parcerias institucionais entre a rede COC e instituições de ensino do mundo todo — high schools, universidades, escolas de idioma e academies.",
     nucleo: "Núcleo",
     contact: "Contato",
     networks: "Redes",
     whatsapp: "WhatsApp",
     email: "E-mail",
-    enroll: "Inscreva-se",
-    staffLogin: "Entrar (equipe)",
+    enroll: "Seja parceira",
+    staffLogin: "Entrar (equipe e parceiros)",
     legal: "Grupo Nota Máxima · Rede COC Santa Catarina",
   },
 
   /** Rótulos de Call to Action. Todos levam ao mesmo formulário (#inscrever). */
   cta: {
-    visit: "Agende uma visita",
-    enroll: "Inscreva-se",
-    meeting: "Marque uma reunião",
+    visit: "Seja uma instituição parceira",
+    enroll: "Quero ser parceira",
+    meeting: "Agende uma reunião",
     whatsapp: "Falar no WhatsApp",
-    pricing: "Consultar valores",
-    summerSpots: "Quero saber das vagas",
+    pricing: "Conhecer o modelo",
+    summerSpots: "Receber uma turma",
     /** Frase curta de reforço usada nas faixas de CTA ao longo da rolagem. */
-    line: "Matrículas abertas — fale com o Núcleo antes das vagas fecharem.",
-    bandLabel: "Matrículas abertas",
+    line: "Novas parcerias abertas para o próximo ciclo — fale com o Núcleo.",
+    bandLabel: "Parcerias abertas",
   },
 
   hero: {
-    kicker: "Núcleo de Internacionalização · Colégio COC",
-    titleA: "Formação global,",
-    titleAccent: "desde os primeiros anos",
-    titleB: "da vida escolar.",
+    kicker: "Núcleo Internacional · Parcerias Institucionais",
+    titleA: "Sua instituição,",
+    titleAccent: "a próxima parada",
+    titleB: "de estudantes globais.",
     lead:
-      "Do Fundamental II ao Ensino Médio, construímos uma trajetória internacional real — certificação americana Junior High, dupla diplomação Brasil/USA e imersão em inglês desde cedo. Para quem já mira o próximo passo, também orientamos a admissão em universidades no exterior.",
-    secondary: "Conhecer o programa",
+      "O Núcleo Internacional prepara estudantes brasileiros desde o Fundamental II — inglês, currículo internacional, dupla diplomação e planejamento de carreira. Agora abrimos a rede para novas instituições parceiras: high schools, universidades, escolas de idioma e academies que querem receber esses alunos, prontos e acompanhados.",
+    secondary: "Ver como funciona",
     proof: [
-      "Inglês",
-      "Competências Globais",
-      "Experiências Internacionais",
-      "Planejamento",
-      "Projeto de Vida",
-      "Bolsa de Estudos",
+      "High Schools",
+      "Boarding Schools",
+      "Universidades",
+      "Escolas de Idioma",
+      "Academies",
+      "Summer Programs",
     ],
     globeAlt: "O planeta Terra no espaço, com a estrela Polaris brilhando acima",
     polaris: "Polaris · a estrela que guia",
   },
 
   pillars: {
-    label: "Pilares do programa",
+    label: "O que a parceria entrega",
     items: [
       {
-        title: "Formação Internacional",
-        items: ["Dupla Diplomação", "Certificações", "Currículo Internacional", "Junior High", "High School"],
+        title: "Estudantes Qualificados",
+        items: ["Perfil acadêmico", "Inglês avaliado", "Objetivo definido", "Orçamento alinhado", "Famílias engajadas"],
       },
       {
-        title: "Desenvolvimento do Estudante",
-        items: ["Planejamento", "Extracurriculares", "Summer Camps", "Mentorias"],
+        title: "Plataforma e Formação",
+        items: ["Match Institucional", "CRM de alunos", "Treinamento", "Material de captação", "Coordenação dedicada"],
       },
       {
-        title: "Universidade Internacional",
-        items: ["Admissions", "Essays", "SAT, TOEFL, IELTS", "Applications", "Scholarship"],
+        title: "Novas Matrículas",
+        items: ["Nova fonte de receita", "Diversidade internacional", "Mercado brasileiro", "Programas conjuntos"],
       },
     ],
   },
@@ -98,73 +103,76 @@ export const pt = {
   abertura: {
     alt: "Estudantes saindo pelo portão de um campus universitário",
     figLabel: "Fig. 01 — Abertura",
-    caption: "O próximo passo começa dentro da escola",
+    caption: "Da escola brasileira à sua instituição",
   },
 
   trajetoria: {
-    kicker: "A trajetória",
-    title: "Um caminho contínuo — do 6º ano ao diploma internacional.",
+    kicker: "Como funciona",
+    title: "Da primeira conversa ao aluno matriculado.",
     lead:
-      "A formação internacional não começa no Ensino Médio. Ela é construída ano a ano, dentro da rotina do COC, até o aluno chegar à reta final com dupla diplomação e — se quiser — candidatura a universidades no exterior.",
+      "A parceria não é uma lista de contatos. Sua instituição entra na plataforma do Núcleo, nossa equipe conhece seus programas a fundo e passa a indicar — e preparar — os estudantes que realmente combinam com o seu perfil.",
     imageAlt: "Formandos jogando os capelos para o alto",
     steps: [
       {
-        phase: "Fundamental II",
-        label: "6º ao 9º ano",
-        detail: "Imersão em inglês desde cedo e a base do currículo internacional, integradas à rotina do COC.",
+        phase: "Diagnóstico",
+        label: "Conversa inicial",
+        detail: "Entendemos seus programas, critérios de admissão, faixas de investimento e o perfil de aluno que você busca.",
       },
       {
-        phase: "Certificação Junior High",
-        label: "Certificação americana",
-        detail: "Certificação norte-americana de Junior High cursada em paralelo ao Fundamental II.",
+        phase: "Plataforma",
+        label: "Match Institucional",
+        detail: "Sua instituição entra na base de parceiros da plataforma e passa a aparecer para os alunos com perfil compatível.",
       },
       {
-        phase: "Ensino Médio",
-        label: "1ª à 3ª série",
-        detail: "Dupla diplomação Brasil/USA: o diploma de High School americano somado ao do COC.",
+        phase: "Formação",
+        label: "Equipe e materiais",
+        detail: "Treinamos a coordenação do Núcleo sobre a sua instituição e construímos juntos lives, eventos e material de captação.",
       },
       {
-        phase: "Próximo passo",
-        label: "Universidade no exterior",
-        detail: "Para quem já mira fora, orientação completa de admissão em universidades internacionais.",
+        phase: "Matrícula",
+        label: "Aluno pronto",
+        detail: "Indicamos estudantes preparados e acompanhamos cada família até o embarque — uma nova fonte de matrículas e receita.",
       },
     ],
   },
 
   solutions: {
-    kicker: "Três soluções estratégicas",
-    title: "Cada aluno tem um caminho — não adivinhamos, calculamos.",
+    kicker: "Três frentes de parceria",
+    title: "Um modelo para cada tipo de instituição.",
     lead:
-      "A partir do perfil acadêmico, do momento escolar e do objetivo da família, nossa equipe indica qual das três soluções combina melhor com cada aluno.",
+      "Do Fundamental II à universidade, o Núcleo acompanha o aluno em toda a trajetória — e cada fase abre uma frente de parceria diferente para a sua instituição.",
     items: {
       "dupla-diplomacao": {
-        name: "Dupla Diplomação Internacional",
-        tagline: "Diploma de High School americano em paralelo ao COC.",
+        name: "High Schools e Boarding Schools",
+        tagline:
+          "Dupla diplomação, Junior High e programas de High School para alunos que já cursam o currículo internacional dentro da rede.",
         alt: "Alunos em sala de aula trabalhando juntos em notebooks",
       },
       "high-school": {
-        name: "Consultoria High School",
-        tagline: "Planejamento para Fundamental II e Ensino Médio.",
+        name: "Escolas de Idioma e Academies",
+        tagline:
+          "Cursos de idioma, certificações e programas esportivos ou artísticos que complementam a formação do estudante.",
         alt: "Dois estudantes planejando os estudos com notebook e livro",
       },
       college: {
-        name: "Consultoria College",
-        tagline: "Preparação completa para ingresso em universidades no exterior.",
+        name: "Universidades e Colleges",
+        tagline:
+          "Candidatos com planejamento desde cedo, testes (SAT, TOEFL, IELTS), essays e applications orientados pela nossa equipe.",
         alt: "Estudantes subindo a escadaria de uma universidade, vistos pelo portão do campus",
       },
     },
   },
 
   summer: {
-    kicker: "Summer Camps",
-    title: "No verão, a trajetória internacional sai do papel.",
+    kicker: "Programas de curta duração",
+    title: "Receba turmas do Núcleo na sua instituição.",
     description:
-      "Nas férias, os alunos do Núcleo participam de summer camps no exterior — semanas de imersão em inglês, vida de campus e cultura local que aceleram todo o resto da formação.",
+      "Summer camps, cursos de férias e imersões curtas são a porta de entrada da trajetória internacional. Sua instituição recebe grupos de estudantes brasileiros já organizados pelo Núcleo — e conhece de perto os alunos que podem voltar para programas mais longos.",
     points: [
-      "Imersão em inglês em ambiente 100% nativo",
-      "Vivência de campus e da rotina de um estudante internacional",
-      "Turmas acompanhadas pela coordenação do Núcleo",
-      "Vagas limitadas por temporada",
+      "Grupos acompanhados pela coordenação do Núcleo",
+      "Documentação, logística e famílias organizadas por nós",
+      "Programas desenhados em conjunto com a sua equipe",
+      "Uma vitrine para os seus programas de longa duração",
     ],
     images: [
       "Grupo de estudantes tirando uma selfie em uma rua de cidade americana",
@@ -177,7 +185,7 @@ export const pt = {
   video: {
     kicker: "Vídeo",
     title: "O Núcleo em movimento",
-    lead: "Conheça de perto a rotina do Núcleo.",
+    lead: "Conheça a estrutura que vai apresentar a sua instituição às famílias brasileiras.",
     pieces: ["Depoimento de família", "Tour pelo programa bilíngue", "Cerimônia de certificação"],
     posterAlt: "Estudantes estudando juntos com notebook ao ar livre",
     play: "Assistir ao vídeo institucional",
@@ -185,17 +193,17 @@ export const pt = {
   },
 
   partners: {
-    kicker: "Ecossistema de parceiros",
-    title: "Cada estudante conectado ao parceiro certo para o seu destino.",
+    kicker: "Rede de parceiros",
+    title: "Sua instituição ao lado de quem já faz parte da rede.",
     network: "Também na rede",
     items: {
       "instituto-cultural": {
-        focus: "Prioridade: Estados Unidos",
+        focus: "Parceiro de rota: Estados Unidos",
         brands: "EducationUSA · Griggs",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
       },
       worlded: {
-        focus: "Prioridade: demais destinos internacionais",
+        focus: "Parceiro de rota: demais destinos internacionais",
         brands: "Programas em diferentes países e sistemas educacionais",
         alt: "WorldEd School",
       },
@@ -211,12 +219,12 @@ export const pt = {
 
   agenda: {
     kicker: "Agenda",
-    title: "Próximos eventos",
+    title: "Onde sua instituição aparece",
     events: [
+      "Lives com instituições parceiras",
+      "Visitas e apresentações nas unidades",
       "Parents Meeting",
-      "Cerimônia de Abertura",
-      "Community Service",
-      "Workshops e Encontros Acadêmicos",
+      "Workshops com coordenadores e famílias",
       "Cerimônia Anual de Certificação",
     ],
     instagramLatest: "Últimos no Instagram",
@@ -243,44 +251,44 @@ export const pt = {
 
   inscricao: {
     kicker: "Próximo passo",
-    title: "Comece a trajetória internacional deste aluno.",
+    title: "Vamos construir essa parceria.",
     lead:
-      "Deixe seus dados e o time do Núcleo retoma o contato pelo WhatsApp para agendar uma visita, tirar dúvidas sobre a dupla diplomação e os summer camps, e mostrar qual solução combina com o momento escolar do aluno.",
+      "Deixe os dados da sua instituição e o time do Núcleo retoma o contato para agendar uma reunião e apresentar a rede, a plataforma e o modelo de parceria que faz sentido para vocês.",
     talkNow: "Prefere falar agora?",
   },
 
   form: {
-    ariaLabel: "Formulário de inscrição",
-    responsavel: "Nome do responsável *",
-    aluno: "Nome do aluno(a) *",
-    serie: "Série que vai cursar",
-    unidade: "Unidade / cidade",
-    unidadePlaceholder: "Ex.: Balneário Camboriú, SC",
+    ariaLabel: "Formulário de parceria",
+    contato: "Seu nome *",
+    cargo: "Cargo",
+    cargoPlaceholder: "Ex.: Diretor(a) de Admissões",
+    instituicao: "Instituição *",
+    tipo: "Tipo de instituição",
+    local: "País / cidade",
+    localPlaceholder: "Ex.: Boston, EUA",
     email: "E-mail *",
-    whatsapp: "WhatsApp *",
-    whatsappPlaceholder: "(47) 90000-0000",
+    whatsapp: "WhatsApp / telefone *",
+    whatsappPlaceholder: "+1 555 000 0000",
     error: "Não foi possível enviar agora. Tente novamente.",
     sending: "Enviando…",
     submit: "Enviar e falar no WhatsApp",
-    note: "Ao enviar, você abre uma conversa no WhatsApp com o time do Núcleo.",
-    serieOptions: [
-      "6º ano",
-      "7º ano",
-      "8º ano",
-      "9º ano",
-      "1ª série do Ensino Médio",
-      "2ª série do Ensino Médio",
-      "3ª série do Ensino Médio",
-      "Já concluí o Ensino Médio",
+    note: "Ao enviar, você abre uma conversa no WhatsApp com o time de parcerias do Núcleo.",
+    tipoOptions: [
+      "High School / Boarding School",
+      "Universidade / College",
+      "Escola de idiomas",
+      "Academy (esportes, artes)",
+      "Summer camp / curta duração",
+      "Outro",
     ],
   },
 
   /** Mensagem pré-preenchida do WhatsApp. */
   whatsappMessage: {
-    base: "Olá! Vim pela página do Núcleo Internacional e quero saber mais sobre o programa de formação internacional (do Fundamental II ao Ensino Médio).",
-    responsavel: "Responsável",
-    aluno: "Aluno(a)",
-    unidade: "Unidade/cidade",
+    base: "Olá! Vim pela página de parcerias do Núcleo Internacional e quero conversar sobre tornar nossa instituição parceira.",
+    contato: "Contato",
+    instituicao: "Instituição",
+    local: "País/cidade",
     email: "E-mail",
   },
 };

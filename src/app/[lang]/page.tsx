@@ -152,7 +152,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         </figcaption>
       </figure>
 
-      {/* Trajetória — Fundamental II ao Ensino Médio */}
+      {/* Como funciona — etapas da parceria (âncora #trajetoria mantida) */}
       <section id="trajetoria" className="scroll-mt-20 bg-cream text-night">
         <div className={`${WRAP} ${SECTION_Y}`}>
           <div className="grid items-end gap-10 md:grid-cols-2">
@@ -202,7 +202,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       {/* CTA #2 — início-meio da rolagem */}
       <CtaBand line={t.cta.line} label={t.cta.enroll} ariaLabel={t.cta.bandLabel} />
 
-      {/* Soluções */}
+      {/* Frentes de parceria */}
       <section id="solucoes" className="scroll-mt-20 bg-night">
         <div className={`${WRAP} ${SECTION_Y}`}>
           <p className={`${KICKER} text-accent`}>{t.solutions.kicker}</p>
@@ -244,7 +244,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
 
-      {/* Summer Camps */}
+      {/* Programas de curta duração (summer) */}
       <section id="summer" className="scroll-mt-20 bg-navy">
         <div className={`${WRAP} ${SECTION_Y} grid items-center gap-12 md:grid-cols-2`}>
           <div>

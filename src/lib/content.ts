@@ -8,19 +8,19 @@
 // fica nos dicionários em src/lib/i18n/{pt,en,es}.ts, indexados pelas
 // mesmas chaves/ordem usadas aqui.
 
-/** Programas — os nomes "de marca" (shortName) são iguais em todos os idiomas. */
+/** Frentes de parceria (B2B) — os nomes "de marca" (shortName) são iguais em todos os idiomas. */
 export const SOLUTIONS = {
   "dupla-diplomacao": {
     image: { src: "/media/solucao-dupla-diplomacao.jpg", focus: "center" },
-    shortName: "Junior High International Program",
+    shortName: "Secondary School Partnerships",
   },
   "high-school": {
     image: { src: "/media/solucao-high-school.jpg", focus: "center" },
-    shortName: "International Counselling",
+    shortName: "Language & Academy Programs",
   },
   college: {
     image: { src: "/media/solucao-college.jpg", focus: "center 62%" },
-    shortName: "College Admissions Program",
+    shortName: "University Pathways",
   },
 } as const;
 
