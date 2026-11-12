@@ -103,15 +103,17 @@ export const es: Dictionary = {
       tag: "01 · Red nacional",
       title: "COC — tradición educativa desde 1963",
       text:
-        "Fundado en Ribeirão Preto (São Paulo), el COC es una de las redes educativas más tradicionales de Brasil, con metodología, material didáctico y evaluaciones propios presentes en escuelas de todo el país.",
-      stats: ["Fundación", "Escuelas asociadas en Brasil"],
+        "Fundado en Ribeirão Preto (São Paulo), el COC es una plataforma educativa con más de 60 años de trayectoria — metodología, material didáctico, evaluaciones y currículo bilingüe propios, presentes en escuelas de todo Brasil.",
+      stats: ["Escuelas asociadas en 24 estados y el DF", "Estudiantes en la red", "Estudiantes en el currículo bilingüe Be", "Aprobación en exámenes internacionales"],
+      values: ["500+", "160 mil+", "70 mil+", "95%"],
     },
     regional: {
       tag: "02 · Santa Catarina",
       title: "COC Santa Catarina — Grupo Nota Máxima",
       text:
-        "Desde 1999 el Grupo Nota Máxima construye el COC en el estado de Santa Catarina, en el sur de Brasil — del Valle del Itajaí y la sierra hasta la costa. Una red reconocida por sus resultados, con alumnos aprobados en más de 70 universidades en Brasil y en el exterior.",
-      stats: ["Ciudades", "Desde", "Universidades con alumnos aprobados", "Universidades en el exterior con aprobados"],
+        "Desde 1999 el Grupo Nota Máxima construye el COC en el estado de Santa Catarina, en el sur de Brasil: hoy son 10 sedes en 6 ciudades, del Valle del Itajaí y la sierra hasta el litoral. Una red reconocida por sus resultados, con alumnos aprobados en más de 70 universidades en Brasil y en el exterior.",
+      stats: ["Ciudades", "Sedes", "Desde", "Universidades con alumnos aprobados"],
+      unitsSuffix: "sedes",
       timelineTitle: "Nuestra trayectoria en Santa Catarina",
       timeline: [
         { year: "1999", text: "Inicio en Rio do Sul" },
@@ -151,7 +153,22 @@ export const es: Dictionary = {
       tag: "03 · Núcleo Polaris",
       title: "Cómo nació el Núcleo",
       text:
-        "[por confirmar: cuándo y por qué se creó el Núcleo Polaris, quién lo ideó y qué necesidad de las familias y escuelas vino a resolver.]",
+        "El mundo cambió — y las oportunidades académicas dejaron de tener fronteras. Las mejores universidades pasaron a valorar a estudiantes con dominio del inglés, vivencias internacionales, protagonismo y liderazgo, mucho más allá de las buenas notas. El Núcleo de Internacionalización nace dentro del COC Santa Catarina para preparar a los alumnos para esa realidad desde los primeros años de la vida escolar, acompañando a cada uno en toda la trayectoria internacional.",
+      frontsTitle: "Dos frentes que avanzan juntos",
+      fronts: [
+        {
+          name: "Sin movilidad · el mundo dentro de la escuela",
+          detail:
+            "Currículo bilingüe, doble titulación, preparación para exámenes de dominio del idioma y clases con especialistas de instituciones internacionales — sin salir de Brasil.",
+        },
+        {
+          name: "Con movilidad · el mundo fuera de la escuela",
+          detail:
+            "Short programs y summer camps, High School Experience en el exterior y postulación a universidades internacionales, con acompañamiento antes, durante y después.",
+        },
+      ],
+      partnerNote:
+        "Construido con aliados académicos como el Instituto Cultural, que formó y certificó al equipo del Núcleo para multiplicar la metodología en las sedes de la red — y en nuevas instituciones aliadas.",
     },
     counseling: {
       tag: "04 · Counseling",

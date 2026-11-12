@@ -103,15 +103,17 @@ export const en: Dictionary = {
       tag: "01 · National network",
       title: "COC — a tradition in education since 1963",
       text:
-        "Founded in Ribeirão Preto, São Paulo, COC is one of Brazil's most established school networks, with its own methodology, learning materials and assessments used by schools across the country.",
-      stats: ["Founded", "Partner schools in Brazil"],
+        "Founded in Ribeirão Preto, São Paulo, COC is an education platform with more than 60 years of history — its own methodology, learning materials, assessments and bilingual curriculum, used by schools across Brazil.",
+      stats: ["Partner schools in 24 states and the Federal District", "Students in the network", "Students in the Be bilingual curriculum", "Pass rate in international exams"],
+      values: ["500+", "160k+", "70k+", "95%"],
     },
     regional: {
       tag: "02 · Santa Catarina",
       title: "COC Santa Catarina — Grupo Nota Máxima",
       text:
-        "Since 1999, Grupo Nota Máxima has been building COC in the state of Santa Catarina, in southern Brazil — from the Itajaí Valley and the highlands to the coast. A network known for results, with students admitted to more than 70 universities in Brazil and abroad.",
-      stats: ["Cities", "Since", "Universities with admitted students", "Universities abroad with admitted students"],
+        "Since 1999, Grupo Nota Máxima has been building COC in the state of Santa Catarina, in southern Brazil: today 10 schools in 6 cities, from the Itajaí Valley and the highlands to the coast. A network known for results, with students admitted to more than 70 universities in Brazil and abroad.",
+      stats: ["Cities", "Schools", "Since", "Universities with admitted students"],
+      unitsSuffix: "schools",
       timelineTitle: "Our journey in Santa Catarina",
       timeline: [
         { year: "1999", text: "First school in Rio do Sul" },
@@ -151,7 +153,22 @@ export const en: Dictionary = {
       tag: "03 · Núcleo Polaris",
       title: "How the Núcleo began",
       text:
-        "[to be confirmed: when and why Núcleo Polaris was created, who founded it and which need of families and schools it set out to meet.]",
+        "The world has changed — and academic opportunities no longer have borders. Leading universities now look for students with strong English, international experience, initiative and leadership, far beyond good grades. The International Center was born inside COC Santa Catarina to prepare students for that reality from the early school years, supporting each of them along the entire international journey.",
+      frontsTitle: "Two tracks that move together",
+      fronts: [
+        {
+          name: "Without mobility · the world inside the school",
+          detail:
+            "Bilingual curriculum, dual diploma, proficiency exam preparation and classes with experts from international institutions — without leaving Brazil.",
+        },
+        {
+          name: "With mobility · the world beyond the school",
+          detail:
+            "Short programs and summer camps, a High School Experience abroad and applications to international universities, with support before, during and after.",
+        },
+      ],
+      partnerNote:
+        "Built with academic partners such as Instituto Cultural, which trained and certified the Núcleo team to multiply the methodology across the network's schools — and in new partner institutions.",
     },
     counseling: {
       tag: "04 · Counseling",

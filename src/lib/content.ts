@@ -82,14 +82,11 @@ export const INTERNATIONAL_APPROVALS = [
   "UNC Charlotte",
 ];
 
-const INTERNATIONAL_APPROVALS_COUNT = INTERNATIONAL_APPROVALS.length;
-
 export const ABOUT_STATS = {
-  // Fundação · escolas parceiras no Brasil (fontes públicas — confirmar com o COC)
-  national: ["1963", "500+"] as (string | null)[],
-  // Cidades · desde (grupo em SC) · universidades com aprovados · universidades no exterior com aprovados
-  // Fonte: apresentação da Convenção COC SC 2026 (sem números do vestibular 2026).
-  regional: ["6", "1999", "70+", String(INTERNATIONAL_APPROVALS_COUNT)] as (string | null)[],
+  // Cidades · unidades · desde (grupo em SC) · universidades com alunos aprovados
+  // Fontes: apresentações Polaris (alunos e famílias) e Convenção COC SC 2026 —
+  // sem números do vestibular 2026.
+  regional: ["6", "10", "1999", "70+"] as (string | null)[],
 };
 
 /**
@@ -98,10 +95,10 @@ export const ABOUT_STATS = {
  * para leitura: interior à esquerda/baixo, litoral à direita.
  */
 export const COC_SC_UNITS = [
-  { city: "Blumenau", x: 245, y: 92, label: "top" },
-  { city: "Itajaí", x: 345, y: 58, label: "top" },
-  { city: "Balneário Camboriú", x: 380, y: 118, label: "bottom" },
-  { city: "Porto Belo", x: 340, y: 192, label: "right" },
-  { city: "Rio do Sul", x: 150, y: 150, label: "bottom" },
-  { city: "Lages", x: 62, y: 222, label: "right" },
+  { city: "Blumenau", x: 245, y: 92, label: "top", units: 1 },
+  { city: "Itajaí", x: 345, y: 58, label: "top", units: 1 },
+  { city: "Balneário Camboriú", x: 380, y: 118, label: "bottom", units: 4 },
+  { city: "Porto Belo", x: 340, y: 192, label: "right", units: 1 },
+  { city: "Rio do Sul", x: 150, y: 150, label: "bottom", units: 2 },
+  { city: "Lages", x: 62, y: 222, label: "right", units: 1 },
 ] as const;

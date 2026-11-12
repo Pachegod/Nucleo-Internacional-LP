@@ -188,7 +188,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
               </h3>
               <p className={`mt-4 max-w-[520px] ${LEAD} text-night/70`}>{t.about.national.text}</p>
             </div>
-            <StatGrid values={ABOUT_STATS.national} labels={t.about.national.stats} pending={t.about.pending} />
+            <StatGrid values={t.about.national.values} labels={t.about.national.stats} pending={t.about.pending} />
           </div>
 
           {/* 02 · COC Santa Catarina */}
@@ -206,6 +206,9 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                     className="rounded-full border border-night/15 bg-white px-3.5 py-1.5 text-xs font-semibold text-navy"
                   >
                     COC {u.city}
+                    {u.units > 1 && (
+                      <span className="ml-1.5 text-accent-deep">· {u.units} {t.about.regional.unitsSuffix}</span>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -266,12 +269,29 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           </div>
 
           {/* 03 · Núcleo Polaris */}
-          <div className="mt-12 border-t border-night/10 pt-10">
-            <p className={`${KICKER} text-accent-deep`}>{t.about.nucleo.tag}</p>
-            <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">
-              {t.about.nucleo.title}
-            </h3>
-            <p className={`mt-4 max-w-[760px] ${LEAD} text-night/70`}>{t.about.nucleo.text}</p>
+          <div className="mt-12 grid items-start gap-8 border-t border-night/10 pt-10 md:grid-cols-2">
+            <div>
+              <p className={`${KICKER} text-accent-deep`}>{t.about.nucleo.tag}</p>
+              <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">
+                {t.about.nucleo.title}
+              </h3>
+              <p className={`mt-4 max-w-[560px] ${LEAD} text-night/70`}>{t.about.nucleo.text}</p>
+              <p className="mt-6 max-w-[560px] border-l-2 border-accent-deep pl-4 text-sm leading-relaxed text-night/75">
+                {t.about.nucleo.partnerNote}
+              </p>
+            </div>
+            <div>
+              <p className={`${KICKER} text-night/55`}>{t.about.nucleo.frontsTitle}</p>
+              <ul className="mt-4 grid gap-3">
+                {t.about.nucleo.fronts.map((front, i) => (
+                  <li key={front.name} className="rounded-[18px] border border-night/10 bg-white p-6">
+                    <span className={`${NUM} text-[36px] text-accent-deep`}>0{i + 1}</span>
+                    <h4 className="mt-2 text-lg font-bold text-navy">{front.name}</h4>
+                    <p className="mt-2 text-sm leading-relaxed text-night/70">{front.detail}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* 04 · Counseling */}

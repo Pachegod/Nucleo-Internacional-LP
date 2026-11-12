@@ -112,15 +112,17 @@ export const pt = {
       tag: "01 · Rede nacional",
       title: "COC — tradição em educação desde 1963",
       text:
-        "Fundado em Ribeirão Preto (SP), o COC é uma das redes de ensino mais tradicionais do Brasil, com metodologia, material didático e avaliações próprios presentes em escolas de todo o país.",
-      stats: ["Fundação", "Escolas parceiras no Brasil"],
+        "Fundado em Ribeirão Preto (SP), o COC é uma plataforma educacional com mais de 60 anos de trajetória — metodologia, material didático, avaliações e currículo bilíngue próprios, presentes em escolas de todo o Brasil.",
+      stats: ["Escolas parceiras em 24 estados e no DF", "Estudantes na rede", "Estudantes no currículo bilíngue Be", "Aprovação em exames internacionais"],
+      values: ["500+", "160 mil+", "70 mil+", "95%"],
     },
     regional: {
       tag: "02 · Santa Catarina",
       title: "COC Santa Catarina — Grupo Nota Máxima",
       text:
-        "Desde 1999 o Grupo Nota Máxima constrói o COC em Santa Catarina — do interior ao litoral, do Vale do Itajaí e da Serra até a costa. Uma rede reconhecida por resultados, com alunos aprovados em mais de 70 universidades no Brasil e no exterior.",
-      stats: ["Cidades", "Desde", "Universidades com alunos aprovados", "Universidades no exterior com aprovados"],
+        "Desde 1999 o Grupo Nota Máxima constrói o COC em Santa Catarina: hoje são 10 unidades em 6 cidades, do Vale do Itajaí e da Serra até o litoral. Uma rede reconhecida por resultados, com alunos aprovados em mais de 70 universidades no Brasil e no exterior.",
+      stats: ["Cidades", "Unidades", "Desde", "Universidades com alunos aprovados"],
+      unitsSuffix: "unidades",
       timelineTitle: "Nossa trajetória em Santa Catarina",
       timeline: [
         { year: "1999", text: "Início em Rio do Sul" },
@@ -160,7 +162,22 @@ export const pt = {
       tag: "03 · Núcleo Polaris",
       title: "Como nasceu o Núcleo",
       text:
-        "[a confirmar: quando e por que o Núcleo Polaris foi criado, quem idealizou o projeto e qual necessidade das famílias e escolas ele veio resolver.]",
+        "O mundo mudou — e as oportunidades acadêmicas deixaram de ter fronteiras. As melhores universidades passaram a valorizar estudantes com domínio do inglês, vivências internacionais, protagonismo e liderança, muito além das boas notas. O Núcleo de Internacionalização nasce dentro do COC Santa Catarina para preparar os alunos para essa realidade desde os primeiros anos da vida escolar, acompanhando cada um em toda a jornada internacional.",
+      frontsTitle: "Duas frentes que caminham juntas",
+      fronts: [
+        {
+          name: "Sem mobilidade · o mundo dentro da escola",
+          detail:
+            "Currículo bilíngue, dupla diplomação, preparação para exames de proficiência e aulas com especialistas de instituições internacionais — sem sair do Brasil.",
+        },
+        {
+          name: "Com mobilidade · o mundo fora da escola",
+          detail:
+            "Short programs e summer camps, High School Experience no exterior e candidatura a universidades internacionais, com acompanhamento antes, durante e depois.",
+        },
+      ],
+      partnerNote:
+        "Construído com parceiros acadêmicos como o Instituto Cultural, que formou e certificou a equipe do Núcleo para multiplicar a metodologia nas unidades da rede — e em novas instituições parceiras.",
     },
     counseling: {
       tag: "04 · Counseling",
