@@ -126,7 +126,7 @@ export const en: Dictionary = {
         { year: "2025", text: "COC Itajaí" },
         { year: "2026", text: "COC Porto Belo" },
       ],
-      expansion: "Next: COC Colinas, a new school in Camboriú.",
+      expansion: "Next: COC Colinas Global School and a new early-childhood campus, both in Balneário Camboriú.",
       mapTitle: "Map of COC schools in Santa Catarina",
       mapCaption: "COC schools in Santa Catarina · illustrative map",
     },

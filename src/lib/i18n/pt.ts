@@ -135,7 +135,7 @@ export const pt = {
         { year: "2025", text: "COC Itajaí" },
         { year: "2026", text: "COC Porto Belo" },
       ],
-      expansion: "Próximo passo: COC Colinas, nova escola em Camboriú.",
+      expansion: "Próximos passos: COC Colinas Global School e a nova unidade de Educação Infantil, ambas em Balneário Camboriú.",
       mapTitle: "Mapa das unidades COC em Santa Catarina",
       mapCaption: "Unidades COC em Santa Catarina · mapa ilustrativo",
     },
