@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRightIcon } from "./icons";
 
 const VARIANTS = {
@@ -23,13 +22,13 @@ export function CtaButton({
   className?: string;
 }) {
   return (
-    <Link
+    <a
       href="#inscrever"
       className={`inline-flex items-center justify-center gap-3 rounded-full text-xs font-bold uppercase tracking-[0.16em] transition ${VARIANTS[variant]} ${className}`}
     >
       {label}
       {arrow && <ArrowRightIcon />}
-    </Link>
+    </a>
   );
 }
 

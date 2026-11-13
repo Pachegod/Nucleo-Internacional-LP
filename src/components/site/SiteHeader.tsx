@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { LOGIN_URL } from "@/lib/config";
 import { Logo } from "./Logo";
 import { UserIcon } from "./icons";
@@ -33,15 +32,15 @@ export function SiteHeader({
   return (
     <header className="sticky top-0 z-30 border-b border-sand/10 bg-deep/90 backdrop-blur">
       <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-5 py-3.5 sm:px-10 lg:px-14">
-        <Link href={localePath(lang)} className="flex shrink-0 items-center" onClick={() => setMobileOpen(false)}>
+        <a href={localePath(lang)} className="flex shrink-0 items-center" onClick={() => setMobileOpen(false)}>
           <Logo logo={logo} alt={logoAlt} className="h-10 sm:h-11" />
-        </Link>
+        </a>
 
         <nav aria-label={t.navLabel} className="hidden items-center gap-5 text-[13px] font-medium md:flex lg:gap-7">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="whitespace-nowrap py-3 text-sand/80 transition-colors hover:text-accent">
+            <a key={link.href} href={link.href} className="whitespace-nowrap py-3 text-sand/80 transition-colors hover:text-accent">
               {link.label}
-            </Link>
+            </a>
           ))}
           <LangSwitcher lang={lang} t={langSwitcher} />
           <a href={LOGIN_URL} aria-label={t.loginAria} className={LOGIN_CLASS}>
@@ -75,14 +74,14 @@ export function SiteHeader({
       {mobileOpen && (
         <nav aria-label={t.navLabel} className="flex flex-col border-t border-sand/10 px-5 pb-4 pt-2 md:hidden">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
               className="border-b border-sand/10 py-3.5 text-sm text-sand/85 hover:text-accent"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
           <a href={LOGIN_URL} aria-label={t.loginAria} className={`mt-4 self-start ${LOGIN_CLASS}`}>
             <UserIcon />

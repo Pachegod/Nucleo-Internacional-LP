@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { LOGIN_URL, CONTACT_EMAIL, INSTAGRAM_URL, INSTAGRAM_HANDLE, whatsappLink, interestMessage } from "@/lib/config";
 import { Logo } from "./Logo";
 import { InstagramIcon } from "./icons";
@@ -37,11 +36,11 @@ export function SiteFooter({
 
         <div className="flex flex-col gap-2.5 text-sm">
           <span className={HEADING}>{f.nucleo}</span>
-          <Link href="#quem-somos" className={LINK}>{nav["quem-somos"]}</Link>
-          <Link href="#trajetoria" className={LINK}>{nav.trajetoria}</Link>
-          <Link href="#solucoes" className={LINK}>{nav.solucoes}</Link>
-          <Link href="#summer" className={LINK}>{nav.summer}</Link>
-          <Link href="#parceiros" className={LINK}>{nav.parceiros}</Link>
+          <a href="#quem-somos" className={LINK}>{nav["quem-somos"]}</a>
+          <a href="#trajetoria" className={LINK}>{nav.trajetoria}</a>
+          <a href="#solucoes" className={LINK}>{nav.solucoes}</a>
+          <a href="#summer" className={LINK}>{nav.summer}</a>
+          <a href="#parceiros" className={LINK}>{nav.parceiros}</a>
         </div>
 
         <div className="flex flex-col gap-2.5 text-sm">
@@ -52,7 +51,7 @@ export function SiteFooter({
           <a href={`mailto:${CONTACT_EMAIL}`} title={CONTACT_EMAIL} className={LINK}>
             {f.email}
           </a>
-          <Link href="#inscrever" className={LINK}>{f.enroll}</Link>
+          <a href="#inscrever" className={LINK}>{f.enroll}</a>
           <a href={LOGIN_URL} className={LINK}>{f.staffLogin}</a>
         </div>
 

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SOLUTIONS, PARTNERS, PARTNER_NETWORK, INSTAGRAM_POSTS, ABOUT_STATS, COC_SC_UNITS, INTERNATIONAL_APPROVALS } from "@/lib/content";
 import { UnitsConstellation } from "@/components/site/UnitsConstellation";
@@ -98,12 +97,12 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
               <CtaButton label={t.cta.visit} />
-              <Link
+              <a
                 href="#trajetoria"
                 className="border-b-2 border-accent py-2 text-sm font-semibold text-white hover:text-accent"
               >
                 {t.hero.secondary}
-              </Link>
+              </a>
             </div>
             <ul className="mt-12 flex flex-wrap gap-x-6 gap-y-2.5 border-t border-sand/10 pt-5 text-[11px] font-semibold uppercase tracking-[0.14em] text-sand/60">
               {t.hero.proof.map((p) => (
