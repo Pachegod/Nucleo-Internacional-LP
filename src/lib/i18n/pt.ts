@@ -179,6 +179,12 @@ export const pt = {
       partnerNote:
         "Construído com parceiros acadêmicos como o Instituto Cultural, que formou e certificou a equipe do Núcleo para multiplicar a metodologia nas unidades da rede — e em novas instituições parceiras.",
     },
+    founders: {
+      tag: "05 · Parceiros fundamentais",
+      title: "Quem construiu o Núcleo com a gente",
+      text:
+        "Dois parceiros estiveram na base do projeto desde o início — da formação da equipe ao diploma americano dos nossos alunos.",
+    },
     counseling: {
       tag: "04 · Counseling",
       title: "International Counseling",
@@ -303,7 +309,7 @@ export const pt = {
       "instituto-cultural": {
         focus: "Parceiro de rota: Estados Unidos",
         brands:
-          "Primeiro centro binacional Brasil–EUA de Porto Alegre e centro oficial EducationUSA, que conduz nossos alunos rumo a high schools e universidades americanas — orientação oficial, testes e todo o caminho até o embarque.",
+          "Primeiro centro binacional Brasil–EUA de Porto Alegre e centro oficial EducationUSA. Formou e certificou a equipe do Núcleo e conduz nossos alunos rumo a high schools e universidades americanas — orientação oficial, testes e todo o caminho até o embarque.",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
         stats: ["Fundado em Porto Alegre", "Centro EducationUSA desde"],
         values: ["1938", "1981"],

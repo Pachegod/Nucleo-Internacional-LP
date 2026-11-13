@@ -170,6 +170,12 @@ export const en: Dictionary = {
       partnerNote:
         "Built with academic partners such as Instituto Cultural, which trained and certified the Núcleo team to multiply the methodology across the network's schools — and in new partner institutions.",
     },
+    founders: {
+      tag: "05 · Founding partners",
+      title: "Who built the Núcleo with us",
+      text:
+        "Two partners have been at the core of the project from the start — from training our team to the American diploma our students earn.",
+    },
     counseling: {
       tag: "04 · Counseling",
       title: "International Counseling",
@@ -294,7 +300,7 @@ export const en: Dictionary = {
       "instituto-cultural": {
         focus: "Pathway partner: United States",
         brands:
-          "Porto Alegre's first Brazil–U.S. binational center and an official EducationUSA center, guiding our students toward American high schools and universities — official advising, testing and the whole path to departure.",
+          "Porto Alegre's first Brazil–U.S. binational center and an official EducationUSA center. It trained and certified the Núcleo team and guides our students toward American high schools and universities — official advising, testing and the whole path to departure.",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
         stats: ["Founded in Porto Alegre", "EducationUSA center since"],
         values: ["1938", "1981"],

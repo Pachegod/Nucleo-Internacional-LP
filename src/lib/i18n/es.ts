@@ -170,6 +170,12 @@ export const es: Dictionary = {
       partnerNote:
         "Construido con aliados académicos como el Instituto Cultural, que formó y certificó al equipo del Núcleo para multiplicar la metodología en las sedes de la red — y en nuevas instituciones aliadas.",
     },
+    founders: {
+      tag: "05 · Aliados fundamentales",
+      title: "Quienes construyeron el Núcleo con nosotros",
+      text:
+        "Dos aliados estuvieron en la base del proyecto desde el inicio — de la formación del equipo al diploma estadounidense de nuestros alumnos.",
+    },
     counseling: {
       tag: "04 · Counseling",
       title: "International Counseling",
@@ -294,7 +300,7 @@ export const es: Dictionary = {
       "instituto-cultural": {
         focus: "Aliado de ruta: Estados Unidos",
         brands:
-          "Primer centro binacional Brasil–EE. UU. de Porto Alegre y centro oficial EducationUSA, que guía a nuestros alumnos hacia high schools y universidades estadounidenses — orientación oficial, exámenes y todo el camino hasta el embarque.",
+          "Primer centro binacional Brasil–EE. UU. de Porto Alegre y centro oficial EducationUSA. Formó y certificó al equipo del Núcleo y guía a nuestros alumnos hacia high schools y universidades estadounidenses — orientación oficial, exámenes y todo el camino hasta el embarque.",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
         stats: ["Fundado en Porto Alegre", "Centro EducationUSA desde"],
         values: ["1938", "1981"],

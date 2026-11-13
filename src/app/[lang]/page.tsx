@@ -320,6 +320,37 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
               </ul>
             </div>
           </div>
+
+          {/* 05 · Parceiros fundamentais — mesma largura do bloco "COC Nacional", dividida entre os dois */}
+          <div className="mt-14">
+            <p className={`${KICKER} text-accent-deep`}>{t.about.founders.tag}</p>
+            <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">
+              {t.about.founders.title}
+            </h3>
+            <p className={`mt-4 max-w-[640px] ${LEAD} text-night/70`}>{t.about.founders.text}</p>
+            <div className="mt-8 grid gap-px overflow-hidden rounded-[20px] border border-night/10 bg-night/10 md:grid-cols-2">
+              {Object.entries(PARTNERS)
+                .filter(([, p]) => p.featured)
+                .map(([id, p]) => {
+                  const copy = t.partners.items[id as keyof typeof PARTNERS];
+                  return (
+                    <article key={id} className="flex flex-col bg-white p-8 sm:p-10">
+                      <div className="relative h-28 w-full max-w-[260px]">
+                        <Image src={p.logo.src} alt={copy.alt} fill sizes="260px" className="object-contain object-left" />
+                      </div>
+                      <p className={`mt-8 ${KICKER} text-accent-deep`}>{copy.focus}</p>
+                      <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">{p.name}</h3>
+                      <p className={`mt-4 max-w-[480px] ${LEAD} text-night/70`}>{copy.brands}</p>
+                      {copy.stats.length > 0 && (
+                        <div className="mt-auto pt-8">
+                          <StatGrid values={copy.values} labels={copy.stats} pending={t.about.pending} />
+                        </div>
+                      )}
+                    </article>
+                  );
+                })}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -515,32 +546,8 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
             {t.partners.title}
           </h2>
 
-          {/* Destaques — mesma largura do bloco "COC Nacional", dividida entre os parceiros em destaque */}
-          <div className="mt-12 grid gap-px overflow-hidden rounded-[20px] border border-night/10 bg-night/10 md:grid-cols-2">
-            {Object.entries(PARTNERS)
-              .filter(([, p]) => p.featured)
-              .map(([id, p]) => {
-                const copy = t.partners.items[id as keyof typeof PARTNERS];
-                return (
-                  <article key={id} className="flex flex-col bg-white p-8 sm:p-10">
-                    <div className="relative h-28 w-full max-w-[260px]">
-                      <Image src={p.logo.src} alt={copy.alt} fill sizes="260px" className="object-contain object-left" />
-                    </div>
-                    <p className={`mt-8 ${KICKER} text-accent-deep`}>{copy.focus}</p>
-                    <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">{p.name}</h3>
-                    <p className={`mt-4 max-w-[480px] ${LEAD} text-night/70`}>{copy.brands}</p>
-                    {copy.stats.length > 0 && (
-                      <div className="mt-auto pt-8">
-                        <StatGrid values={copy.values} labels={copy.stats} pending={t.about.pending} />
-                      </div>
-                    )}
-                  </article>
-                );
-              })}
-          </div>
-
-          {/* Demais parceiros de rota */}
-          <div className="mt-5 grid gap-5">
+          {/* Parceiros de rota (Instituto Cultural e Griggs aparecem em "Quem somos" · 05) */}
+          <div className="mt-12 grid gap-5">
             {Object.entries(PARTNERS)
               .filter(([, p]) => !p.featured)
               .map(([id, p]) => {
