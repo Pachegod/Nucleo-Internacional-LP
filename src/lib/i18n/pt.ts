@@ -361,9 +361,9 @@ export const pt = {
 
   quote: {
     label: "Citação",
-    text: "Educação não transforma o mundo. Educação muda as pessoas.",
-    accent: "Pessoas transformam o mundo.",
-    author: "— Anísio Teixeira",
+    text: "Uma criança, um professor, um livro e uma caneta",
+    accent: "podem mudar o mundo.",
+    author: "— Malala Yousafzai",
   },
 
   agenda: {

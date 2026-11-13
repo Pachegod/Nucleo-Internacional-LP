@@ -352,9 +352,9 @@ export const en: Dictionary = {
 
   quote: {
     label: "Quote",
-    text: "Education does not change the world. Education changes people.",
-    accent: "People change the world.",
-    author: "— Anísio Teixeira",
+    text: "One child, one teacher, one book and one pen",
+    accent: "can change the world.",
+    author: "— Malala Yousafzai",
   },
 
   agenda: {
