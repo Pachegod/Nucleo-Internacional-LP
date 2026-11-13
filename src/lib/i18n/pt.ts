@@ -303,19 +303,25 @@ export const pt = {
       "instituto-cultural": {
         focus: "Parceiro de rota: Estados Unidos",
         brands:
-          "Centro EducationUSA que conduz nossos alunos rumo a high schools e universidades americanas — orientação oficial, testes e todo o caminho até o embarque.",
+          "Primeiro centro binacional Brasil–EUA de Porto Alegre e centro oficial EducationUSA, que conduz nossos alunos rumo a high schools e universidades americanas — orientação oficial, testes e todo o caminho até o embarque.",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
+        stats: ["Fundado em Porto Alegre", "Centro EducationUSA desde"],
+        values: ["1938", "1981"],
       },
       griggs: {
         focus: "Parceiro acadêmico: diploma americano",
         brands:
-          "Escola americana acreditada, operada pela Andrews University, que certifica o diploma de High School americano cursado em paralelo ao COC.",
+          "Escola americana acreditada, operada pela Andrews University, que certifica o diploma de High School americano cursado em paralelo ao COC — mais de 250 mil alunos formados ao longo de sua história.",
         alt: "Griggs International Academy",
+        stats: ["Fundada nos EUA", "Países com alunos"],
+        values: ["1909", "60+"],
       },
       worlded: {
         focus: "Parceiro de rota: demais destinos internacionais",
         brands: "Programas em diferentes países e sistemas educacionais",
         alt: "WorldEd School",
+        stats: [] as string[],
+        values: [] as string[],
       },
     },
   },

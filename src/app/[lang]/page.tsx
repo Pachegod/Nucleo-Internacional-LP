@@ -529,6 +529,11 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                     <p className={`mt-8 ${KICKER} text-accent-deep`}>{copy.focus}</p>
                     <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">{p.name}</h3>
                     <p className={`mt-4 max-w-[480px] ${LEAD} text-night/70`}>{copy.brands}</p>
+                    {copy.stats.length > 0 && (
+                      <div className="mt-auto pt-8">
+                        <StatGrid values={copy.values} labels={copy.stats} pending={t.about.pending} />
+                      </div>
+                    )}
                   </article>
                 );
               })}

@@ -294,19 +294,25 @@ export const en: Dictionary = {
       "instituto-cultural": {
         focus: "Pathway partner: United States",
         brands:
-          "EducationUSA center guiding our students toward American high schools and universities — official advising, testing and the whole path to departure.",
+          "Porto Alegre's first Brazil–U.S. binational center and an official EducationUSA center, guiding our students toward American high schools and universities — official advising, testing and the whole path to departure.",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
+        stats: ["Founded in Porto Alegre", "EducationUSA center since"],
+        values: ["1938", "1981"],
       },
       griggs: {
         focus: "Academic partner: American diploma",
         brands:
-          "Accredited American school, operated by Andrews University, that awards the U.S. High School diploma earned alongside the COC curriculum.",
+          "Accredited American school, operated by Andrews University, that awards the U.S. High School diploma earned alongside the COC curriculum — over 250,000 students served throughout its history.",
         alt: "Griggs International Academy",
+        stats: ["Founded in the U.S.", "Countries with students"],
+        values: ["1909", "60+"],
       },
       worlded: {
         focus: "Pathway partner: other international destinations",
         brands: "Programs across different countries and education systems",
         alt: "WorldEd School",
+        stats: [] as string[],
+        values: [] as string[],
       },
     },
   },

@@ -294,19 +294,25 @@ export const es: Dictionary = {
       "instituto-cultural": {
         focus: "Aliado de ruta: Estados Unidos",
         brands:
-          "Centro EducationUSA que guía a nuestros alumnos hacia high schools y universidades estadounidenses — orientación oficial, exámenes y todo el camino hasta el embarque.",
+          "Primer centro binacional Brasil–EE. UU. de Porto Alegre y centro oficial EducationUSA, que guía a nuestros alumnos hacia high schools y universidades estadounidenses — orientación oficial, exámenes y todo el camino hasta el embarque.",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
+        stats: ["Fundado en Porto Alegre", "Centro EducationUSA desde"],
+        values: ["1938", "1981"],
       },
       griggs: {
         focus: "Aliado académico: diploma estadounidense",
         brands:
-          "Escuela estadounidense acreditada, operada por Andrews University, que otorga el diploma de High School estadounidense cursado en paralelo al COC.",
+          "Escuela estadounidense acreditada, operada por Andrews University, que otorga el diploma de High School estadounidense cursado en paralelo al COC — más de 250 mil alumnos a lo largo de su historia.",
         alt: "Griggs International Academy",
+        stats: ["Fundada en EE. UU.", "Países con alumnos"],
+        values: ["1909", "60+"],
       },
       worlded: {
         focus: "Aliado de ruta: otros destinos internacionales",
         brands: "Programas en distintos países y sistemas educativos",
         alt: "WorldEd School",
+        stats: [] as string[],
+        values: [] as string[],
       },
     },
   },
