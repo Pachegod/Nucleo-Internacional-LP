@@ -333,29 +333,30 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
 
           {/* 04 · Counseling */}
           <div className="mt-12 grid gap-8 rounded-[20px] bg-navy p-7 text-white sm:p-10 md:grid-cols-2">
-            <div>
+            <div className="md:col-span-2">
               <p className={`${KICKER} text-accent`}>{t.about.counseling.tag}</p>
               <h3 className="mt-3 font-display text-[34px] leading-none sm:text-[40px]">
                 {t.about.counseling.title}
               </h3>
               <p className={`mt-4 ${LEAD} text-white/75`}>{t.about.counseling.text}</p>
-              <figure className="mt-8">
-                <MediaFrame
-                  src="/media/pessoas/counseling-orientacao.jpg"
-                  alt={t.about.figures.counseling.alt}
-                  ratio="4 / 3"
-                  focus="center"
-                  sizes="(max-width: 768px) 100vw, 560px"
-                  className="rounded-2xl"
-                />
-                <figcaption className="mt-2 text-[9px] font-medium uppercase tracking-[0.1em] text-white/40">
-                  {t.about.figures.counseling.caption}
-                </figcaption>
-              </figure>
             </div>
-            <ul className="border-t border-white/15">
+            {/* Foto e lista 01–06 lado a lado, com a lista esticada à altura da foto */}
+            <figure className="flex flex-col">
+              <MediaFrame
+                src="/media/pessoas/counseling-orientacao.jpg"
+                alt={t.about.figures.counseling.alt}
+                ratio="4 / 3"
+                focus="center"
+                sizes="(max-width: 768px) 100vw, 560px"
+                className="rounded-2xl"
+              />
+              <figcaption className="mt-2 text-[9px] font-medium uppercase tracking-[0.1em] text-white/40">
+                {t.about.figures.counseling.caption}
+              </figcaption>
+            </figure>
+            <ul className="flex flex-col border-t border-white/15 md:mb-[22px]">
               {t.about.counseling.items.map((item, i) => (
-                <li key={item} className="flex gap-4 border-b border-white/15 py-3.5 text-[15px] text-white/85">
+                <li key={item} className="flex flex-1 items-center gap-4 border-b border-white/15 py-3.5 text-[15px] text-white/85">
                   <span className="w-6 shrink-0 text-xs font-bold text-accent">0{i + 1}</span>
                   {item}
                 </li>
