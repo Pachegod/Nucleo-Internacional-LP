@@ -169,7 +169,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
 
-      {/* Quem somos — de cima para baixo: COC Nacional → COC SC → Núcleo Polaris → Counseling */}
+      {/* Quem somos — de cima para baixo: Sistema de ensino → Grupo Nota Máxima (SC) → Núcleo Polaris → Counseling */}
       <section id="quem-somos" className="scroll-mt-20 bg-cream text-night">
         <div className={`${WRAP} ${SECTION_Y}`}>
           <p className={`${KICKER} text-accent-deep`}>{t.about.kicker}</p>
@@ -179,7 +179,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           {/* Foto de abertura — humaniza o "Quem somos" */}
           <figure className="mt-12">
             <MediaFrame
-              src="/media/pessoas/coc-colinas-campus.jpg"
+              src="/media/pessoas/global-colinas-campus.jpg"
               alt={t.about.figures.opening.alt}
               ratio="1024 / 434"
               focus="center"
@@ -215,7 +215,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
             </div>
           </div>
 
-          {/* 01 · COC Nacional */}
+          {/* 01 · Sistema de ensino (licença) */}
           <div className="mt-14 grid items-start gap-8 border-t border-night/10 pt-10 md:grid-cols-2">
             <div>
               <p className={`${KICKER} text-accent-deep`}>{t.about.national.tag}</p>
@@ -227,7 +227,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
             <StatGrid values={t.about.national.values} labels={t.about.national.stats} pending={t.about.pending} />
           </div>
 
-          {/* 02 · COC Santa Catarina */}
+          {/* 02 · Grupo Nota Máxima em Santa Catarina */}
           <div className="mt-12 grid items-start gap-8 border-t border-night/10 pt-10 md:grid-cols-2">
             <div>
               <p className={`${KICKER} text-accent-deep`}>{t.about.regional.tag}</p>
@@ -241,7 +241,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                     key={u.city}
                     className="rounded-full border border-night/15 bg-white px-3.5 py-1.5 text-xs font-semibold text-navy"
                   >
-                    COC {u.city}
+                    {u.city}
                     {u.units > 1 && (
                       <span className="ml-1.5 text-accent-deep">· {u.units} {t.about.regional.unitsSuffix}</span>
                     )}
@@ -373,7 +373,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
             </div>
           </div>
 
-          {/* 05 · Parceiros fundamentais — mesma largura do bloco "COC Nacional", dividida entre os dois */}
+          {/* 05 · Parceiros fundamentais — mesma largura do bloco "Sistema de ensino", dividida entre os dois */}
           <div className="mt-14">
             <p className={`${KICKER} text-accent-deep`}>{t.about.founders.tag}</p>
             <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">

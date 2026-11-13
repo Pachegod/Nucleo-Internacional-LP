@@ -4,7 +4,7 @@ export const en: Dictionary = {
   meta: {
     title: "Núcleo Polaris — Institutional Partnerships",
     description:
-      "Become a Núcleo Polaris partner: connect your high school, university, language school or academy with Brazilian students prepared from middle school onwards across the COC school network.",
+      "Become a Núcleo Polaris partner: connect your high school, university, language school or academy with Brazilian students prepared from middle school onwards at a school network in southern Brazil.",
   },
 
   langSwitcher: {
@@ -33,7 +33,7 @@ export const en: Dictionary = {
   footer: {
     tagline: "From Brazilian schools to the world",
     description:
-      "Institutional partnerships between the COC school network and educational institutions worldwide — high schools, universities, language schools and academies.",
+      "Institutional partnerships between Núcleo Polaris and educational institutions worldwide — high schools, universities, language schools and academies.",
     nucleo: "Núcleo",
     contact: "Contact",
     networks: "Social",
@@ -41,7 +41,7 @@ export const en: Dictionary = {
     email: "Email",
     enroll: "Become a partner",
     staffLogin: "Staff & partner log in",
-    legal: "Grupo Nota Máxima · COC Santa Catarina Network",
+    legal: "Grupo Nota Máxima · Santa Catarina, Brazil",
   },
 
   cta: {
@@ -100,7 +100,7 @@ export const en: Dictionary = {
       "A good partnership starts with knowing who is on the other side. From a national school system to the Núcleo team, this is the path that brings each student to your institution.",
     pending: "to be confirmed",
     figures: {
-      opening: { alt: "Students chatting in the COC Colinas courtyard at sunset", caption: "Fig. 01 — COC Colinas" },
+      opening: { alt: "Students chatting in the Global Colinas campus courtyard at sunset", caption: "Fig. 01 — Global Colinas campus" },
       counseling: { alt: "A counselor walks a student and her mother through a study plan on a laptop", caption: "Fig. 02 — One-on-one guidance" },
     },
     principles: {
@@ -121,33 +121,33 @@ export const en: Dictionary = {
       ],
     },
     national: {
-      tag: "01 · National network",
-      title: "COC — a tradition in education since 1963",
+      tag: "01 · School system",
+      title: "A teaching foundation over 60 years in the making",
       text:
-        "Founded in Ribeirão Preto, São Paulo, COC is an education platform with more than 60 years of history — its own methodology, learning materials, assessments and bilingual curriculum, used by schools across Brazil.",
+        "Our schools are COC-licensed, part of a school system founded in Ribeirão Preto, São Paulo, in 1963 — methodology, learning materials, assessments and a bilingual curriculum used by schools across Brazil.",
       stats: ["Partner schools in 24 states and the Federal District", "Students in the network", "Students in the Be bilingual curriculum", "Pass rate in international exams"],
       values: ["500+", "160k+", "70k+", "95%"],
     },
     regional: {
       tag: "02 · Santa Catarina",
-      title: "COC Santa Catarina — Grupo Nota Máxima",
+      title: "Grupo Nota Máxima — Santa Catarina",
       text:
-        "Since 1999, Grupo Nota Máxima has been building COC in the state of Santa Catarina, in southern Brazil: today 10 schools in 6 cities, from the Itajaí Valley and the highlands to the coast. A network known for results, with students admitted to more than 70 universities in Brazil and abroad.",
+        "Since 1999, Grupo Nota Máxima has been building its school network in the state of Santa Catarina, in southern Brazil: today 10 schools in 6 cities, from the Itajaí Valley and the highlands to the coast. A network known for results, with students admitted to more than 70 universities in Brazil and abroad.",
       stats: ["Cities", "Schools", "Since", "Universities with admitted students"],
       unitsSuffix: "schools",
       timelineTitle: "Our journey in Santa Catarina",
       timeline: [
         { year: "1999", text: "First school in Rio do Sul" },
         { year: "2003", text: "Arrival in Lages" },
-        { year: "2012", text: "Joining the COC system" },
+        { year: "2012", text: "All schools united under a single school system" },
         { year: "2017", text: "Balneário Camboriú" },
-        { year: "2018", text: "Blumenau and Aletech — the group's startup and COC Online, its online learning platform" },
+        { year: "2018", text: "Blumenau and Aletech — the group's startup and its online learning platform" },
         { year: "2019", text: "New building in Lages and new schools in Rio do Sul and Balneário Camboriú" },
         { year: "2021", text: "Balneário Camboriú — Campus 2 opens" },
         { year: "2023", text: "Balneário Camboriú — Campus 3" },
         { year: "2024", text: "New school in Lages and a countryside campus" },
-        { year: "2025", text: "COC Itajaí" },
-        { year: "2026", text: "COC Porto Belo" },
+        { year: "2025", text: "Itajaí campus" },
+        { year: "2026", text: "Porto Belo campus" },
       ],
       expansion: {
         kicker: "What's next",
@@ -155,7 +155,7 @@ export const en: Dictionary = {
         lead: "The network keeps growing — and it grows with the world in view.",
         items: [
           {
-            name: "COC Colinas Global School",
+            name: "Global Colinas campus",
             place: "Balneário Camboriú",
             detail:
               "A bilingual school of about 8,000 m² in a planned neighborhood — designed from day one for an international education.",
@@ -167,14 +167,14 @@ export const en: Dictionary = {
           },
         ],
       },
-      mapTitle: "Map of COC schools in Santa Catarina",
-      mapCaption: "COC schools in Santa Catarina · illustrative map",
+      mapTitle: "Map of our schools in Santa Catarina",
+      mapCaption: "Our schools in Santa Catarina · illustrative map",
     },
     nucleo: {
       tag: "03 · Núcleo Polaris",
       title: "How the Núcleo began",
       text:
-        "The world has changed — and academic opportunities no longer have borders. Leading universities now look for students with strong English, international experience, initiative and leadership, far beyond good grades. The International Center was born inside COC Santa Catarina to prepare students for that reality from the early school years, supporting each of them along the entire international journey.",
+        "The world has changed — and academic opportunities no longer have borders. Leading universities now look for students with strong English, international experience, initiative and leadership, far beyond good grades. The International Center was born inside Grupo Nota Máxima to prepare students for that reality from the early school years, supporting each of them along the entire international journey.",
       frontsTitle: "Two tracks that move together",
       fronts: [
         {
@@ -217,7 +217,7 @@ export const en: Dictionary = {
   abertura: {
     alt: "Students walking out through the gate of a university campus",
     figLabel: "Fig. 05 — Our cities",
-    carouselLabel: "Cities with COC schools in Santa Catarina",
+    carouselLabel: "Cities with our schools in Santa Catarina",
     prev: "Previous city",
     next: "Next city",
     goTo: "Go to",
@@ -331,7 +331,7 @@ export const en: Dictionary = {
       griggs: {
         focus: "Academic partner: American diploma",
         brands:
-          "Accredited American school, operated by Andrews University, that awards the U.S. High School diploma earned alongside the COC curriculum — over 250,000 students served throughout its history.",
+          "Accredited American school, operated by Andrews University, that awards the U.S. High School diploma earned alongside the Brazilian curriculum — over 250,000 students served throughout its history.",
         alt: "Griggs International Academy",
         photoCaption: "Fig. 04 — American diploma",
         photoAlt: "A graduate in cap and gown, moved, holds her diploma while classmates embrace",
@@ -377,7 +377,7 @@ export const en: Dictionary = {
       },
       {
         tag: "Training · Nov 6",
-        title: "Basketball with Andre White Sr. — COC Balneário Camboriú",
+        title: "Basketball with Andre White Sr. — Balneário Camboriú campus",
         alt: "Special basketball training with Andre White Sr.",
       },
       {

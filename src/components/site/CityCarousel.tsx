@@ -93,7 +93,7 @@ export function CityCarousel({ slides, labels }: { slides: CitySlide[]; labels: 
             />
             <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1240px] px-5 pb-8 sm:px-10 sm:pb-10 lg:px-14">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-accent">
-                COC{slide.unitsLabel ? ` · ${slide.unitsLabel}` : ""}
+                Santa Catarina{slide.unitsLabel ? ` · ${slide.unitsLabel}` : ""}
               </p>
               <p className="mt-2 font-display text-[52px] leading-[0.9] text-white sm:text-[80px] lg:text-[96px]">
                 {slide.city}

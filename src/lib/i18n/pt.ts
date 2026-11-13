@@ -10,7 +10,7 @@ export const pt = {
   meta: {
     title: "Núcleo Polaris — Parcerias Institucionais",
     description:
-      "Seja uma instituição parceira do Núcleo Polaris: conecte sua high school, universidade, escola de idiomas ou academy a estudantes brasileiros preparados desde o Fundamental II na rede COC.",
+      "Seja uma instituição parceira do Núcleo Polaris: conecte sua high school, universidade, escola de idiomas ou academy a estudantes brasileiros preparados desde o Fundamental II em uma rede de escolas no Sul do Brasil.",
   },
 
   langSwitcher: {
@@ -39,7 +39,7 @@ export const pt = {
   footer: {
     tagline: "Da escola brasileira ao mundo",
     description:
-      "Parcerias institucionais entre a rede COC e instituições de ensino do mundo todo — high schools, universidades, escolas de idioma e academies.",
+      "Parcerias institucionais entre o Núcleo Polaris e instituições de ensino do mundo todo — high schools, universidades, escolas de idioma e academies.",
     nucleo: "Núcleo",
     contact: "Contato",
     networks: "Redes",
@@ -47,7 +47,7 @@ export const pt = {
     email: "E-mail",
     enroll: "Seja parceira",
     staffLogin: "Entrar (equipe e parceiros)",
-    legal: "Grupo Nota Máxima · Rede COC Santa Catarina",
+    legal: "Grupo Nota Máxima · Santa Catarina, Brasil",
   },
 
   /** Rótulos de Call to Action. Todos levam ao mesmo formulário (#inscrever). */
@@ -109,7 +109,7 @@ export const pt = {
     /** Marcador exibido onde um número ainda não foi confirmado. */
     pending: "a confirmar",
     figures: {
-      opening: { alt: "Alunos conversando no pátio do COC Colinas ao entardecer", caption: "Fig. 01 — COC Colinas" },
+      opening: { alt: "Alunos conversando no pátio da Unidade Global Colinas ao entardecer", caption: "Fig. 01 — Unidade Global Colinas" },
       counseling: { alt: "Orientadora apresenta o plano de estudos no notebook a uma aluna e sua mãe", caption: "Fig. 02 — Orientação individual" },
     },
     principles: {
@@ -130,33 +130,33 @@ export const pt = {
       ],
     },
     national: {
-      tag: "01 · Rede nacional",
-      title: "COC — tradição em educação desde 1963",
+      tag: "01 · Sistema de ensino",
+      title: "Uma base pedagógica de mais de 60 anos",
       text:
-        "Fundado em Ribeirão Preto (SP), o COC é uma plataforma educacional com mais de 60 anos de trajetória — metodologia, material didático, avaliações e currículo bilíngue próprios, presentes em escolas de todo o Brasil.",
+        "Nossas escolas são licenciadas COC, sistema de ensino fundado em Ribeirão Preto (SP) em 1963 — metodologia, material didático, avaliações e currículo bilíngue presentes em escolas de todo o Brasil.",
       stats: ["Escolas parceiras em 24 estados e no DF", "Estudantes na rede", "Estudantes no currículo bilíngue Be", "Aprovação em exames internacionais"],
       values: ["500+", "160 mil+", "70 mil+", "95%"],
     },
     regional: {
       tag: "02 · Santa Catarina",
-      title: "COC Santa Catarina — Grupo Nota Máxima",
+      title: "Grupo Nota Máxima — Santa Catarina",
       text:
-        "Desde 1999 o Grupo Nota Máxima constrói o COC em Santa Catarina: hoje são 10 unidades em 6 cidades, do Vale do Itajaí e da Serra até o litoral. Uma rede reconhecida por resultados, com alunos aprovados em mais de 70 universidades no Brasil e no exterior.",
+        "Desde 1999 o Grupo Nota Máxima constrói sua rede de escolas em Santa Catarina: hoje são 10 unidades em 6 cidades, do Vale do Itajaí e da Serra até o litoral. Uma rede reconhecida por resultados, com alunos aprovados em mais de 70 universidades no Brasil e no exterior.",
       stats: ["Cidades", "Unidades", "Desde", "Universidades com alunos aprovados"],
       unitsSuffix: "unidades",
       timelineTitle: "Nossa trajetória em Santa Catarina",
       timeline: [
         { year: "1999", text: "Início em Rio do Sul" },
         { year: "2003", text: "Chegada a Lages" },
-        { year: "2012", text: "Unificação no sistema COC" },
+        { year: "2012", text: "Unificação das unidades em um mesmo sistema de ensino" },
         { year: "2017", text: "Balneário Camboriú" },
-        { year: "2018", text: "Blumenau e Aletech — startup do grupo e plataforma de aulas on-line COC Online" },
+        { year: "2018", text: "Blumenau e Aletech — startup do grupo e plataforma de aulas on-line" },
         { year: "2019", text: "Construção em Lages e novas unidades em Rio do Sul e Balneário Camboriú" },
         { year: "2021", text: "Chegada da Unidade 2 de Balneário Camboriú" },
         { year: "2023", text: "Balneário Camboriú — Unidade 3" },
         { year: "2024", text: "Nova unidade em Lages e escola de campo" },
-        { year: "2025", text: "COC Itajaí" },
-        { year: "2026", text: "COC Porto Belo" },
+        { year: "2025", text: "Unidade Itajaí" },
+        { year: "2026", text: "Unidade Porto Belo" },
       ],
       expansion: {
         kicker: "Próximos passos",
@@ -164,7 +164,7 @@ export const pt = {
         lead: "A rede continua crescendo — e cresce olhando para o mundo.",
         items: [
           {
-            name: "COC Colinas Global School",
+            name: "Unidade Global Colinas",
             place: "Balneário Camboriú",
             detail:
               "Uma escola bilíngue de cerca de 8 mil m², num bairro planejado — pensada desde o projeto para a formação internacional.",
@@ -176,14 +176,14 @@ export const pt = {
           },
         ],
       },
-      mapTitle: "Mapa das unidades COC em Santa Catarina",
-      mapCaption: "Unidades COC em Santa Catarina · mapa ilustrativo",
+      mapTitle: "Mapa das unidades em Santa Catarina",
+      mapCaption: "Unidades em Santa Catarina · mapa ilustrativo",
     },
     nucleo: {
       tag: "03 · Núcleo Polaris",
       title: "Como nasceu o Núcleo",
       text:
-        "O mundo mudou — e as oportunidades acadêmicas deixaram de ter fronteiras. As melhores universidades passaram a valorizar estudantes com domínio do inglês, vivências internacionais, protagonismo e liderança, muito além das boas notas. O Núcleo de Internacionalização nasce dentro do COC Santa Catarina para preparar os alunos para essa realidade desde os primeiros anos da vida escolar, acompanhando cada um em toda a jornada internacional.",
+        "O mundo mudou — e as oportunidades acadêmicas deixaram de ter fronteiras. As melhores universidades passaram a valorizar estudantes com domínio do inglês, vivências internacionais, protagonismo e liderança, muito além das boas notas. O Núcleo de Internacionalização nasce dentro do Grupo Nota Máxima para preparar os alunos para essa realidade desde os primeiros anos da vida escolar, acompanhando cada um em toda a jornada internacional.",
       frontsTitle: "Duas frentes que caminham juntas",
       fronts: [
         {
@@ -226,7 +226,7 @@ export const pt = {
   abertura: {
     alt: "Estudantes saindo pelo portão de um campus universitário",
     figLabel: "Fig. 05 — Nossas cidades",
-    carouselLabel: "Cidades com unidades COC em Santa Catarina",
+    carouselLabel: "Cidades com unidades em Santa Catarina",
     prev: "Cidade anterior",
     next: "Próxima cidade",
     goTo: "Ir para",
@@ -340,7 +340,7 @@ export const pt = {
       griggs: {
         focus: "Parceiro acadêmico: diploma americano",
         brands:
-          "Escola americana acreditada, operada pela Andrews University, que certifica o diploma de High School americano cursado em paralelo ao COC — mais de 250 mil alunos formados ao longo de sua história.",
+          "Escola americana acreditada, operada pela Andrews University, que certifica o diploma de High School americano cursado em paralelo ao currículo brasileiro — mais de 250 mil alunos formados ao longo de sua história.",
         alt: "Griggs International Academy",
         photoCaption: "Fig. 04 — Diploma americano",
         photoAlt: "Formanda de beca e capelo, emocionada, segura o diploma enquanto colegas se abraçam",
@@ -387,7 +387,7 @@ export const pt = {
       },
       {
         tag: "Treinamento · 06/11",
-        title: "Basquete com Andre White Sr. — COC Balneário Camboriú",
+        title: "Basquete com Andre White Sr. — Unidade Balneário Camboriú",
         alt: "Treinamento especial de basquete com Andre White Sr.",
       },
       {
