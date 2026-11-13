@@ -216,7 +216,7 @@ export const en: Dictionary = {
 
   abertura: {
     alt: "Students walking out through the gate of a university campus",
-    figLabel: "Fig. 04 — Our cities",
+    figLabel: "Fig. 05 — Our cities",
     carouselLabel: "Cities with COC schools in Santa Catarina",
     prev: "Previous city",
     next: "Next city",
@@ -333,8 +333,8 @@ export const en: Dictionary = {
         brands:
           "Accredited American school, operated by Andrews University, that awards the U.S. High School diploma earned alongside the COC curriculum — over 250,000 students served throughout its history.",
         alt: "Griggs International Academy",
-        photoCaption: "",
-        photoAlt: "",
+        photoCaption: "Fig. 04 — American diploma",
+        photoAlt: "A graduate in cap and gown, moved, holds her diploma while classmates embrace",
         stats: ["Founded in the U.S.", "Countries with students"],
         values: ["1909", "60+"],
       },

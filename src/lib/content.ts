@@ -39,7 +39,7 @@ export const PARTNERS = {
     name: "Griggs International Academy",
     logo: { src: "/media/parceiros/griggs.webp" },
     featured: true,
-    photo: null,
+    photo: { src: "/media/pessoas/diploma-americano.jpg", focus: "center 30%" },
   },
   worlded: {
     name: "WorldEd",

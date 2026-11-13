@@ -225,7 +225,7 @@ export const pt = {
 
   abertura: {
     alt: "Estudantes saindo pelo portão de um campus universitário",
-    figLabel: "Fig. 04 — Nossas cidades",
+    figLabel: "Fig. 05 — Nossas cidades",
     carouselLabel: "Cidades com unidades COC em Santa Catarina",
     prev: "Cidade anterior",
     next: "Próxima cidade",
@@ -342,8 +342,8 @@ export const pt = {
         brands:
           "Escola americana acreditada, operada pela Andrews University, que certifica o diploma de High School americano cursado em paralelo ao COC — mais de 250 mil alunos formados ao longo de sua história.",
         alt: "Griggs International Academy",
-        photoCaption: "",
-        photoAlt: "",
+        photoCaption: "Fig. 04 — Diploma americano",
+        photoAlt: "Formanda de beca e capelo, emocionada, segura o diploma enquanto colegas se abraçam",
         stats: ["Fundada nos EUA", "Países com alunos"],
         values: ["1909", "60+"],
       },
