@@ -100,7 +100,7 @@ export const en: Dictionary = {
       "A good partnership starts with knowing who is on the other side. From a national school system to the Núcleo team, this is the path that brings each student to your institution.",
     pending: "to be confirmed",
     figures: {
-      opening: { alt: "Students chatting in the Global Colinas campus courtyard at sunset", caption: "Fig. 01 — Global Colinas campus" },
+      opening: { alt: "Students chatting in the Colinas Global School courtyard at sunset", caption: "Fig. 01 — Colinas Global School" },
       counseling: { alt: "A counselor walks a student and her mother through a study plan on a laptop", caption: "Fig. 02 — One-on-one guidance" },
     },
     principles: {
@@ -155,7 +155,7 @@ export const en: Dictionary = {
         lead: "The network keeps growing — and it grows with the world in view.",
         items: [
           {
-            name: "Global Colinas campus",
+            name: "Colinas Global School",
             place: "Balneário Camboriú",
             detail:
               "A bilingual school of about 8,000 m² in a planned neighborhood — designed from day one for an international education.",

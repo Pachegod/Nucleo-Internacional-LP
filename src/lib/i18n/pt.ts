@@ -109,7 +109,7 @@ export const pt = {
     /** Marcador exibido onde um número ainda não foi confirmado. */
     pending: "a confirmar",
     figures: {
-      opening: { alt: "Alunos conversando no pátio da Unidade Global Colinas ao entardecer", caption: "Fig. 01 — Unidade Global Colinas" },
+      opening: { alt: "Alunos conversando no pátio da Colinas Global School ao entardecer", caption: "Fig. 01 — Colinas Global School" },
       counseling: { alt: "Orientadora apresenta o plano de estudos no notebook a uma aluna e sua mãe", caption: "Fig. 02 — Orientação individual" },
     },
     principles: {
@@ -164,7 +164,7 @@ export const pt = {
         lead: "A rede continua crescendo — e cresce olhando para o mundo.",
         items: [
           {
-            name: "Unidade Global Colinas",
+            name: "Colinas Global School",
             place: "Balneário Camboriú",
             detail:
               "Uma escola bilíngue de cerca de 8 mil m², num bairro planejado — pensada desde o projeto para a formação internacional.",

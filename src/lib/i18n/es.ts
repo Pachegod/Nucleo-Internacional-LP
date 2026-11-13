@@ -100,7 +100,7 @@ export const es: Dictionary = {
       "Una buena alianza empieza por conocer a quien está del otro lado. Del sistema educativo nacional al equipo del Núcleo, este es el camino que lleva a cada estudiante hasta su institución.",
     pending: "por confirmar",
     figures: {
-      opening: { alt: "Estudiantes conversando en el patio de la Sede Global Colinas al atardecer", caption: "Fig. 01 — Sede Global Colinas" },
+      opening: { alt: "Estudiantes conversando en el patio de la Colinas Global School al atardecer", caption: "Fig. 01 — Colinas Global School" },
       counseling: { alt: "Una orientadora presenta el plan de estudios en el portátil a una alumna y su madre", caption: "Fig. 02 — Orientación individual" },
     },
     principles: {
@@ -155,7 +155,7 @@ export const es: Dictionary = {
         lead: "La red sigue creciendo — y crece mirando al mundo.",
         items: [
           {
-            name: "Sede Global Colinas",
+            name: "Colinas Global School",
             place: "Balneário Camboriú",
             detail:
               "Una escuela bilingüe de cerca de 8 mil m², en un barrio planificado — pensada desde el proyecto para la formación internacional.",
