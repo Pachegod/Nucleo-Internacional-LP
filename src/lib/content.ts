@@ -33,16 +33,19 @@ export const PARTNERS = {
     name: "Instituto Cultural",
     logo: { src: "/media/parceiros/instituto-cultural.webp" },
     featured: true,
+    photo: { src: "/media/pessoas/formacao-educadores.jpg", focus: "center 40%" },
   },
   griggs: {
     name: "Griggs International Academy",
     logo: { src: "/media/parceiros/griggs.webp" },
     featured: true,
+    photo: null,
   },
   worlded: {
     name: "WorldEd",
     logo: { src: "/media/parceiros/worlded.webp" },
     featured: false,
+    photo: null,
   },
 } as const;
 

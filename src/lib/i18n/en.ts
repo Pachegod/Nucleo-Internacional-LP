@@ -216,7 +216,7 @@ export const en: Dictionary = {
 
   abertura: {
     alt: "Students walking out through the gate of a university campus",
-    figLabel: "Fig. 03 — Our cities",
+    figLabel: "Fig. 04 — Our cities",
     carouselLabel: "Cities with COC schools in Santa Catarina",
     prev: "Previous city",
     next: "Next city",
@@ -323,6 +323,8 @@ export const en: Dictionary = {
         brands:
           "Porto Alegre's first Brazil–U.S. binational center and an official EducationUSA center. It trained and certified the Núcleo team and guides our students toward American high schools and universities — official advising, testing and the whole path to departure.",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
+        photoCaption: "Fig. 03 — Educator training",
+        photoAlt: "A trainer leads a professional development session with teachers around a table",
         stats: ["Founded in Porto Alegre", "EducationUSA center since"],
         values: ["1938", "1981"],
       },
@@ -331,6 +333,8 @@ export const en: Dictionary = {
         brands:
           "Accredited American school, operated by Andrews University, that awards the U.S. High School diploma earned alongside the COC curriculum — over 250,000 students served throughout its history.",
         alt: "Griggs International Academy",
+        photoCaption: "",
+        photoAlt: "",
         stats: ["Founded in the U.S.", "Countries with students"],
         values: ["1909", "60+"],
       },
@@ -338,6 +342,8 @@ export const en: Dictionary = {
         focus: "Pathway partner: other international destinations",
         brands: "Programs across different countries and education systems",
         alt: "WorldEd School",
+        photoCaption: "",
+        photoAlt: "",
         stats: [] as string[],
         values: [] as string[],
       },

@@ -387,7 +387,16 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                 .map(([id, p]) => {
                   const copy = t.partners.items[id as keyof typeof PARTNERS];
                   return (
-                    <article key={id} className="flex flex-col bg-white p-8 sm:p-10">
+                    <article key={id} className="flex flex-col bg-white">
+                      {p.photo && (
+                        <figure className="relative">
+                          <MediaFrame src={p.photo.src} alt={copy.photoAlt} ratio="16 / 9" focus={p.photo.focus} sizes="(max-width: 768px) 100vw, 620px" />
+                          <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night/60 to-transparent px-8 pb-2.5 pt-8 text-[9px] font-medium uppercase tracking-[0.1em] text-white/75 sm:px-10">
+                            {copy.photoCaption}
+                          </figcaption>
+                        </figure>
+                      )}
+                      <div className="flex flex-1 flex-col p-8 sm:p-10">
                       <div className="relative h-28 w-full max-w-[260px]">
                         <Image src={p.logo.src} alt={copy.alt} fill sizes="260px" className="object-contain object-left" />
                       </div>
@@ -399,6 +408,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                           <StatGrid values={copy.values} labels={copy.stats} pending={t.about.pending} />
                         </div>
                       )}
+                      </div>
                     </article>
                   );
                 })}

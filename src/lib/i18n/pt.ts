@@ -225,7 +225,7 @@ export const pt = {
 
   abertura: {
     alt: "Estudantes saindo pelo portão de um campus universitário",
-    figLabel: "Fig. 03 — Nossas cidades",
+    figLabel: "Fig. 04 — Nossas cidades",
     carouselLabel: "Cidades com unidades COC em Santa Catarina",
     prev: "Cidade anterior",
     next: "Próxima cidade",
@@ -332,6 +332,8 @@ export const pt = {
         brands:
           "Primeiro centro binacional Brasil–EUA de Porto Alegre e centro oficial EducationUSA. Formou e certificou a equipe do Núcleo e conduz nossos alunos rumo a high schools e universidades americanas — orientação oficial, testes e todo o caminho até o embarque.",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
+        photoCaption: "Fig. 03 — Formação de educadores",
+        photoAlt: "Formador conduz uma sessão de capacitação com professores ao redor de uma mesa",
         stats: ["Fundado em Porto Alegre", "Centro EducationUSA desde"],
         values: ["1938", "1981"],
       },
@@ -340,6 +342,8 @@ export const pt = {
         brands:
           "Escola americana acreditada, operada pela Andrews University, que certifica o diploma de High School americano cursado em paralelo ao COC — mais de 250 mil alunos formados ao longo de sua história.",
         alt: "Griggs International Academy",
+        photoCaption: "",
+        photoAlt: "",
         stats: ["Fundada nos EUA", "Países com alunos"],
         values: ["1909", "60+"],
       },
@@ -347,6 +351,8 @@ export const pt = {
         focus: "Parceiro de rota: demais destinos internacionais",
         brands: "Programas em diferentes países e sistemas educacionais",
         alt: "WorldEd School",
+        photoCaption: "",
+        photoAlt: "",
         stats: [] as string[],
         values: [] as string[],
       },
