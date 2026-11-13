@@ -187,7 +187,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
               sizes="(max-width: 1240px) 100vw, 1240px"
               className="rounded-[20px]"
             />
-            <figcaption className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-night/55">{t.about.figures.opening.caption}</figcaption>
+            <figcaption className="mt-2 text-[9px] font-medium uppercase tracking-[0.1em] text-night/40">{t.about.figures.opening.caption}</figcaption>
           </figure>
 
           {/* Missão, visão e valores — abre o "Quem somos", antes da trajetória da rede */}
@@ -348,7 +348,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                   sizes="(max-width: 768px) 100vw, 560px"
                   className="rounded-2xl"
                 />
-                <figcaption className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55">
+                <figcaption className="mt-2 text-[9px] font-medium uppercase tracking-[0.1em] text-white/40">
                   {t.about.figures.counseling.caption}
                 </figcaption>
               </figure>
