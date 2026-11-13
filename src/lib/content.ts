@@ -1,3 +1,4 @@
+import type { Locale } from "@/lib/i18n/locales";
 // Dados estruturais da LP (ids, imagens, nomes próprios) — espelha
 // SOLUTIONS/PARTNERS da ferramenta (src/lib/types.ts no outro repo).
 // Duplicado deliberadamente aqui: a LP é só apresentação, não precisa
@@ -107,8 +108,8 @@ export const ABOUT_STATS = {
 
 export type CityPhoto = {
   src: string;
-  /** Ponto turístico ou paisagem retratada. */
-  landmark: string;
+  /** Ponto turístico ou paisagem retratada, por idioma. */
+  landmark: Record<Locale, string>;
   /** Vista aérea (drone/avião) ou do alto. */
   aerial?: boolean;
   /** Atribuição — exigida pelas licenças CC do Wikimedia Commons; cortesia no Pexels. Ausente em foto cedida. */
@@ -133,18 +134,18 @@ export const COC_SC_UNITS: {
   {
     city: "Balneário Camboriú", slug: "balneario-camboriu", units: 4, x: 380, y: 118, label: "bottom",
     photos: [
-      { src: "/media/cidades/balneario-camboriu-aerea.jpg", landmark: "Vista aérea — Praia do Buraco e skyline", aerial: true,
+      { src: "/media/cidades/balneario-camboriu-aerea.jpg", landmark: { pt: "Vista aérea — Praia do Buraco e skyline", en: "Aerial view — Praia do Buraco and skyline", es: "Vista aérea — Praia do Buraco y skyline" }, aerial: true,
         credit: { author: "Jodejau", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_praia_do_Buraco.jpg" } },
-      { src: "/media/cidades/balneario-camboriu.jpg", landmark: "Praia Central e Barra Norte",
+      { src: "/media/cidades/balneario-camboriu.jpg", landmark: { pt: "Praia Central e Barra Norte", en: "Praia Central and Barra Norte", es: "Praia Central y Barra Norte" },
         credit: { author: "HVL", license: "CC BY 4.0", url: "https://commons.wikimedia.org/wiki/File:Praia_Central_e_Barra_Norte_ao_fundo,_Balne%C3%A1rio_Cambori%C3%BA_SC.JPG" } },
     ],
   },
   {
     city: "Itajaí", slug: "itajai", units: 1, x: 345, y: 58, label: "top",
     photos: [
-      { src: "/media/cidades/itajai-aerea.jpg", landmark: "Vista aérea do litoral", aerial: true,
+      { src: "/media/cidades/itajai-aerea.jpg", landmark: { pt: "Vista aérea do litoral", en: "Aerial view of the coastline", es: "Vista aérea de la costa" }, aerial: true,
         credit: { author: "Aleson Padilha", license: "Pexels", url: "https://www.pexels.com/photo/scenic-aerial-view-of-itajai-coastline-34054812/" } },
-      { src: "/media/cidades/itajai.jpg", landmark: "Praia Brava",
+      { src: "/media/cidades/itajai.jpg", landmark: { pt: "Praia Brava", en: "Praia Brava beach", es: "Playa Brava" },
         credit: { author: "Eduardo Marquetti", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Praia_Brava_Itaja%C3%AD.jpg" } },
     ],
   },
@@ -153,17 +154,17 @@ export const COC_SC_UNITS: {
     photos: [
       // Foto cedida por um amigo do Núcleo (uso autorizado) — trocar pelo arquivo
       // original em alta resolução e preencher o crédito quando houver.
-      { src: "/media/cidades/porto-belo-orla.jpg", landmark: "Vista aérea da orla ao entardecer", aerial: true },
-      { src: "/media/cidades/porto-belo.jpg", landmark: "Enseada de Porto Belo",
+      { src: "/media/cidades/porto-belo-orla.jpg", landmark: { pt: "Vista aérea da orla ao entardecer", en: "Aerial view of the waterfront at sunset", es: "Vista aérea del litoral al atardecer" }, aerial: true },
+      { src: "/media/cidades/porto-belo.jpg", landmark: { pt: "Enseada de Porto Belo", en: "Porto Belo Bay", es: "Ensenada de Porto Belo" },
         credit: { author: "Rachmaninoff", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Porto_Belo_boats_sunset.jpg" } },
     ],
   },
   {
     city: "Blumenau", slug: "blumenau", units: 1, x: 245, y: 92, label: "top",
     photos: [
-      { src: "/media/cidades/blumenau.jpg", landmark: "Vista aérea do Rio Itajaí-Açu", aerial: true,
+      { src: "/media/cidades/blumenau.jpg", landmark: { pt: "Vista aérea do Rio Itajaí-Açu", en: "Aerial view of the Itajaí-Açu River", es: "Vista aérea del río Itajaí-Açu" }, aerial: true,
         credit: { author: "Charles Ringenberg", license: "CC BY 3.0", url: "https://commons.wikimedia.org/wiki/File:Foto_a%C3%A9rea_Blumenau_-_panoramio.jpg" } },
-      { src: "/media/cidades/blumenau-vila-germanica.jpg", landmark: "Vila Germânica",
+      { src: "/media/cidades/blumenau-vila-germanica.jpg", landmark: { pt: "Vila Germânica", en: "Vila Germânica (German Village)", es: "Vila Germânica (Villa Germánica)" },
         credit: { author: "off leko", license: "Pexels", url: "https://www.pexels.com/photo/the-parque-vila-germanica-in-brazil-13571279/" } },
     ],
   },
@@ -171,16 +172,16 @@ export const COC_SC_UNITS: {
     city: "Rio do Sul", slug: "rio-do-sul", units: 2, x: 150, y: 150, label: "bottom",
     // Fotos enviadas pela equipe — preencher o crédito quando houver.
     photos: [
-      { src: "/media/cidades/rio-do-sul-aerea.jpg", landmark: "Vista aérea do centro e do Rio Itajaí-Açu", aerial: true },
-      { src: "/media/cidades/rio-do-sul-catedral.jpg", landmark: "Catedral São João Batista", aerial: true },
+      { src: "/media/cidades/rio-do-sul-aerea.jpg", landmark: { pt: "Vista aérea do centro e do Rio Itajaí-Açu", en: "Aerial view of downtown and the Itajaí-Açu River", es: "Vista aérea del centro y del río Itajaí-Açu" }, aerial: true },
+      { src: "/media/cidades/rio-do-sul-catedral.jpg", landmark: { pt: "Catedral São João Batista", en: "St. John the Baptist Cathedral", es: "Catedral San Juan Bautista" }, aerial: true },
     ],
   },
   {
     city: "Lages", slug: "lages", units: 1, x: 62, y: 222, label: "right",
     photos: [
-      { src: "/media/cidades/lages-alto.jpg", landmark: "Vista do alto da cidade", aerial: true,
+      { src: "/media/cidades/lages-alto.jpg", landmark: { pt: "Vista do alto da cidade", en: "View of the city from above", es: "Vista de la ciudad desde lo alto" }, aerial: true,
         credit: { author: "Leonir Angelo Lunardi", license: "CC BY 3.0", url: "https://commons.wikimedia.org/wiki/File:Lages_-_SC.jpg" } },
-      { src: "/media/cidades/lages.jpg", landmark: "Coxilha Rica",
+      { src: "/media/cidades/lages.jpg", landmark: { pt: "Coxilha Rica", en: "Coxilha Rica highlands", es: "Coxilha Rica" },
         credit: { author: "Gibbneckel", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Vista_da_Coxilha_Rica,_com_destaque_para_o_Viaduto_Ferrovi%C3%A1rio_Rio_Tatetos_(02-05-2020).jpg" } },
     ],
   },

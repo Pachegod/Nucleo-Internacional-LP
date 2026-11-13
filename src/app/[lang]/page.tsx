@@ -424,12 +424,12 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           const count = Math.max(u.photos.length, 1);
           return Array.from({ length: count }, (_, i) => {
             const local = u.photos[i];
-            const alt = `${local?.landmark ?? u.city} — ${u.city}, Santa Catarina`;
+            const alt = `${local?.landmark[lang] ?? u.city} — ${u.city}, Santa Catarina`;
             const cms = getImage(items, i === 0 ? `cidade-${u.slug}` : `cidade-${u.slug}-${i + 1}`, lang, alt);
             return {
               key: `${u.slug}-${i}`,
               city: u.city,
-              landmark: cms ? "" : (local?.landmark ?? ""),
+              landmark: cms ? "" : (local?.landmark[lang] ?? ""),
               unitsLabel,
               image: cms ?? (local ? { src: local.src, alt } : undefined),
               // Crédito só vale para a foto local; foto do CMS é responsabilidade de quem subiu.
