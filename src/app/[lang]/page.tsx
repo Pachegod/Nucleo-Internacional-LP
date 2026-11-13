@@ -11,7 +11,7 @@ import { InscricaoForm } from "@/components/site/InscricaoForm";
 import { WhatsappButton } from "@/components/site/WhatsappButton";
 import { InstagramIcon } from "@/components/site/icons";
 import { getLpContent, getImage, getVideo, parseVideoEmbed } from "@/lib/cms";
-import { getDictionary, hasLocale } from "@/lib/i18n";
+import { getDictionary, hasLocale, legalPath } from "@/lib/i18n";
 
 // Classes compartilhadas
 const WRAP = "mx-auto max-w-[1240px] px-5 sm:px-10 lg:px-14";
@@ -738,7 +738,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
               <WhatsappButton label={t.cta.whatsapp} message={t.whatsappMessage} />
             </div>
           </div>
-          <InscricaoForm lang={lang} t={t.form} message={t.whatsappMessage} />
+          <InscricaoForm lang={lang} t={t.form} message={t.whatsappMessage} privacyHref={legalPath(lang, "privacy")} />
         </div>
       </section>
     </>

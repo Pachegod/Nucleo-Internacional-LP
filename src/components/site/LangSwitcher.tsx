@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
-import { LOCALES, LOCALE_COOKIE, HTML_LANG, localePath, type Locale } from "@/lib/i18n/locales";
+import { usePathname } from "next/navigation";
+import { LOCALES, LOCALE_COOKIE, HTML_LANG, pathForLocale, type Locale } from "@/lib/i18n/locales";
 import type { Dictionary } from "@/lib/i18n/pt";
 import { ChevronDownIcon, GlobeIcon } from "./icons";
 
@@ -33,6 +34,7 @@ export function LangSwitcher({
   className?: string;
 }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname() ?? "/";
   const rootRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -68,7 +70,7 @@ export function LangSwitcher({
     rememberLocale(locale);
     setOpen(false);
     if (locale === lang) return;
-    window.location.assign(localePath(locale) + window.location.hash);
+    window.location.assign(pathForLocale(window.location.pathname, locale) + window.location.hash);
   }
 
   function onButtonKeyDown(e: KeyboardEvent<HTMLButtonElement>) {
@@ -153,7 +155,7 @@ export function LangSwitcher({
                   }}
                   role="menuitemradio"
                   aria-checked={active}
-                  href={localePath(locale)}
+                  href={pathForLocale(pathname, locale)}
                   hrefLang={HTML_LANG[locale]}
                   lang={HTML_LANG[locale]}
                   tabIndex={-1}

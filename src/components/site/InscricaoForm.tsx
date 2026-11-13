@@ -27,10 +27,12 @@ export function InscricaoForm({
   lang,
   t,
   message,
+  privacyHref,
 }: {
   lang: Locale;
   t: Dictionary["form"];
   message: Dictionary["whatsappMessage"];
+  privacyHref: string;
 }) {
   const [fields, setFields] = useState<Fields>({
     contato: "",
@@ -174,7 +176,13 @@ export function InscricaoForm({
         >
           {status === "sending" ? t.sending : t.submit}
         </button>
-        <span className="text-xs leading-relaxed text-night/60">{t.note}</span>
+        <span className="text-xs leading-relaxed text-night/60">
+          {t.note} {t.privacyBefore}
+          <a href={privacyHref} className="font-semibold text-navy underline underline-offset-2 hover:text-accent-deep">
+            {t.privacyLink}
+          </a>
+          {t.privacyAfter}
+        </span>
       </div>
     </form>
   );

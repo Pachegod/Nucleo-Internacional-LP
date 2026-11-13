@@ -412,6 +412,9 @@ export const en: Dictionary = {
     sending: "Sending…",
     submit: "Send and chat on WhatsApp",
     note: "Submitting opens a WhatsApp chat with the Núcleo partnerships team.",
+    privacyBefore: "By submitting, you acknowledge our ",
+    privacyLink: "Privacy Policy",
+    privacyAfter: ".",
     tipoOptions: [
       "High School / Boarding School",
       "University / College",
@@ -420,6 +423,36 @@ export const en: Dictionary = {
       "Summer camp / short-term program",
       "Other",
     ],
+  },
+
+  legal: {
+    privacy: "Privacy Policy",
+    terms: "Terms of Use",
+    cookies: "Cookie Policy",
+    preferences: "Cookie preferences",
+    updated: "Last updated",
+    back: "Back to home",
+    related: "Other documents",
+    navLabel: "Legal documents",
+  },
+
+  consent: {
+    title: "Your privacy",
+    text: "We use essential cookies to make this website work. With your permission, we may also use analytics and marketing cookies to understand how the site is used and to measure campaigns.",
+    policy: "Cookie Policy",
+    acceptAll: "Accept all",
+    rejectAll: "Reject optional",
+    customize: "Customize",
+    save: "Save choices",
+    close: "Close",
+    dialogTitle: "Cookie preferences",
+    dialogText: "Choose which cookie categories you allow. You can change this at any time from the website footer.",
+    alwaysOn: "Always on",
+    categories: {
+      essential: { name: "Essential", desc: "Required for the website to work, such as remembering your language and cookie choices." },
+      analytics: { name: "Analytics", desc: "Help us understand how the website is used so we can improve it." },
+      marketing: { name: "Marketing", desc: "Measure campaign results and enable more relevant ads." },
+    },
   },
 
   whatsappMessage: {

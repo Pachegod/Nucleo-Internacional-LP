@@ -27,7 +27,7 @@ export function SiteHeader({
   logoAlt: string;
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navLinks = NAV_KEYS.map((key) => ({ href: `#${key}`, label: t.nav[key] }));
+  const navLinks = NAV_KEYS.map((key) => ({ href: `${localePath(lang)}#${key}`, label: t.nav[key] }));
 
   return (
     <header className="sticky top-0 z-30 border-b border-sand/10 bg-deep/90 backdrop-blur">
