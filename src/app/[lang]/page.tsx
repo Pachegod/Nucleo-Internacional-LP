@@ -180,9 +180,9 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           {/* Foto de abertura — humaniza o "Quem somos" */}
           <figure className="mt-12">
             <MediaFrame
-              src="/media/pessoas/coc-colinas-patio.jpg"
+              src="/media/pessoas/coc-colinas-campus.jpg"
               alt={t.about.figures.opening.alt}
-              ratio="1024 / 390"
+              ratio="1024 / 434"
               focus="center"
               sizes="(max-width: 1240px) 100vw, 1240px"
               className="rounded-[20px]"
