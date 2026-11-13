@@ -609,8 +609,9 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
             {t.partners.title}
           </h2>
 
-          {/* Parceiros de rota (Instituto Cultural e Griggs aparecem em "Quem somos" · 05) */}
-          <div className="mt-12 grid gap-5">
+          {/* Parceiros de rota (Instituto Cultural e Griggs aparecem em "Quem somos" · 05).
+              WorldEd ocupa 2/3 como destaque; "Também na rede" fica no 1/3 restante, mesma altura. */}
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
             {Object.entries(PARTNERS)
               .filter(([, p]) => !p.featured)
               .map(([id, p]) => {
@@ -618,30 +619,30 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                 return (
                   <article
                     key={id}
-                    className="flex flex-wrap items-center gap-x-7 gap-y-6 rounded-[20px] border border-night/10 bg-white p-8"
+                    className="flex flex-col gap-8 rounded-[20px] border border-night/10 bg-white p-8 sm:flex-row sm:items-center sm:p-10 md:col-span-2"
                   >
-                    <div className="relative h-24 w-[180px] shrink-0">
-                      <Image src={p.logo.src} alt={copy.alt} fill sizes="180px" className="object-contain" />
+                    <div className="relative h-32 w-[200px] shrink-0">
+                      <Image src={p.logo.src} alt={copy.alt} fill sizes="200px" className="object-contain object-left" />
                     </div>
-                    <div className="min-w-0 flex-[1_1_200px]">
-                      <h3 className="text-[22px] font-bold text-navy">{p.name}</h3>
-                      <p className={`mt-2 ${KICKER} tracking-[0.14em] text-accent-deep`}>{copy.focus}</p>
-                      <p className="mt-3 text-sm leading-relaxed text-night/70">{copy.brands}</p>
+                    <div className="min-w-0">
+                      <p className={`${KICKER} text-accent-deep`}>{copy.focus}</p>
+                      <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">{p.name}</h3>
+                      <p className={`mt-4 ${LEAD} text-night/70`}>{copy.brands}</p>
                     </div>
                   </article>
                 );
               })}
-          </div>
 
-          <div className="mt-11 border-t border-night/10 pt-7">
-            <p className={`mb-5 ${KICKER} text-night/55`}>{t.partners.network}</p>
-            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {PARTNER_NETWORK.filter((logo) => !logo.standby).map((logo) => (
-                <li key={logo.src} className="relative h-24 rounded-[14px] border border-night/10 bg-white">
-                  <Image src={logo.src} alt={logo.alt} fill sizes="200px" className="object-contain p-3.5" />
-                </li>
-              ))}
-            </ul>
+            <aside className="flex flex-col rounded-[20px] border border-night/10 bg-white p-8">
+              <p className={`${KICKER} text-night/55`}>{t.partners.network}</p>
+              <ul className="mt-5 grid flex-1 gap-3">
+                {PARTNER_NETWORK.filter((logo) => !logo.standby).map((logo) => (
+                  <li key={logo.src} className="relative min-h-24 rounded-[14px] border border-night/10">
+                    <Image src={logo.src} alt={logo.alt} fill sizes="300px" className="object-contain p-4" />
+                  </li>
+                ))}
+              </ul>
+            </aside>
           </div>
         </div>
       </section>
