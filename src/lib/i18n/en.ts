@@ -99,6 +99,10 @@ export const en: Dictionary = {
     lead:
       "A good partnership starts with knowing who is on the other side. From a national school system to the Núcleo team, this is the path that brings each student to your institution.",
     pending: "to be confirmed",
+    figures: {
+      opening: { alt: "Teenagers chatting while sitting outside a school", caption: "Fig. 01 — From middle school" },
+      counseling: { alt: "A counselor talking with a student at a table", caption: "Fig. 02 — One-on-one guidance" },
+    },
     principles: {
       title: "Mission, vision and values",
       missionLabel: "Mission",
@@ -212,7 +216,7 @@ export const en: Dictionary = {
 
   abertura: {
     alt: "Students walking out through the gate of a university campus",
-    figLabel: "Fig. 01 — Our cities",
+    figLabel: "Fig. 05 — Our cities",
     carouselLabel: "Cities with COC schools in Santa Catarina",
     prev: "Previous city",
     next: "Next city",
@@ -321,6 +325,8 @@ export const en: Dictionary = {
         alt: "Instituto Cultural Brasileiro Norte-Americano",
         stats: ["Founded in Porto Alegre", "EducationUSA center since"],
         values: ["1938", "1981"],
+        photoCaption: "Fig. 03 — Educator training",
+        photoAlt: "Educators in a training session led by a specialist",
       },
       griggs: {
         focus: "Academic partner: American diploma",
@@ -329,6 +335,8 @@ export const en: Dictionary = {
         alt: "Griggs International Academy",
         stats: ["Founded in the U.S.", "Countries with students"],
         values: ["1909", "60+"],
+        photoCaption: "Fig. 04 — American diploma",
+        photoAlt: "A graduate seen from behind raising her cap",
       },
       worlded: {
         focus: "Pathway partner: other international destinations",
@@ -336,6 +344,8 @@ export const en: Dictionary = {
         alt: "WorldEd School",
         stats: [] as string[],
         values: [] as string[],
+        photoCaption: "",
+        photoAlt: "",
       },
     },
   },

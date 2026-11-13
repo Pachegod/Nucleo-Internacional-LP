@@ -99,6 +99,10 @@ export const es: Dictionary = {
     lead:
       "Una buena alianza empieza por conocer a quien está del otro lado. Del sistema educativo nacional al equipo del Núcleo, este es el camino que lleva a cada estudiante hasta su institución.",
     pending: "por confirmar",
+    figures: {
+      opening: { alt: "Adolescentes conversando sentados frente a una escuela", caption: "Fig. 01 — Desde la secundaria" },
+      counseling: { alt: "Una orientadora conversando con una estudiante en una mesa", caption: "Fig. 02 — Orientación individual" },
+    },
     principles: {
       title: "Misión, visión y valores",
       missionLabel: "Misión",
@@ -212,7 +216,7 @@ export const es: Dictionary = {
 
   abertura: {
     alt: "Estudiantes saliendo por el portón de un campus universitario",
-    figLabel: "Fig. 01 — Nuestras ciudades",
+    figLabel: "Fig. 05 — Nuestras ciudades",
     carouselLabel: "Ciudades con sedes COC en Santa Catarina",
     prev: "Ciudad anterior",
     next: "Ciudad siguiente",
@@ -321,6 +325,8 @@ export const es: Dictionary = {
         alt: "Instituto Cultural Brasileiro Norte-Americano",
         stats: ["Fundado en Porto Alegre", "Centro EducationUSA desde"],
         values: ["1938", "1981"],
+        photoCaption: "Fig. 03 — Formación de educadores",
+        photoAlt: "Educadores en una formación dirigida por una especialista",
       },
       griggs: {
         focus: "Aliado académico: diploma estadounidense",
@@ -329,6 +335,8 @@ export const es: Dictionary = {
         alt: "Griggs International Academy",
         stats: ["Fundada en EE. UU.", "Países con alumnos"],
         values: ["1909", "60+"],
+        photoCaption: "Fig. 04 — Diploma estadounidense",
+        photoAlt: "Graduada de espaldas levantando el birrete",
       },
       worlded: {
         focus: "Aliado de ruta: otros destinos internacionales",
@@ -336,6 +344,8 @@ export const es: Dictionary = {
         alt: "WorldEd School",
         stats: [] as string[],
         values: [] as string[],
+        photoCaption: "",
+        photoAlt: "",
       },
     },
   },

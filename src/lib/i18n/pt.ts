@@ -108,6 +108,10 @@ export const pt = {
       "Uma boa parceria começa por conhecer quem está do outro lado. Do sistema de ensino nacional à equipe do Núcleo, este é o caminho que leva cada estudante até a sua instituição.",
     /** Marcador exibido onde um número ainda não foi confirmado. */
     pending: "a confirmar",
+    figures: {
+      opening: { alt: "Adolescentes conversando sentados em frente a uma escola", caption: "Fig. 01 — Desde o Fundamental II" },
+      counseling: { alt: "Orientadora conversando com uma estudante à mesa", caption: "Fig. 02 — Orientação individual" },
+    },
     principles: {
       title: "Missão, visão e valores",
       missionLabel: "Missão",
@@ -221,7 +225,7 @@ export const pt = {
 
   abertura: {
     alt: "Estudantes saindo pelo portão de um campus universitário",
-    figLabel: "Fig. 01 — Nossas cidades",
+    figLabel: "Fig. 05 — Nossas cidades",
     carouselLabel: "Cidades com unidades COC em Santa Catarina",
     prev: "Cidade anterior",
     next: "Próxima cidade",
@@ -330,6 +334,8 @@ export const pt = {
         alt: "Instituto Cultural Brasileiro Norte-Americano",
         stats: ["Fundado em Porto Alegre", "Centro EducationUSA desde"],
         values: ["1938", "1981"],
+        photoCaption: "Fig. 03 — Formação de educadores",
+        photoAlt: "Educadores em uma formação conduzida por uma especialista",
       },
       griggs: {
         focus: "Parceiro acadêmico: diploma americano",
@@ -338,6 +344,8 @@ export const pt = {
         alt: "Griggs International Academy",
         stats: ["Fundada nos EUA", "Países com alunos"],
         values: ["1909", "60+"],
+        photoCaption: "Fig. 04 — Diploma americano",
+        photoAlt: "Formanda de costas erguendo o capelo",
       },
       worlded: {
         focus: "Parceiro de rota: demais destinos internacionais",
@@ -345,6 +353,8 @@ export const pt = {
         alt: "WorldEd School",
         stats: [] as string[],
         values: [] as string[],
+        photoCaption: "",
+        photoAlt: "",
       },
     },
   },
