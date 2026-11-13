@@ -101,6 +101,7 @@ export const en: Dictionary = {
     pending: "to be confirmed",
     figures: {
       opening: { alt: "Students chatting in the COC Colinas courtyard at sunset", caption: "Fig. 01 — COC Colinas" },
+      counseling: { alt: "A counselor walks a student and her mother through a study plan on a laptop", caption: "Fig. 02 — One-on-one guidance" },
     },
     principles: {
       title: "Mission, vision and values",
@@ -215,7 +216,7 @@ export const en: Dictionary = {
 
   abertura: {
     alt: "Students walking out through the gate of a university campus",
-    figLabel: "Fig. 02 — Our cities",
+    figLabel: "Fig. 03 — Our cities",
     carouselLabel: "Cities with COC schools in Santa Catarina",
     prev: "Previous city",
     next: "Next city",

@@ -110,6 +110,7 @@ export const pt = {
     pending: "a confirmar",
     figures: {
       opening: { alt: "Alunos conversando no pátio do COC Colinas ao entardecer", caption: "Fig. 01 — COC Colinas" },
+      counseling: { alt: "Orientadora apresenta o plano de estudos no notebook a uma aluna e sua mãe", caption: "Fig. 02 — Orientação individual" },
     },
     principles: {
       title: "Missão, visão e valores",
@@ -224,7 +225,7 @@ export const pt = {
 
   abertura: {
     alt: "Estudantes saindo pelo portão de um campus universitário",
-    figLabel: "Fig. 02 — Nossas cidades",
+    figLabel: "Fig. 03 — Nossas cidades",
     carouselLabel: "Cidades com unidades COC em Santa Catarina",
     prev: "Cidade anterior",
     next: "Próxima cidade",

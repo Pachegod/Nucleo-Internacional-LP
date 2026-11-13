@@ -101,6 +101,7 @@ export const es: Dictionary = {
     pending: "por confirmar",
     figures: {
       opening: { alt: "Estudiantes conversando en el patio del COC Colinas al atardecer", caption: "Fig. 01 — COC Colinas" },
+      counseling: { alt: "Una orientadora presenta el plan de estudios en el portátil a una alumna y su madre", caption: "Fig. 02 — Orientación individual" },
     },
     principles: {
       title: "Misión, visión y valores",
@@ -215,7 +216,7 @@ export const es: Dictionary = {
 
   abertura: {
     alt: "Estudiantes saliendo por el portón de un campus universitario",
-    figLabel: "Fig. 02 — Nuestras ciudades",
+    figLabel: "Fig. 03 — Nuestras ciudades",
     carouselLabel: "Ciudades con sedes COC en Santa Catarina",
     prev: "Ciudad anterior",
     next: "Ciudad siguiente",

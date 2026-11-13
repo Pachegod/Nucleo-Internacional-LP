@@ -339,6 +339,19 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                 {t.about.counseling.title}
               </h3>
               <p className={`mt-4 ${LEAD} text-white/75`}>{t.about.counseling.text}</p>
+              <figure className="mt-8">
+                <MediaFrame
+                  src="/media/pessoas/counseling-orientacao.jpg"
+                  alt={t.about.figures.counseling.alt}
+                  ratio="4 / 3"
+                  focus="center"
+                  sizes="(max-width: 768px) 100vw, 560px"
+                  className="rounded-2xl"
+                />
+                <figcaption className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55">
+                  {t.about.figures.counseling.caption}
+                </figcaption>
+              </figure>
             </div>
             <ul className="border-t border-white/15">
               {t.about.counseling.items.map((item, i) => (
