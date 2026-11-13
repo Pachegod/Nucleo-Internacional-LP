@@ -15,8 +15,6 @@ type Props = {
   preload?: boolean;
   className?: string;
   imgClassName?: string;
-  /** Véu azul-marinho leve — padrão das fotos ilustrativas (banco de imagens). */
-  tint?: boolean;
 };
 
 /** Quadro de foto do Núcleo: recorte por proporção (ou altura fixa), foto colorida em object-cover. */
@@ -30,7 +28,6 @@ export function MediaFrame({
   preload = false,
   className = "",
   imgClassName = "",
-  tint = false,
 }: Props) {
   const style = height ? { height } : { aspectRatio: ratio };
 
@@ -45,7 +42,6 @@ export function MediaFrame({
         className={`object-cover ${imgClassName}`}
         style={{ objectPosition: focus }}
       />
-      {tint && <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-navy/20 mix-blend-multiply" />}
     </div>
   );
 }

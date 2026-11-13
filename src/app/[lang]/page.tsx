@@ -177,20 +177,6 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           <h2 className={`mt-3.5 max-w-[820px] ${H2}`}>{t.about.title}</h2>
           <p className={`mt-5 max-w-[640px] ${LEAD} text-night/70`}>{t.about.lead}</p>
 
-          {/* Foto de abertura — humaniza o "Quem somos" (ilustrativa) */}
-          <figure className="mt-12">
-            <MediaFrame
-              src="/media/pessoas/quem-somos-alunos.jpg"
-              alt={t.about.figures.opening.alt}
-              ratio="21 / 8"
-              focus="center 40%"
-              sizes="(max-width: 1240px) 100vw, 1240px"
-              className="rounded-[20px]"
-              tint
-            />
-            <figcaption className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-night/55">{t.about.figures.opening.caption}</figcaption>
-          </figure>
-
           {/* Missão, visão e valores — abre o "Quem somos", antes da trajetória da rede */}
           <div className="mt-14">
             <p className={`${KICKER} text-night/55`}>{t.about.principles.title}</p>
@@ -340,19 +326,6 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                 {t.about.counseling.title}
               </h3>
               <p className={`mt-4 ${LEAD} text-white/75`}>{t.about.counseling.text}</p>
-              <figure className="mt-8">
-                <MediaFrame
-                  src="/media/pessoas/counseling-conversa.jpg"
-                  alt={t.about.figures.counseling.alt}
-                  ratio="4 / 3"
-                  focus="35% center"
-                  className="rounded-2xl"
-                  tint
-                />
-                <figcaption className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55">
-                  {t.about.figures.counseling.caption}
-                </figcaption>
-              </figure>
             </div>
             <ul className="border-t border-white/15">
               {t.about.counseling.items.map((item, i) => (
@@ -387,22 +360,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                 .map(([id, p]) => {
                   const copy = t.partners.items[id as keyof typeof PARTNERS];
                   return (
-                    <article key={id} className="flex flex-col bg-white">
-                      {p.photo && (
-                        <figure className="relative">
-                          <MediaFrame
-                            src={p.photo.src}
-                            alt={copy.photoAlt}
-                            ratio="16 / 9"
-                            focus={p.photo.focus}
-                            tint
-                          />
-                          <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-night/70 to-transparent px-8 pb-3 pt-10 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/85 sm:px-10">
-                            {copy.photoCaption}
-                          </figcaption>
-                        </figure>
-                      )}
-                      <div className="flex flex-1 flex-col p-8 sm:p-10">
+                    <article key={id} className="flex flex-col bg-white p-8 sm:p-10">
                       <div className="relative h-28 w-full max-w-[260px]">
                         <Image src={p.logo.src} alt={copy.alt} fill sizes="260px" className="object-contain object-left" />
                       </div>
@@ -414,7 +372,6 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                           <StatGrid values={copy.values} labels={copy.stats} pending={t.about.pending} />
                         </div>
                       )}
-                      </div>
                     </article>
                   );
                 })}
@@ -656,23 +613,11 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <section
         id="cases"
         aria-label={t.quote.label}
-        className="relative isolate scroll-mt-20 overflow-hidden bg-navy"
+        className="scroll-mt-20 bg-navy"
+        style={{
+          backgroundImage: "radial-gradient(ellipse 60% 80% at 100% 0%, rgba(194,160,104,0.18), rgba(35,50,100,0) 60%)",
+        }}
       >
-        {/* Foto de fundo (decorativa) bem escurecida + brilho dourado original */}
-        <Image
-          src="/media/pessoas/corredor-escola.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="-z-20 object-cover opacity-70 grayscale"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-navy/65"
-          style={{
-            backgroundImage: "radial-gradient(ellipse 60% 80% at 100% 0%, rgba(194,160,104,0.18), rgba(35,50,100,0) 60%)",
-          }}
-        />
         <div className={`${WRAP} py-16 sm:py-24`}>
           <svg aria-hidden="true" width="48" height="40" viewBox="0 0 48 40" className="fill-accent">
             <path d="M0 40V22C0 9 7 1.5 20 0l2 5c-7 2-10 6-10.5 12H20v23H0Zm26 0V22C26 9 33 1.5 46 0l2 5c-7 2-10 6-10.5 12H46v23H26Z" />
