@@ -8,9 +8,9 @@
 
 export const pt = {
   meta: {
-    title: "Núcleo Internacional — Parcerias Institucionais",
+    title: "Núcleo Polaris — Parcerias Institucionais",
     description:
-      "Seja uma instituição parceira do Núcleo Internacional: conecte sua high school, universidade, escola de idiomas ou academy a estudantes brasileiros preparados desde o Fundamental II na rede COC.",
+      "Seja uma instituição parceira do Núcleo Polaris: conecte sua high school, universidade, escola de idiomas ou academy a estudantes brasileiros preparados desde o Fundamental II na rede COC.",
   },
 
   langSwitcher: {
@@ -64,12 +64,12 @@ export const pt = {
   },
 
   hero: {
-    kicker: "Núcleo Internacional · Parcerias Institucionais",
+    kicker: "Núcleo Polaris · Parcerias Institucionais",
     titleA: "Sua instituição,",
     titleAccent: "a próxima parada",
     titleB: "de estudantes globais.",
     lead:
-      "O Núcleo Internacional prepara estudantes brasileiros desde o Fundamental II — inglês, currículo internacional, dupla diplomação e planejamento de carreira. Agora abrimos a rede para novas instituições parceiras: high schools, universidades, escolas de idioma e academies que querem receber esses alunos, prontos e acompanhados.",
+      "O Núcleo Polaris prepara estudantes brasileiros desde o Fundamental II — inglês, currículo internacional, dupla diplomação e planejamento de carreira. Agora abrimos a rede para novas instituições parceiras: high schools, universidades, escolas de idioma e academies que querem receber esses alunos, prontos e acompanhados.",
     secondary: "Ver como funciona",
     proof: [
       "High Schools",
@@ -407,7 +407,7 @@ export const pt = {
 
   /** Mensagem pré-preenchida do WhatsApp. */
   whatsappMessage: {
-    base: "Olá! Vim pela página de parcerias do Núcleo Internacional e quero conversar sobre tornar nossa instituição parceira.",
+    base: "Olá! Vim pela página de parcerias do Núcleo Polaris e quero conversar sobre tornar nossa instituição parceira.",
     contato: "Contato",
     instituicao: "Instituição",
     local: "País/cidade",

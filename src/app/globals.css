@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Núcleo Internacional — tokens
+   Núcleo Polaris — tokens
    Noite estrelada + dourado: seções escuras (night/deep/navy) alternadas com
    seções claras (cream). O dourado é a cor de destaque e pode ser sobrescrito
    pelo admin via mini-CMS (--accent), por isso os derivados usam color-mix.

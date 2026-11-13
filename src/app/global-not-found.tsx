@@ -5,7 +5,7 @@ import "./globals.css";
 // 404 para URLs que não casam com nenhuma rota (ex. "/fr"). O layout raiz
 // fica em app/[lang], então este arquivo precisa montar o próprio <html>.
 export const metadata: Metadata = {
-  title: "404 — Núcleo Internacional",
+  title: "404 — Núcleo Polaris",
 };
 
 export default function GlobalNotFound() {

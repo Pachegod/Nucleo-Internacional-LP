@@ -2,9 +2,9 @@ import type { Dictionary } from "./pt";
 
 export const es: Dictionary = {
   meta: {
-    title: "Núcleo Internacional — Alianzas Institucionales",
+    title: "Núcleo Polaris — Alianzas Institucionales",
     description:
-      "Sea una institución aliada del Núcleo Internacional: conecte su high school, universidad, escuela de idiomas o academia con estudiantes brasileños preparados desde la secundaria en la red COC.",
+      "Sea una institución aliada del Núcleo Polaris: conecte su high school, universidad, escuela de idiomas o academia con estudiantes brasileños preparados desde la secundaria en la red COC.",
   },
 
   langSwitcher: {
@@ -56,12 +56,12 @@ export const es: Dictionary = {
   },
 
   hero: {
-    kicker: "Núcleo Internacional · Alianzas Institucionales",
+    kicker: "Núcleo Polaris · Alianzas Institucionales",
     titleA: "Su institución,",
     titleAccent: "la próxima parada",
     titleB: "de estudiantes globales.",
     lead:
-      "El Núcleo Internacional prepara a estudiantes brasileños desde la secundaria — inglés, currículo internacional, doble titulación y planificación de carrera. Ahora abrimos la red a nuevas instituciones aliadas: high schools, universidades, escuelas de idiomas y academias que quieren recibir a estos alumnos, preparados y acompañados.",
+      "El Núcleo Polaris prepara a estudiantes brasileños desde la secundaria — inglés, currículo internacional, doble titulación y planificación de carrera. Ahora abrimos la red a nuevas instituciones aliadas: high schools, universidades, escuelas de idiomas y academias que quieren recibir a estos alumnos, preparados y acompañados.",
     secondary: "Ver cómo funciona",
     proof: [
       "High Schools",
@@ -396,7 +396,7 @@ export const es: Dictionary = {
   },
 
   whatsappMessage: {
-    base: "¡Hola! Llegué por la página de alianzas del Núcleo Internacional y quiero conversar sobre convertir nuestra institución en aliada.",
+    base: "¡Hola! Llegué por la página de alianzas del Núcleo Polaris y quiero conversar sobre convertir nuestra institución en aliada.",
     contato: "Contacto",
     instituicao: "Institución",
     local: "País/ciudad",

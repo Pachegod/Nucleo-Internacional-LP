@@ -2,9 +2,9 @@ import type { Dictionary } from "./pt";
 
 export const en: Dictionary = {
   meta: {
-    title: "Núcleo Internacional — Institutional Partnerships",
+    title: "Núcleo Polaris — Institutional Partnerships",
     description:
-      "Become a Núcleo Internacional partner: connect your high school, university, language school or academy with Brazilian students prepared from middle school onwards across the COC school network.",
+      "Become a Núcleo Polaris partner: connect your high school, university, language school or academy with Brazilian students prepared from middle school onwards across the COC school network.",
   },
 
   langSwitcher: {
@@ -56,12 +56,12 @@ export const en: Dictionary = {
   },
 
   hero: {
-    kicker: "Núcleo Internacional · Institutional Partnerships",
+    kicker: "Núcleo Polaris · Institutional Partnerships",
     titleA: "Your institution,",
     titleAccent: "the next stop",
     titleB: "for global students.",
     lead:
-      "Núcleo Internacional prepares Brazilian students from middle school onwards — English, an international curriculum, a dual diploma and career planning. We are now opening our network to new partner institutions: high schools, universities, language schools and academies ready to welcome these students, fully prepared and supported.",
+      "Núcleo Polaris prepares Brazilian students from middle school onwards — English, an international curriculum, a dual diploma and career planning. We are now opening our network to new partner institutions: high schools, universities, language schools and academies ready to welcome these students, fully prepared and supported.",
     secondary: "See how it works",
     proof: [
       "High Schools",
@@ -396,7 +396,7 @@ export const en: Dictionary = {
   },
 
   whatsappMessage: {
-    base: "Hello! I found the Núcleo Internacional partnerships page and would like to talk about becoming a partner institution.",
+    base: "Hello! I found the Núcleo Polaris partnerships page and would like to talk about becoming a partner institution.",
     contato: "Contact",
     instituicao: "Institution",
     local: "Country/city",
