@@ -515,30 +515,52 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
             {t.partners.title}
           </h2>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {Object.entries(PARTNERS).map(([id, p]) => {
-              const copy = t.partners.items[id as keyof typeof PARTNERS];
-              return (
-              <article
-                key={id}
-                className="flex flex-wrap items-center gap-x-7 gap-y-6 rounded-[20px] border border-night/10 bg-white p-8"
-              >
-                <div className="relative h-24 w-[180px] shrink-0">
-                  <Image src={p.logo.src} alt={copy.alt} fill sizes="180px" className="object-contain" />
-                </div>
-                <div className="min-w-0 flex-[1_1_200px]">
-                  <h3 className="text-[22px] font-bold text-navy">{p.name}</h3>
-                  <p className={`mt-2 ${KICKER} tracking-[0.14em] text-accent-deep`}>{copy.focus}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-night/70">{copy.brands}</p>
-                </div>
-              </article>
-              );
-            })}
+          {/* Destaques — mesma largura do bloco "COC Nacional", dividida entre os parceiros em destaque */}
+          <div className="mt-12 grid gap-px overflow-hidden rounded-[20px] border border-night/10 bg-night/10 md:grid-cols-2">
+            {Object.entries(PARTNERS)
+              .filter(([, p]) => p.featured)
+              .map(([id, p]) => {
+                const copy = t.partners.items[id as keyof typeof PARTNERS];
+                return (
+                  <article key={id} className="flex flex-col bg-white p-8 sm:p-10">
+                    <div className="relative h-28 w-full max-w-[260px]">
+                      <Image src={p.logo.src} alt={copy.alt} fill sizes="260px" className="object-contain object-left" />
+                    </div>
+                    <p className={`mt-8 ${KICKER} text-accent-deep`}>{copy.focus}</p>
+                    <h3 className="mt-3 font-display text-[34px] leading-none text-navy sm:text-[40px]">{p.name}</h3>
+                    <p className={`mt-4 max-w-[480px] ${LEAD} text-night/70`}>{copy.brands}</p>
+                  </article>
+                );
+              })}
+          </div>
+
+          {/* Demais parceiros de rota */}
+          <div className="mt-5 grid gap-5">
+            {Object.entries(PARTNERS)
+              .filter(([, p]) => !p.featured)
+              .map(([id, p]) => {
+                const copy = t.partners.items[id as keyof typeof PARTNERS];
+                return (
+                  <article
+                    key={id}
+                    className="flex flex-wrap items-center gap-x-7 gap-y-6 rounded-[20px] border border-night/10 bg-white p-8"
+                  >
+                    <div className="relative h-24 w-[180px] shrink-0">
+                      <Image src={p.logo.src} alt={copy.alt} fill sizes="180px" className="object-contain" />
+                    </div>
+                    <div className="min-w-0 flex-[1_1_200px]">
+                      <h3 className="text-[22px] font-bold text-navy">{p.name}</h3>
+                      <p className={`mt-2 ${KICKER} tracking-[0.14em] text-accent-deep`}>{copy.focus}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-night/70">{copy.brands}</p>
+                    </div>
+                  </article>
+                );
+              })}
           </div>
 
           <div className="mt-11 border-t border-night/10 pt-7">
             <p className={`mb-5 ${KICKER} text-night/55`}>{t.partners.network}</p>
-            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {PARTNER_NETWORK.map((logo) => (
                 <li key={logo.src} className="relative h-24 rounded-[14px] border border-night/10 bg-white">
                   <Image src={logo.src} alt={logo.alt} fill sizes="200px" className="object-contain p-3.5" />

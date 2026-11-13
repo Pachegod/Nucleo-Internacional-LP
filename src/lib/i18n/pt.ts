@@ -302,8 +302,15 @@ export const pt = {
     items: {
       "instituto-cultural": {
         focus: "Parceiro de rota: Estados Unidos",
-        brands: "EducationUSA · Griggs",
+        brands:
+          "Centro EducationUSA que conduz nossos alunos rumo a high schools e universidades americanas — orientação oficial, testes e todo o caminho até o embarque.",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
+      },
+      griggs: {
+        focus: "Parceiro acadêmico: diploma americano",
+        brands:
+          "Escola americana acreditada, operada pela Andrews University, que certifica o diploma de High School americano cursado em paralelo ao COC.",
+        alt: "Griggs International Academy",
       },
       worlded: {
         focus: "Parceiro de rota: demais destinos internacionais",

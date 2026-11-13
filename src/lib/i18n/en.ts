@@ -293,8 +293,15 @@ export const en: Dictionary = {
     items: {
       "instituto-cultural": {
         focus: "Pathway partner: United States",
-        brands: "EducationUSA · Griggs",
+        brands:
+          "EducationUSA center guiding our students toward American high schools and universities — official advising, testing and the whole path to departure.",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
+      },
+      griggs: {
+        focus: "Academic partner: American diploma",
+        brands:
+          "Accredited American school, operated by Andrews University, that awards the U.S. High School diploma earned alongside the COC curriculum.",
+        alt: "Griggs International Academy",
       },
       worlded: {
         focus: "Pathway partner: other international destinations",

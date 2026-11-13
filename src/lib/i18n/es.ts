@@ -293,8 +293,15 @@ export const es: Dictionary = {
     items: {
       "instituto-cultural": {
         focus: "Aliado de ruta: Estados Unidos",
-        brands: "EducationUSA · Griggs",
+        brands:
+          "Centro EducationUSA que guía a nuestros alumnos hacia high schools y universidades estadounidenses — orientación oficial, exámenes y todo el camino hasta el embarque.",
         alt: "Instituto Cultural Brasileiro Norte-Americano",
+      },
+      griggs: {
+        focus: "Aliado académico: diploma estadounidense",
+        brands:
+          "Escuela estadounidense acreditada, operada por Andrews University, que otorga el diploma de High School estadounidense cursado en paralelo al COC.",
+        alt: "Griggs International Academy",
       },
       worlded: {
         focus: "Aliado de ruta: otros destinos internacionales",

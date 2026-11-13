@@ -24,21 +24,31 @@ export const SOLUTIONS = {
   },
 } as const;
 
+/**
+ * Parceiros de rota. `featured` = destaque na faixa larga do topo da seção
+ * (mesma largura do bloco "COC Nacional", dividida entre os destacados).
+ */
 export const PARTNERS = {
   "instituto-cultural": {
     name: "Instituto Cultural",
     logo: { src: "/media/parceiros/instituto-cultural.webp" },
+    featured: true,
+  },
+  griggs: {
+    name: "Griggs International Academy",
+    logo: { src: "/media/parceiros/griggs.webp" },
+    featured: true,
   },
   worlded: {
     name: "WorldEd",
     logo: { src: "/media/parceiros/worlded.webp" },
+    featured: false,
   },
 } as const;
 
 /** Demais marcas da rede de parceiros (faixa de logos) — o alt é o nome da marca. */
 export const PARTNER_NETWORK = [
   { src: "/media/parceiros/be.webp", alt: "Be Currículo Bilíngue" },
-  { src: "/media/parceiros/griggs.webp", alt: "Griggs International Academy" },
   { src: "/media/parceiros/nba-school.webp", alt: "NBA Basketball School" },
   { src: "/media/parceiros/psg-academy.webp", alt: "PSG Academy" },
 ];
