@@ -99,6 +99,9 @@ export const en: Dictionary = {
     lead:
       "A good partnership starts with knowing who is on the other side. From a national school system to the Núcleo team, this is the path that brings each student to your institution.",
     pending: "to be confirmed",
+    figures: {
+      opening: { alt: "Students chatting in the COC Colinas courtyard at sunset", caption: "Fig. 01 — COC Colinas" },
+    },
     principles: {
       title: "Mission, vision and values",
       missionLabel: "Mission",
@@ -212,7 +215,7 @@ export const en: Dictionary = {
 
   abertura: {
     alt: "Students walking out through the gate of a university campus",
-    figLabel: "Fig. 01 — Our cities",
+    figLabel: "Fig. 02 — Our cities",
     carouselLabel: "Cities with COC schools in Santa Catarina",
     prev: "Previous city",
     next: "Next city",

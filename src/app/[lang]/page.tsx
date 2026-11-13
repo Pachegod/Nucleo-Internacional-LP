@@ -177,6 +177,19 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           <h2 className={`mt-3.5 max-w-[820px] ${H2}`}>{t.about.title}</h2>
           <p className={`mt-5 max-w-[640px] ${LEAD} text-night/70`}>{t.about.lead}</p>
 
+          {/* Foto de abertura — humaniza o "Quem somos" */}
+          <figure className="mt-12">
+            <MediaFrame
+              src="/media/pessoas/coc-colinas-alunos.jpg"
+              alt={t.about.figures.opening.alt}
+              ratio="2 / 1"
+              focus="center 55%"
+              sizes="(max-width: 1240px) 100vw, 1240px"
+              className="rounded-[20px]"
+            />
+            <figcaption className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-night/55">{t.about.figures.opening.caption}</figcaption>
+          </figure>
+
           {/* Missão, visão e valores — abre o "Quem somos", antes da trajetória da rede */}
           <div className="mt-14">
             <p className={`${KICKER} text-night/55`}>{t.about.principles.title}</p>

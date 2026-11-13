@@ -99,6 +99,9 @@ export const es: Dictionary = {
     lead:
       "Una buena alianza empieza por conocer a quien está del otro lado. Del sistema educativo nacional al equipo del Núcleo, este es el camino que lleva a cada estudiante hasta su institución.",
     pending: "por confirmar",
+    figures: {
+      opening: { alt: "Estudiantes conversando en el patio del COC Colinas al atardecer", caption: "Fig. 01 — COC Colinas" },
+    },
     principles: {
       title: "Misión, visión y valores",
       missionLabel: "Misión",
@@ -212,7 +215,7 @@ export const es: Dictionary = {
 
   abertura: {
     alt: "Estudiantes saliendo por el portón de un campus universitario",
-    figLabel: "Fig. 01 — Nuestras ciudades",
+    figLabel: "Fig. 02 — Nuestras ciudades",
     carouselLabel: "Ciudades con sedes COC en Santa Catarina",
     prev: "Ciudad anterior",
     next: "Ciudad siguiente",

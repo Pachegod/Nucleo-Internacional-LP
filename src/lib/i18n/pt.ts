@@ -108,6 +108,9 @@ export const pt = {
       "Uma boa parceria começa por conhecer quem está do outro lado. Do sistema de ensino nacional à equipe do Núcleo, este é o caminho que leva cada estudante até a sua instituição.",
     /** Marcador exibido onde um número ainda não foi confirmado. */
     pending: "a confirmar",
+    figures: {
+      opening: { alt: "Alunos conversando no pátio do COC Colinas ao entardecer", caption: "Fig. 01 — COC Colinas" },
+    },
     principles: {
       title: "Missão, visão e valores",
       missionLabel: "Missão",
@@ -221,7 +224,7 @@ export const pt = {
 
   abertura: {
     alt: "Estudantes saindo pelo portão de um campus universitário",
-    figLabel: "Fig. 01 — Nossas cidades",
+    figLabel: "Fig. 02 — Nossas cidades",
     carouselLabel: "Cidades com unidades COC em Santa Catarina",
     prev: "Cidade anterior",
     next: "Próxima cidade",
