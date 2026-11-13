@@ -176,7 +176,7 @@ export const es: Dictionary = {
         {
           name: "Sin movilidad · el mundo dentro de la escuela",
           detail:
-            "Currículo bilingüe, doble titulación, preparación para exámenes de dominio del idioma y clases con especialistas de instituciones internacionales — sin salir de Brasil.",
+            "Currículo bilingüe, Junior High Certificate en la secundaria básica, doble titulación de High School en la secundaria superior, preparación para exámenes de dominio del idioma y clases con especialistas de instituciones internacionales — sin salir de Brasil.",
         },
         {
           name: "Con movilidad · el mundo fuera de la escuela",

@@ -176,7 +176,7 @@ export const en: Dictionary = {
         {
           name: "Without mobility · the world inside the school",
           detail:
-            "Bilingual curriculum, dual diploma, proficiency exam preparation and classes with experts from international institutions — without leaving Brazil.",
+            "Bilingual curriculum, a Junior High Certificate in middle school, a dual High School diploma in high school, proficiency exam preparation and classes with experts from international institutions — without leaving Brazil.",
         },
         {
           name: "With mobility · the world beyond the school",

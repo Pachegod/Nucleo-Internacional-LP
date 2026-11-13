@@ -185,7 +185,7 @@ export const pt = {
         {
           name: "Sem mobilidade · o mundo dentro da escola",
           detail:
-            "Currículo bilíngue, dupla diplomação, preparação para exames de proficiência e aulas com especialistas de instituições internacionais — sem sair do Brasil.",
+            "Currículo bilíngue, Junior High Certificate no Fundamental II, dupla diplomação de High School no Ensino Médio, preparação para exames de proficiência e aulas com especialistas de instituições internacionais — sem sair do Brasil.",
         },
         {
           name: "Com mobilidade · o mundo fora da escola",
