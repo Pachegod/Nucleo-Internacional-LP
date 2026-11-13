@@ -573,7 +573,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           <div className="mt-11 border-t border-night/10 pt-7">
             <p className={`mb-5 ${KICKER} text-night/55`}>{t.partners.network}</p>
             <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {PARTNER_NETWORK.map((logo) => (
+              {PARTNER_NETWORK.filter((logo) => !logo.standby).map((logo) => (
                 <li key={logo.src} className="relative h-24 rounded-[14px] border border-night/10 bg-white">
                   <Image src={logo.src} alt={logo.alt} fill sizes="200px" className="object-contain p-3.5" />
                 </li>

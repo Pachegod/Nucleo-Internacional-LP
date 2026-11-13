@@ -46,11 +46,14 @@ export const PARTNERS = {
   },
 } as const;
 
-/** Demais marcas da rede de parceiros (faixa de logos) — o alt é o nome da marca. */
+/**
+ * Demais marcas da rede de parceiros (faixa de logos) — o alt é o nome da marca.
+ * `standby: true` = parceria em espera: fica fora da página até ser reativada.
+ */
 export const PARTNER_NETWORK = [
-  { src: "/media/parceiros/be.webp", alt: "Be Currículo Bilíngue" },
-  { src: "/media/parceiros/nba-school.webp", alt: "NBA Basketball School" },
-  { src: "/media/parceiros/psg-academy.webp", alt: "PSG Academy" },
+  { src: "/media/parceiros/be.webp", alt: "Be Currículo Bilíngue", standby: false },
+  { src: "/media/parceiros/nba-school.webp", alt: "NBA Basketball School", standby: true },
+  { src: "/media/parceiros/psg-academy.webp", alt: "PSG Academy", standby: true },
 ];
 
 /**
