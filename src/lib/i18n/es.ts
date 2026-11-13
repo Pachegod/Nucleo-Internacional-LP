@@ -99,6 +99,23 @@ export const es: Dictionary = {
     lead:
       "Una buena alianza empieza por conocer a quien está del otro lado. Del sistema educativo nacional al equipo del Núcleo, este es el camino que lleva a cada estudiante hasta su institución.",
     pending: "por confirmar",
+    principles: {
+      title: "Misión, visión y valores",
+      missionLabel: "Misión",
+      mission:
+        "Promover la excelencia educativa, brindando a los alumnos oportunidades ilimitadas para impulsar sus sueños y desarrollar sus habilidades.",
+      visionLabel: "Visión",
+      vision:
+        "Ser referencia nacional en innovación y calidad pedagógica, ofreciendo soluciones para los ecosistemas digitales educativos.",
+      valuesLabel: "Valores",
+      values: [
+        "Transformación de vidas a través de la educación y la tecnología",
+        "Evolución constante",
+        "Incentivo al aprendizaje",
+        "Compromiso con la evolución de la educación en Brasil",
+        "Pasión por educar",
+      ],
+    },
     national: {
       tag: "01 · Red nacional",
       title: "COC — tradición educativa desde 1963",

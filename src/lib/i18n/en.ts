@@ -99,6 +99,23 @@ export const en: Dictionary = {
     lead:
       "A good partnership starts with knowing who is on the other side. From a national school system to the Núcleo team, this is the path that brings each student to your institution.",
     pending: "to be confirmed",
+    principles: {
+      title: "Mission, vision and values",
+      missionLabel: "Mission",
+      mission:
+        "To promote educational excellence, giving students limitless opportunities to pursue their dreams and develop their skills.",
+      visionLabel: "Vision",
+      vision:
+        "To be a national benchmark in innovation and teaching quality, delivering solutions for digital education ecosystems.",
+      valuesLabel: "Values",
+      values: [
+        "Transforming lives through education and technology",
+        "Constant evolution",
+        "Encouraging learning",
+        "Commitment to advancing education in Brazil",
+        "Passion for teaching",
+      ],
+    },
     national: {
       tag: "01 · National network",
       title: "COC — a tradition in education since 1963",

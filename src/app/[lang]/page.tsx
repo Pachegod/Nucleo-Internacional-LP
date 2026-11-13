@@ -177,6 +177,32 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           <h2 className={`mt-3.5 max-w-[820px] ${H2}`}>{t.about.title}</h2>
           <p className={`mt-5 max-w-[640px] ${LEAD} text-night/70`}>{t.about.lead}</p>
 
+          {/* Missão, visão e valores — abre o "Quem somos", antes da trajetória da rede */}
+          <div className="mt-14">
+            <p className={`${KICKER} text-night/55`}>{t.about.principles.title}</p>
+            <div className="mt-5 grid gap-px overflow-hidden rounded-[20px] border border-night/10 bg-night/10 md:grid-cols-3">
+              <div className="bg-navy p-7 text-white sm:p-8">
+                <p className={`${KICKER} text-accent`}>{t.about.principles.missionLabel}</p>
+                <p className="mt-4 text-[17px] leading-relaxed text-white/90">{t.about.principles.mission}</p>
+              </div>
+              <div className="bg-white p-7 sm:p-8">
+                <p className={`${KICKER} text-accent-deep`}>{t.about.principles.visionLabel}</p>
+                <p className="mt-4 text-[17px] leading-relaxed text-night/80">{t.about.principles.vision}</p>
+              </div>
+              <div className="bg-white p-7 sm:p-8">
+                <p className={`${KICKER} text-accent-deep`}>{t.about.principles.valuesLabel}</p>
+                <ul className="mt-3">
+                  {t.about.principles.values.map((v, i) => (
+                    <li key={v} className="flex gap-3 border-b border-night/10 py-2.5 text-[15px] leading-snug text-night/80 last:border-b-0">
+                      <span className="w-5 shrink-0 text-xs font-bold text-accent-deep">0{i + 1}</span>
+                      {v}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
           {/* 01 · COC Nacional */}
           <div className="mt-14 grid items-start gap-8 border-t border-night/10 pt-10 md:grid-cols-2">
             <div>

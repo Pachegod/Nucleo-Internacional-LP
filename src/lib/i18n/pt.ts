@@ -108,6 +108,23 @@ export const pt = {
       "Uma boa parceria começa por conhecer quem está do outro lado. Do sistema de ensino nacional à equipe do Núcleo, este é o caminho que leva cada estudante até a sua instituição.",
     /** Marcador exibido onde um número ainda não foi confirmado. */
     pending: "a confirmar",
+    principles: {
+      title: "Missão, visão e valores",
+      missionLabel: "Missão",
+      mission:
+        "Promover a excelência educacional, fornecendo aos alunos oportunidades ilimitadas para impulsionar os seus sonhos e desenvolver suas habilidades.",
+      visionLabel: "Visão",
+      vision:
+        "Ser referência nacional em inovação e em qualidade pedagógica, oferecendo soluções para os ecossistemas digitais educacionais.",
+      valuesLabel: "Valores",
+      values: [
+        "Transformação de vidas através da educação e tecnologia",
+        "Evolução constante",
+        "Incentivo ao aprendizado",
+        "Compromisso com a evolução da educação no Brasil",
+        "Paixão por educar",
+      ],
+    },
     national: {
       tag: "01 · Rede nacional",
       title: "COC — tradição em educação desde 1963",
