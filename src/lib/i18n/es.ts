@@ -352,9 +352,9 @@ export const es: Dictionary = {
 
   quote: {
     label: "Cita",
-    text: "Un niño, un maestro, un libro y una pluma",
-    accent: "pueden cambiar el mundo.",
-    author: "— Malala Yousafzai",
+    text: "Debemos fomentar la ciudadanía mundial. La educación va más allá de la lectura y las matemáticas;",
+    accent: "también se trata de ciudadanía.",
+    author: "— Ban Ki-moon",
   },
 
   agenda: {

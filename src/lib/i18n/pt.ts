@@ -361,9 +361,9 @@ export const pt = {
 
   quote: {
     label: "Citação",
-    text: "Uma criança, um professor, um livro e uma caneta",
-    accent: "podem mudar o mundo.",
-    author: "— Malala Yousafzai",
+    text: "Precisamos fomentar a cidadania global. A educação vai além da leitura e da matemática;",
+    accent: "trata-se também de cidadania.",
+    author: "— Ban Ki-moon",
   },
 
   agenda: {

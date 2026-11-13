@@ -352,9 +352,9 @@ export const en: Dictionary = {
 
   quote: {
     label: "Quote",
-    text: "One child, one teacher, one book and one pen",
-    accent: "can change the world.",
-    author: "— Malala Yousafzai",
+    text: "We must foster global citizenship. Education is about more than literacy and numeracy.",
+    accent: "It is also about citizenry.",
+    author: "— Ban Ki-moon",
   },
 
   agenda: {
