@@ -18,7 +18,7 @@ export function VideoEmbed({ embed, t }: { embed?: Embed; t: Dictionary["video"]
       <div className="relative overflow-hidden rounded-[22px] border border-sand/10 bg-deep" style={{ aspectRatio: "16 / 9" }}>
         {embed.kind === "iframe" ? (
           <iframe
-            src={`${embed.src}?autoplay=1`}
+            src={`${embed.src}${embed.src.includes("?") ? "&" : "?"}autoplay=1`}
             title={t.iframeTitle}
             className="h-full w-full"
             allow="autoplay; encrypted-media; picture-in-picture"

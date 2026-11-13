@@ -422,6 +422,9 @@ export const pt = {
     sending: "Enviando…",
     submit: "Enviar e falar no WhatsApp",
     note: "Ao enviar, você abre uma conversa no WhatsApp com o time de parcerias do Núcleo.",
+    privacyBefore: "Ao enviar, você declara estar ciente da nossa ",
+    privacyLink: "Política de Privacidade",
+    privacyAfter: ".",
     tipoOptions: [
       "High School / Boarding School",
       "Universidade / College",
@@ -430,6 +433,38 @@ export const pt = {
       "Summer camp / curta duração",
       "Outro",
     ],
+  },
+
+  /** Páginas legais (LGPD) e links do rodapé. */
+  legal: {
+    privacy: "Política de Privacidade",
+    terms: "Termos de Uso",
+    cookies: "Política de Cookies",
+    preferences: "Preferências de cookies",
+    updated: "Última atualização",
+    back: "Voltar ao início",
+    related: "Outros documentos",
+    navLabel: "Documentos legais",
+  },
+
+  /** Aviso e central de consentimento de cookies. */
+  consent: {
+    title: "Sua privacidade",
+    text: "Usamos cookies essenciais para o site funcionar. Com a sua permissão, também podemos usar cookies de análise e de marketing para entender o uso do site e medir campanhas.",
+    policy: "Política de Cookies",
+    acceptAll: "Aceitar todos",
+    rejectAll: "Recusar opcionais",
+    customize: "Personalizar",
+    save: "Salvar escolhas",
+    close: "Fechar",
+    dialogTitle: "Preferências de cookies",
+    dialogText: "Escolha quais categorias de cookies você permite. Você pode mudar isso a qualquer momento pelo rodapé do site.",
+    alwaysOn: "Sempre ativos",
+    categories: {
+      essential: { name: "Essenciais", desc: "Necessários para o site funcionar, como lembrar o idioma e as suas escolhas de cookies." },
+      analytics: { name: "Análise", desc: "Ajudam a entender como o site é usado, para melhorá-lo." },
+      marketing: { name: "Marketing", desc: "Medem o resultado de campanhas e permitem anúncios mais relevantes." },
+    },
   },
 
   /** Mensagem pré-preenchida do WhatsApp. */

@@ -136,15 +136,15 @@ export function parseVideoEmbed(url: string): { kind: "iframe" | "video"; src: s
 
   if (host === "youtube.com") {
     const id = parsed.searchParams.get("v") ?? parsed.pathname.split("/").filter(Boolean).pop();
-    return id ? { kind: "iframe", src: `https://www.youtube.com/embed/${id}` } : undefined;
+    return id ? { kind: "iframe", src: `https://www.youtube-nocookie.com/embed/${id}` } : undefined;
   }
   if (host === "youtu.be") {
     const id = parsed.pathname.slice(1);
-    return id ? { kind: "iframe", src: `https://www.youtube.com/embed/${id}` } : undefined;
+    return id ? { kind: "iframe", src: `https://www.youtube-nocookie.com/embed/${id}` } : undefined;
   }
   if (host === "vimeo.com") {
     const id = parsed.pathname.split("/").filter(Boolean).pop();
-    return id ? { kind: "iframe", src: `https://player.vimeo.com/video/${id}` } : undefined;
+    return id ? { kind: "iframe", src: `https://player.vimeo.com/video/${id}?dnt=1` } : undefined;
   }
   if (/\.(mp4|webm|ogg)$/i.test(parsed.pathname)) {
     return { kind: "video", src: url };

@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { DEFAULT_LOCALE, LOCALE_COOKIE, hasLocale, localePath, matchAcceptLanguage } from "@/lib/i18n/locales";
+import { DEFAULT_LOCALE, LEGAL_SLUGS, LOCALE_COOKIE, hasLocale, localePath, matchAcceptLanguage } from "@/lib/i18n/locales";
 
 // PT-BR mora na raiz ("/") sem prefixo; as páginas ficam em app/[lang], então
 // "/" é reescrito internamente para "/pt". Na raiz, quem decide o idioma é:
@@ -13,6 +13,14 @@ export function proxy(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = pathname.slice(3) || "/";
     return NextResponse.redirect(url);
+  }
+
+  // Páginas legais em PT ("/privacidade", "/termos", "/cookies") vivem sem prefixo.
+  const ptLegal = Object.values(LEGAL_SLUGS.pt).map((s) => `/${s}`);
+  if (ptLegal.includes(pathname)) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/${DEFAULT_LOCALE}${pathname}`;
+    return NextResponse.rewrite(url);
   }
 
   // pathname === "/"
@@ -35,5 +43,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/pt", "/pt/:path*"],
+  matcher: ["/", "/pt", "/pt/:path*", "/privacidade", "/termos", "/cookies"],
 };

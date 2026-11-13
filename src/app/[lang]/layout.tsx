@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 import { Bebas_Neue, Montserrat } from "next/font/google";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { CookieConsent } from "@/components/site/CookieConsent";
 import { getLpContent, getAccentColor, getAccentInk, getImage, getSocialLinks, DEFAULT_ACCENT } from "@/lib/cms";
-import { LOCALES, HTML_LANG, getDictionary, hasLocale, localePath } from "@/lib/i18n";
+import { LOCALES, HTML_LANG, getDictionary, hasLocale, legalPath, localePath } from "@/lib/i18n";
 import "../globals.css";
 
 // Títulos em Bebas Neue (caixa alta condensada), texto corrido em Montserrat.
@@ -72,7 +73,8 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
       <body className="flex min-h-full flex-col bg-night font-body text-sand" style={accentStyle}>
         <SiteHeader logo={logo} lang={lang} t={t.header} langSwitcher={t.langSwitcher} logoAlt={t.logoAlt} />
         <main className="flex-1">{children}</main>
-        <SiteFooter logo={logo} socialLinks={socialLinks} t={t} />
+        <SiteFooter logo={logo} socialLinks={socialLinks} t={t} lang={lang} />
+        <CookieConsent t={t.consent} policyHref={legalPath(lang, "cookies")} />
       </body>
     </html>
   );

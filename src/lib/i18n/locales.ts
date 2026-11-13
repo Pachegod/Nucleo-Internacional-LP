@@ -45,3 +45,30 @@ export function matchAcceptLanguage(header: string | null | undefined): Locale {
   }
   return DEFAULT_LOCALE;
 }
+
+// Páginas legais (LGPD): cada idioma tem o próprio slug. PT fica sem prefixo
+// ("/privacidade"), EN/ES com prefixo ("/en/privacy", "/es/privacidad").
+export const LEGAL_DOCS = ["privacy", "terms", "cookies"] as const;
+export type LegalDoc = (typeof LEGAL_DOCS)[number];
+
+export const LEGAL_SLUGS: Record<Locale, Record<LegalDoc, string>> = {
+  pt: { privacy: "privacidade", terms: "termos", cookies: "cookies" },
+  en: { privacy: "privacy", terms: "terms", cookies: "cookies" },
+  es: { privacy: "privacidad", terms: "terminos", cookies: "cookies" },
+};
+
+export function legalPath(locale: Locale, doc: LegalDoc): string {
+  const slug = LEGAL_SLUGS[locale][doc];
+  return locale === DEFAULT_LOCALE ? `/${slug}` : `/${locale}/${slug}`;
+}
+
+export function legalDocFromSlug(locale: Locale, slug: string): LegalDoc | undefined {
+  return LEGAL_DOCS.find((doc) => LEGAL_SLUGS[locale][doc] === slug);
+}
+
+/** Caminho equivalente em outro idioma: página legal ↔ página legal, senão a home. */
+export function pathForLocale(pathname: string, locale: Locale): string {
+  const last = pathname.split("/").filter(Boolean).pop() ?? "";
+  const doc = LEGAL_DOCS.find((d) => LOCALES.some((l) => LEGAL_SLUGS[l][d] === last));
+  return doc ? legalPath(locale, doc) : localePath(locale);
+}
