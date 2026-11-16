@@ -60,8 +60,8 @@ export function interestMessage(
 export const LEGAL_ENTITY = {
   name: "ALE EDUCACAO E TECNOLOGIA LTDA",
   cnpj: "42.479.610/0001-60",
-  address: "[A PREENCHER: endereço completo]",
-  city: "[A PREENCHER: cidade/UF do foro]",
+  address: "Rua Coelho Neto, 169, Sala 01, Andar 4, Centro, Rio do Sul/SC, CEP 89160-155",
+  city: "Rio do Sul/SC",
 };
 
 /** E-mail do Encarregado (DPO) para pedidos de titulares. */
