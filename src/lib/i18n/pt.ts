@@ -122,11 +122,11 @@ export const pt = {
         "Ser referência nacional em inovação e em qualidade pedagógica, oferecendo soluções para os ecossistemas digitais educacionais.",
       valuesLabel: "Valores",
       values: [
-        { title: "Empoderamento via EdTech", text: "Desbloqueamos o potencial humano unindo tecnologia de ponta e aprendizagem acessível." },
-        { title: "Evolução Incansável", text: "Nunca nos acomodamos com o padrão atual; iteramos, evoluímos e inovamos todos os dias." },
-        { title: "Curiosidade Contínua", text: "Cultivamos uma mentalidade em que o aprendizado nunca para, dentro ou fora da sala de aula." },
-        { title: "Impacto Global", text: "Rompemos fronteiras para moldar o futuro da educação em escala mundial." },
-        { title: "Propósito Acima de Modismos", text: "Guiados pela missão genuína de gerar transformações reais e duradouras por meio do ensino." },
+        { title: "Tecnologia que Transforma", text: "Unimos tecnologia de ponta e ensino de excelência para gerar resultados reais." },
+        { title: "Evolução Incansável", text: "Não nos acomodamos; aprimoramos métodos, processos e tecnologias todos os dias." },
+        { title: "Cultura de Aprendizado", text: "Incentivamos a busca constante por conhecimento, domínio técnico e desenvolvimento." },
+        { title: "Padrão Global", text: "Elevamos o nível da educação digital para entregar qualidade de classe mundial." },
+        { title: "Compromisso com o Ensino", text: "Foco total na qualidade pedagógica e no sucesso concreto de quem aprende." },
       ],
     },
     national: {
