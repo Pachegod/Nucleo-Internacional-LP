@@ -203,9 +203,9 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
               </div>
               <div className="bg-white p-7 sm:p-8 md:col-span-2">
                 <p className={`${KICKER} text-accent-deep`}>{t.about.principles.valuesLabel}</p>
-                <ul className="mt-3 grid sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-5 lg:gap-x-6">
+                <ul className="mt-3 grid sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-10">
                   {t.about.principles.values.map((v, i) => (
-                    <li key={v.title} className="flex gap-3 border-b border-night/10 py-3 last:border-b-0 lg:flex-col lg:gap-2 lg:border-b-0 lg:border-l lg:pl-5 lg:first:border-l-0 lg:first:pl-0">
+                    <li key={v.title} className="flex gap-3 border-b border-night/10 py-4 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:flex-col lg:gap-2 lg:py-5 lg:[&:nth-last-child(-n+3)]:border-b-0">
                       <span className="w-5 shrink-0 pt-0.5 text-xs font-bold text-accent-deep">0{i + 1}</span>
                       <div>
                         <p className="text-[15px] font-semibold leading-snug text-night">{v.title}</p>

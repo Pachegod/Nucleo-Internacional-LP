@@ -107,17 +107,18 @@ export const es: Dictionary = {
       title: "Misión, visión y valores",
       missionLabel: "Misión",
       mission:
-        "Promover la excelencia educativa, brindando a los alumnos oportunidades ilimitadas para impulsar sus sueños y desarrollar sus habilidades.",
+        "Conectar escuelas, alumnos y familias con oportunidades internacionales de aprendizaje y desarrollo, a través de trayectorias personalizadas, seguras y orientadas por propósito, preparando a los jóvenes para ampliar sus horizontes y construir su futuro en un mundo sin fronteras.",
       visionLabel: "Visión",
       vision:
-        "Ser referente en excelencia académica e innovación pedagógica, respaldada por soluciones digitales que amplían el alcance de la enseñanza.",
+        "Ser referente en internacionalización educativa en Brasil, reconocido por la excelencia en la conexión entre escuelas y oportunidades globales, por la formación de ciudadanos con mentalidad internacional y por el impacto positivo en las trayectorias de vida de los estudiantes.",
       valuesLabel: "Valores",
       values: [
-        { title: "Educación que Transforma", text: "Unimos enseñanza de excelencia y recursos tecnológicos para impulsar trayectorias reales." },
-        { title: "Evolución Continua", text: "Perfeccionamos constantemente nuestros métodos pedagógicos para responder a un mundo cambiante." },
-        { title: "Cultura de Aprendizaje", text: "Fomentamos la búsqueda permanente de conocimiento, mérito y desarrollo intelectual." },
-        { title: "Excelencia de Estándar Global", text: "Elevamos la calidad educativa uniendo rigor pedagógico e innovación digital." },
-        { title: "Compromiso con la Enseñanza", text: "Dedicación genuina a la formación sólida y al éxito concreto de cada estudiante." },
+        { title: "Protagonismo y personalización", text: "Cada estudiante es único. Respetamos sus aspiraciones, habilidades, intereses y proyectos de vida, construyendo trayectorias personalizadas que conectan su potencial con las oportunidades internacionales." },
+        { title: "Integridad y transparencia", text: "Actuamos con ética, responsabilidad y claridad en todas las relaciones. Ofrecemos información confiable, orientación honesta y condiciones transparentes para decisiones conscientes y seguras." },
+        { title: "Cuidado y seguridad", text: "Valoramos el bienestar de los estudiantes y la tranquilidad de las familias. Acompañamos cada etapa del recorrido con atención, responsabilidad y apoyo, reconociendo la importancia de cada experiencia." },
+        { title: "Excelencia y evolución continua", text: "Buscamos calidad en cada entrega, invirtiendo en conocimiento, preparación, innovación y mejora constante. Trabajamos con socios calificados y soluciones alineadas con las transformaciones de la educación global." },
+        { title: "Mentalidad global y respeto a la diversidad", text: "Creemos en el poder de la educación para acercar culturas y transformar perspectivas. Valoramos la diversidad, el diálogo intercultural y la formación de ciudadanos conscientes, preparados para actuar en un mundo conectado." },
+        { title: "Conexión y colaboración", text: "Construimos puentes entre escuelas, familias, estudiantes e instituciones internacionales. Creemos que las grandes oportunidades nacen de alianzas sólidas, relaciones de confianza y objetivos compartidos." },
       ],
     },
     national: {
