@@ -58,7 +58,7 @@ export function interestMessage(
 // Controlador dos dados pessoais (LGPD) — aparece na Política de Privacidade
 // e nos Termos de Uso. Preencher antes de publicar.
 export const LEGAL_ENTITY = {
-  name: "ALE EDUCACAO E TECNOLOGIA LTDA",
+  name: "ALE SOLUCOES EDUCACIONAIS LTDA",
   cnpj: "42.479.610/0001-60",
   address: "Rua Coelho Neto, 169, Sala 01, Andar 4, Centro, Rio do Sul/SC, CEP 89160-155",
   city: "Rio do Sul/SC",
