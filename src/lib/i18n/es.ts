@@ -113,11 +113,11 @@ export const es: Dictionary = {
         "Ser referencia nacional en innovación y calidad pedagógica, ofreciendo soluciones para los ecosistemas digitales educativos.",
       valuesLabel: "Valores",
       values: [
-        "Transformación de vidas a través de la educación y la tecnología",
-        "Evolución constante",
-        "Incentivo al aprendizaje",
-        "Compromiso con la evolución de la educación global",
-        "Pasión por educar",
+        { title: "Empoderar a través de EdTech", text: "Desbloqueamos el potencial humano uniendo tecnología de vanguardia y aprendizaje accesible." },
+        { title: "Crecimiento Incesante", text: "Nunca nos conformamos con el statu quo; iteramos, mejoramos e innovamos cada día." },
+        { title: "Curiosidad Permanente", text: "Cultivamos una mentalidad donde el aprendizaje nunca se detiene, dentro ni fuera del aula." },
+        { title: "Impacto Global", text: "Rompemos fronteras para dar forma al futuro de la educación a escala mundial." },
+        { title: "Propósito Sobre Tendencias", text: "Impulsados por la misión genuina de generar un cambio real y duradero a través de la enseñanza." },
       ],
     },
     national: {

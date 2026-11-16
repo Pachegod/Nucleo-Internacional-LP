@@ -122,11 +122,11 @@ export const pt = {
         "Ser referência nacional em inovação e em qualidade pedagógica, oferecendo soluções para os ecossistemas digitais educacionais.",
       valuesLabel: "Valores",
       values: [
-        "Transformação de vidas através da educação e tecnologia",
-        "Evolução constante",
-        "Incentivo ao aprendizado",
-        "Compromisso com a evolução da educação global",
-        "Paixão por educar",
+        { title: "Empoderamento via EdTech", text: "Desbloqueamos o potencial humano unindo tecnologia de ponta e aprendizagem acessível." },
+        { title: "Evolução Incansável", text: "Nunca nos acomodamos com o padrão atual; iteramos, evoluímos e inovamos todos os dias." },
+        { title: "Curiosidade Contínua", text: "Cultivamos uma mentalidade em que o aprendizado nunca para, dentro ou fora da sala de aula." },
+        { title: "Impacto Global", text: "Rompemos fronteiras para moldar o futuro da educação em escala mundial." },
+        { title: "Propósito Acima de Modismos", text: "Guiados pela missão genuína de gerar transformações reais e duradouras por meio do ensino." },
       ],
     },
     national: {

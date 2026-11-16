@@ -192,7 +192,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           {/* Missão, visão e valores — abre o "Quem somos", antes da trajetória da rede */}
           <div className="mt-14">
             <p className={`${KICKER} text-night/55`}>{t.about.principles.title}</p>
-            <div className="mt-5 grid gap-px overflow-hidden rounded-[20px] border border-night/10 bg-night/10 md:grid-cols-3">
+            <div className="mt-5 grid gap-px overflow-hidden rounded-[20px] border border-night/10 bg-night/10 md:grid-cols-2">
               <div className="bg-navy p-7 text-white sm:p-8">
                 <p className={`${KICKER} text-accent`}>{t.about.principles.missionLabel}</p>
                 <p className="mt-4 text-[17px] leading-relaxed text-white/90">{t.about.principles.mission}</p>
@@ -201,13 +201,16 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                 <p className={`${KICKER} text-accent-deep`}>{t.about.principles.visionLabel}</p>
                 <p className="mt-4 text-[17px] leading-relaxed text-night/80">{t.about.principles.vision}</p>
               </div>
-              <div className="bg-white p-7 sm:p-8">
+              <div className="bg-white p-7 sm:p-8 md:col-span-2">
                 <p className={`${KICKER} text-accent-deep`}>{t.about.principles.valuesLabel}</p>
-                <ul className="mt-3">
+                <ul className="mt-3 grid sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-5 lg:gap-x-6">
                   {t.about.principles.values.map((v, i) => (
-                    <li key={v} className="flex gap-3 border-b border-night/10 py-2.5 text-[15px] leading-snug text-night/80 last:border-b-0">
-                      <span className="w-5 shrink-0 text-xs font-bold text-accent-deep">0{i + 1}</span>
-                      {v}
+                    <li key={v.title} className="flex gap-3 border-b border-night/10 py-3 last:border-b-0 lg:flex-col lg:gap-2 lg:border-b-0 lg:border-l lg:pl-5 lg:first:border-l-0 lg:first:pl-0">
+                      <span className="w-5 shrink-0 pt-0.5 text-xs font-bold text-accent-deep">0{i + 1}</span>
+                      <div>
+                        <p className="text-[15px] font-semibold leading-snug text-night">{v.title}</p>
+                        <p className="mt-1 text-[13px] leading-snug text-night/65">{v.text}</p>
+                      </div>
                     </li>
                   ))}
                 </ul>
