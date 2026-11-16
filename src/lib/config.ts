@@ -58,8 +58,8 @@ export function interestMessage(
 // Controlador dos dados pessoais (LGPD) — aparece na Política de Privacidade
 // e nos Termos de Uso. Preencher antes de publicar.
 export const LEGAL_ENTITY = {
-  name: "[A PREENCHER: razão social]",
-  cnpj: "[A PREENCHER: CNPJ]",
+  name: "ALE EDUCACAO E TECNOLOGIA LTDA",
+  cnpj: "42.479.610/0001-60",
   address: "[A PREENCHER: endereço completo]",
   city: "[A PREENCHER: cidade/UF do foro]",
 };
@@ -68,4 +68,4 @@ export const LEGAL_ENTITY = {
 export const PRIVACY_EMAIL = CONTACT_EMAIL;
 
 /** Data da última revisão dos documentos legais (ISO). */
-export const LEGAL_UPDATED_AT = "2026-11-13";
+export const LEGAL_UPDATED_AT = "2026-11-16";
