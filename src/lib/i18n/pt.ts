@@ -122,11 +122,11 @@ export const pt = {
         "Ser referência nacional em inovação e em qualidade pedagógica, oferecendo soluções para os ecossistemas digitais educacionais.",
       valuesLabel: "Valores",
       values: [
-        { title: "Tecnologia que Transforma", text: "Unimos tecnologia de ponta e ensino de excelência para gerar resultados reais." },
-        { title: "Evolução Incansável", text: "Não nos acomodamos; aprimoramos métodos, processos e tecnologias todos os dias." },
-        { title: "Cultura de Aprendizado", text: "Incentivamos a busca constante por conhecimento, domínio técnico e desenvolvimento." },
-        { title: "Padrão Global", text: "Elevamos o nível da educação digital para entregar qualidade de classe mundial." },
-        { title: "Compromisso com o Ensino", text: "Foco total na qualidade pedagógica e no sucesso concreto de quem aprende." },
+        { title: "Educação que Transforma", text: "Unimos ensino de excelência e recursos tecnológicos para impulsionar trajetórias reais." },
+        { title: "Evolução Contínua", text: "Aperfeiçoamos constantemente nossos métodos pedagógicos para acompanhar as demandas do mundo." },
+        { title: "Cultura de Aprendizado", text: "Incentivamos a busca permanente por conhecimento, mérito e desenvolvimento intelectual." },
+        { title: "Excelência de Padrão Global", text: "Elevamos a qualidade do ensino conectando tradição pedagógica e inovação digital." },
+        { title: "Compromisso com o Ensino", text: "Dedicação genuína à formação sólida e ao sucesso concreto de cada aluno." },
       ],
     },
     national: {

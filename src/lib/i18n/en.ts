@@ -113,11 +113,11 @@ export const en: Dictionary = {
         "To be a national benchmark in innovation and teaching quality, delivering solutions for digital education ecosystems.",
       valuesLabel: "Values",
       values: [
-        { title: "Transformation Through EdTech", text: "Combining cutting-edge technology with top-tier teaching to drive real-world results." },
-        { title: "Relentless Improvement", text: "We never settle; we refine our methods, systems, and technology every single day." },
-        { title: "Culture of Mastery", text: "Championing continuous learning, technical excellence, and lifelong personal growth." },
-        { title: "Global Standard", text: "Raising the bar in digital education to deliver world-class quality." },
-        { title: "Commitment to Excellence", text: "Unwavering focus on educational quality and the tangible success of every learner." },
+        { title: "Education That Transforms", text: "Combining academic excellence with modern technology to build lasting real-world success." },
+        { title: "Continuous Advancement", text: "Constantly refining our teaching methods and tools to meet a changing world." },
+        { title: "Culture of Learning", text: "Fostering a lifelong pursuit of knowledge, discipline, and intellectual growth." },
+        { title: "Global Standard of Excellence", text: "Raising the bar in education by uniting pedagogical rigor with smart innovation." },
+        { title: "Dedication to Teaching", text: "An unwavering commitment to quality instruction and every student's achievement." },
       ],
     },
     national: {

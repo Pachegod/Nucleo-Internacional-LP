@@ -113,11 +113,11 @@ export const es: Dictionary = {
         "Ser referencia nacional en innovación y calidad pedagógica, ofreciendo soluciones para los ecosistemas digitales educativos.",
       valuesLabel: "Valores",
       values: [
-        { title: "Tecnología que Transforma", text: "Unimos tecnología de vanguardia y enseñanza de excelencia para generar resultados reales." },
-        { title: "Evolución Incesante", text: "No nos conformamos; perfeccionamos métodos, procesos y tecnología cada día." },
-        { title: "Cultura de Aprendizaje", text: "Fomentamos la búsqueda constante de conocimiento, dominio técnico y desarrollo." },
-        { title: "Estándar Global", text: "Elevamos el nivel de la educación digital para ofrecer calidad de clase mundial." },
-        { title: "Compromiso con la Enseñanza", text: "Enfoque total en la calidad pedagógica y en el éxito concreto de cada estudiante." },
+        { title: "Educación que Transforma", text: "Unimos enseñanza de excelencia y recursos tecnológicos para impulsar trayectorias reales." },
+        { title: "Evolución Continua", text: "Perfeccionamos constantemente nuestros métodos pedagógicos para responder a un mundo cambiante." },
+        { title: "Cultura de Aprendizaje", text: "Fomentamos la búsqueda permanente de conocimiento, mérito y desarrollo intelectual." },
+        { title: "Excelencia de Estándar Global", text: "Elevamos la calidad educativa uniendo rigor pedagógico e innovación digital." },
+        { title: "Compromiso con la Enseñanza", text: "Dedicación genuina a la formación sólida y al éxito concreto de cada estudiante." },
       ],
     },
     national: {
