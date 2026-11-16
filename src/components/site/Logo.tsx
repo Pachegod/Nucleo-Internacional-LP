@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element -- logo de largura variável (local ou do mini-CMS); altura fixa, largura automática. */
 
-const DEFAULT_LOGO_SRC = "/media/logo-nucleo.webp";
+const DEFAULT_LOGO_SRC = "/media/polaris-horizontal-negativo.png";
 
-/** Logo horizontal do Núcleo. Se o admin cadastrar um logo no mini-CMS, ele substitui o padrão. */
+/** Logo horizontal do Núcleo Polaris (versão negativa: branco + estrela dourada). Se o admin cadastrar um logo no mini-CMS, ele substitui o padrão. */
 export function Logo({
   logo,
   alt,

@@ -12,7 +12,7 @@ export const es: Dictionary = {
     names: { pt: "Português", en: "English", es: "Español" },
   },
 
-  logoAlt: "Núcleo de Internacionalización",
+  logoAlt: "Núcleo Polaris",
 
   header: {
     navLabel: "Secciones",

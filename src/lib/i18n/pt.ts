@@ -18,7 +18,7 @@ export const pt = {
     names: { pt: "Português", en: "English", es: "Español" },
   },
 
-  logoAlt: "Núcleo de Internacionalização",
+  logoAlt: "Núcleo Polaris",
 
   header: {
     navLabel: "Seções",
