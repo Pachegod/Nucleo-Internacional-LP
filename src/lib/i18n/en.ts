@@ -110,7 +110,7 @@ export const en: Dictionary = {
         "To promote educational excellence, giving students limitless opportunities to pursue their dreams and develop their skills.",
       visionLabel: "Vision",
       vision:
-        "To be a national benchmark in innovation and teaching quality, delivering solutions for digital education ecosystems.",
+        "To be a benchmark in academic excellence and pedagogical innovation, supported by digital solutions that extend the reach of learning.",
       valuesLabel: "Values",
       values: [
         { title: "Education That Transforms", text: "Combining academic excellence with modern technology to build lasting real-world success." },

@@ -110,7 +110,7 @@ export const es: Dictionary = {
         "Promover la excelencia educativa, brindando a los alumnos oportunidades ilimitadas para impulsar sus sueños y desarrollar sus habilidades.",
       visionLabel: "Visión",
       vision:
-        "Ser referencia nacional en innovación y calidad pedagógica, ofreciendo soluciones para los ecosistemas digitales educativos.",
+        "Ser referente en excelencia académica e innovación pedagógica, respaldada por soluciones digitales que amplían el alcance de la enseñanza.",
       valuesLabel: "Valores",
       values: [
         { title: "Educación que Transforma", text: "Unimos enseñanza de excelencia y recursos tecnológicos para impulsar trayectorias reales." },

@@ -119,7 +119,7 @@ export const pt = {
         "Promover a excelência educacional, fornecendo aos alunos oportunidades ilimitadas para impulsionar os seus sonhos e desenvolver suas habilidades.",
       visionLabel: "Visão",
       vision:
-        "Ser referência nacional em inovação e em qualidade pedagógica, oferecendo soluções para os ecossistemas digitais educacionais.",
+        "Ser referência em excelência acadêmica e inovação pedagógica, apoiada por soluções digitais que ampliam o alcance do ensino.",
       valuesLabel: "Valores",
       values: [
         { title: "Educação que Transforma", text: "Unimos ensino de excelência e recursos tecnológicos para impulsionar trajetórias reais." },
