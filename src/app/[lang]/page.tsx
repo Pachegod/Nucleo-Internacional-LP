@@ -181,7 +181,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
             <MediaFrame
               src="/media/pessoas/global-colinas-campus.jpg"
               alt={t.about.figures.opening.alt}
-              ratio="1024 / 434"
+              ratio="1584 / 672"
               focus="center"
               sizes="(max-width: 1240px) 100vw, 1240px"
               className="rounded-[20px]"
