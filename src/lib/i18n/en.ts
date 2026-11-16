@@ -116,7 +116,7 @@ export const en: Dictionary = {
         "Transforming lives through education and technology",
         "Constant evolution",
         "Encouraging learning",
-        "Commitment to advancing education in Brazil",
+        "Commitment to advancing global education",
         "Passion for teaching",
       ],
     },

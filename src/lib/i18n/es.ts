@@ -116,7 +116,7 @@ export const es: Dictionary = {
         "Transformación de vidas a través de la educación y la tecnología",
         "Evolución constante",
         "Incentivo al aprendizaje",
-        "Compromiso con la evolución de la educación en Brasil",
+        "Compromiso con la evolución de la educación global",
         "Pasión por educar",
       ],
     },

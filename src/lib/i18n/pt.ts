@@ -125,7 +125,7 @@ export const pt = {
         "Transformação de vidas através da educação e tecnologia",
         "Evolução constante",
         "Incentivo ao aprendizado",
-        "Compromisso com a evolução da educação no Brasil",
+        "Compromisso com a evolução da educação global",
         "Paixão por educar",
       ],
     },
