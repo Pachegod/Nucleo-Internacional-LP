@@ -119,6 +119,7 @@ export const en: Dictionary = {
         { title: "Excellence and continuous improvement", text: "We pursue quality in everything we deliver, investing in knowledge, preparation, innovation and constant improvement. We work with qualified partners and solutions aligned with the changes in global education." },
         { title: "Global mindset and respect for diversity", text: "We believe in the power of education to bring cultures together and transform perspectives. We value diversity, intercultural dialogue and the development of conscientious citizens, prepared to act in a connected world." },
         { title: "Connection and collaboration", text: "We build bridges between schools, families, students and international institutions. We believe great opportunities are born from solid partnerships, relationships of trust and shared goals." },
+        { title: "Solidarity", text: "We encourage empathy and generosity in recognizing the pain or needs of others and acting to change that reality. Doing good does not require great wealth, but the willingness to share and support those around us." },
       ],
     },
     national: {

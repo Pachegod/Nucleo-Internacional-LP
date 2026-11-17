@@ -128,6 +128,7 @@ export const pt = {
         { title: "Excelência e evolução contínua", text: "Buscamos qualidade em cada entrega, investindo em conhecimento, preparação, inovação e aprimoramento constante. Trabalhamos com parceiros qualificados e soluções alinhadas às transformações da educação global." },
         { title: "Mentalidade global e respeito à diversidade", text: "Acreditamos no poder da educação para aproximar culturas e transformar perspectivas. Valorizamos a diversidade, o diálogo intercultural e a formação de cidadãos conscientes, preparados para atuar em um mundo conectado." },
         { title: "Conexão e colaboração", text: "Construímos pontes entre escolas, famílias, estudantes e instituições internacionais. Acreditamos que grandes oportunidades nascem de parcerias sólidas, relações de confiança e objetivos compartilhados." },
+        { title: "Solidariedade", text: "Estimulamos a empatia e a generosidade em reconhecer a dor ou a necessidade do outro e agir para transformar essa realidade. Praticar o bem não exige grandes riquezas, mas sim a disposição de compartilhar e apoiar quem está ao redor." },
       ],
     },
     national: {

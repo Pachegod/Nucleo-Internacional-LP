@@ -204,15 +204,25 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
               <div className="bg-white p-7 sm:p-8 md:col-span-2">
                 <p className={`${KICKER} text-accent-deep`}>{t.about.principles.valuesLabel}</p>
                 <ul className="mt-3 grid sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-10">
-                  {t.about.principles.values.map((v, i) => (
-                    <li key={v.title} className="flex gap-3 border-b border-night/10 py-4 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:flex-col lg:gap-2 lg:py-5 lg:[&:nth-last-child(-n+3)]:border-b-0">
+                  {t.about.principles.values.map((v, i, all) => {
+                    // Sem borda na última linha de cada grid (2 col. no sm, 3 no lg),
+                    // mesmo quando a última linha não está completa.
+                    const lastRow = (cols: number) => i >= all.length - (all.length % cols || cols);
+                    return (
+                    <li
+                      key={v.title}
+                      className={`flex gap-3 border-b border-night/10 py-4 last:border-b-0 lg:flex-col lg:gap-2 lg:py-5 ${
+                        lastRow(2) ? "sm:border-b-0" : "sm:border-b"
+                      } ${lastRow(3) ? "lg:border-b-0" : "lg:border-b"}`}
+                    >
                       <span className="w-5 shrink-0 pt-0.5 text-xs font-bold text-accent-deep">0{i + 1}</span>
                       <div>
                         <p className="text-[15px] font-semibold leading-snug text-night">{v.title}</p>
                         <p className="mt-1 text-[13px] leading-snug text-night/65">{v.text}</p>
                       </div>
                     </li>
-                  ))}
+                    );
+                  })}
                 </ul>
               </div>
             </div>

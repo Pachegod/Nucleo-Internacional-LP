@@ -119,6 +119,7 @@ export const es: Dictionary = {
         { title: "Excelencia y evolución continua", text: "Buscamos calidad en cada entrega, invirtiendo en conocimiento, preparación, innovación y mejora constante. Trabajamos con socios calificados y soluciones alineadas con las transformaciones de la educación global." },
         { title: "Mentalidad global y respeto a la diversidad", text: "Creemos en el poder de la educación para acercar culturas y transformar perspectivas. Valoramos la diversidad, el diálogo intercultural y la formación de ciudadanos conscientes, preparados para actuar en un mundo conectado." },
         { title: "Conexión y colaboración", text: "Construimos puentes entre escuelas, familias, estudiantes e instituciones internacionales. Creemos que las grandes oportunidades nacen de alianzas sólidas, relaciones de confianza y objetivos compartidos." },
+        { title: "Solidaridad", text: "Estimulamos la empatía y la generosidad para reconocer el dolor o la necesidad del otro y actuar para transformar esa realidad. Hacer el bien no exige grandes riquezas, sino la disposición de compartir y apoyar a quienes nos rodean." },
       ],
     },
     national: {
