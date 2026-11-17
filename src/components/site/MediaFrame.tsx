@@ -13,6 +13,8 @@ type Props = {
   /** Tamanhos para o srcset do next/image. */
   sizes?: string;
   preload?: boolean;
+  /** Qualidade do next/image; precisa estar em images.qualities (75 ou 90). */
+  quality?: number;
   className?: string;
   imgClassName?: string;
 };
@@ -26,6 +28,7 @@ export function MediaFrame({
   focus = "center",
   sizes = "(max-width: 768px) 100vw, 50vw",
   preload = false,
+  quality,
   className = "",
   imgClassName = "",
 }: Props) {
@@ -39,6 +42,7 @@ export function MediaFrame({
         fill
         sizes={sizes}
         preload={preload}
+        quality={quality}
         className={`object-cover ${imgClassName}`}
         style={{ objectPosition: focus }}
       />

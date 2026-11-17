@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
     globalNotFound: true,
   },
   images: {
+    // 75 é o padrão; 90 para fotos grandes de largura total (ver MediaFrame `quality`).
+    qualities: [75, 90],
     // Imagens do mini-CMS (admin) são hospedadas no Vercel Blob.
     remotePatterns: [
       {
