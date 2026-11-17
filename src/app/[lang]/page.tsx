@@ -223,6 +223,28 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
                     </li>
                     );
                   })}
+                  {(() => {
+                    // Foto preenche as células vazias da última linha (2 col. no sm, 3 no lg).
+                    const n = t.about.principles.values.length;
+                    const smGap = n % 2 === 0 ? 0 : 1;
+                    const lgGap = n % 3 === 0 ? 0 : 3 - (n % 3);
+                    if (!smGap && !lgGap) return null;
+                    const show = `${smGap ? "sm:block" : "sm:hidden"} ${lgGap ? "lg:block" : "lg:hidden"}`;
+                    const span = lgGap === 2 ? "lg:col-span-2" : "lg:col-span-1";
+                    return (
+                      <li aria-hidden="true" className={`hidden py-4 lg:py-5 ${show} ${span}`}>
+                        <div className="relative h-full min-h-48 overflow-hidden rounded-xl lg:min-h-[300px]">
+                          <Image
+                            src="/media/valores-diversidade.webp"
+                            alt=""
+                            fill
+                            sizes="(min-width: 1024px) 66vw, 50vw"
+                            className="object-cover object-[center_85%]"
+                          />
+                        </div>
+                      </li>
+                    );
+                  })()}
                 </ul>
               </div>
             </div>
